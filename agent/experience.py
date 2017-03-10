@@ -87,8 +87,8 @@ class experience_shop(object):
                     self.observations[index - self.history_length + 1:
                                       index + 1, ...]
 
-        return self.start_state, self.action[batch_id], \
-            self.rewards[batch_id], self.end_state, self.terminal[batch_id]
+        return self.start_state, self.end_state, self.action[batch_id], \
+            self.rewards[batch_id], self.terminal[batch_id]
 
 class history_recorder(object):
     def __init__(self, history_length, screen_size):
@@ -97,10 +97,15 @@ class history_recorder(object):
         self.history_exp = np.empty(
             [history_length, screen_size, screen_size], np.uint8)
 
-    def update_history(self, new_observe):
+    def update_history(self, observation):
         self.history_exp[1:, :, :] = \
             self.history_exp[0: self.history_length, :, :]
-        self.history_exp[0, :, :] = new_observe
+        self.history_exp[0, :, :] = observation
+        return
+
+    def init_history(self, observation):
+        for i in range(self.history_length):
+            self.history_exp[i, :, :] = observation
         return
 
     def get_history(self):

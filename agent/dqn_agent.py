@@ -52,10 +52,11 @@ class qlearning_agent(object):
         self.n_action = self.env.get_action_space_size()
 
         # construct the networks
-        self.target_network = deep_Q_network(self.sess, 'target_network',
-                                             self.config, self.n_action)
-        self.predict_network = deep_Q_network(self.sess, 'predict_network',
-                                              self.config, self.n_action)
+        self.target_network = deep_Q_network(
+            self.sess, 'target_network', self.config, self.n_action)
+        self.predict_network = deep_Q_network(
+            self.sess, 'predict_network', self.config, self.n_action,
+            target_network=self.target_network)
         self.target_network.set_all_var_copy_op(
             self.predict_network.get_var_dict())
 
@@ -86,8 +87,37 @@ class qlearning_agent(object):
                 2. using these experiences to update the network
                 3. transfer knowledge from predict network to target network
         '''
+        # TODO: make sure the two network are indentical if ...
+        while True:
+            # generating played sequences
+            for i_exp in range(self.config.EXPERIENCE.exp_train_ratio):
+                # play the whole episodes
+                observation, reward, terminal = self.env.new_game(
+                    run_random_action=True)
+                self.history_recorder.init_history(observation)
+                while terminal == False:
+                    # get the predicted action
+                    feed_dict = {}
+                    feed_dict[self.predict_network.get_input_placeholder()] = \
+                        self.history_recorder.get_history()
+                    pred_action = self.predict_network.get_pred_action(
+                        feed_dict)
+                    
+                    # do the action and record it in the experience shop
+                    observation, reward, terminal, _ = \
+                        self.env.step(pred_action)
+                    self.exp_shop.push(
+                        pred_action, reward, observation, terminal)
 
-
+            # train the network, only after we have at least one batch
+            if self.exp_shop.count < self.TRAIN.batch_size:
+                continue
+            else:
+                start_states, end_states, actions, rewards, terminal = \
+                    self.exp_shop.pop()
+                # train the network
+                self.step = self.predict_network.train_step(
+                    start_states, end_states, actions, rewards)
         return
 
     def init_training(self, restore_path=None):

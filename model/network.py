@@ -22,6 +22,7 @@ class network(object):
         self.network_type = config.NETWORK.network_type
         self.network_basebone = config.NETWORK.network_basebone
         self.data_format = config.data_format
+        self.output = None
 
         self.config = config
         self.name = name
@@ -62,11 +63,24 @@ class network(object):
 
     def get_var_dict(self):
         return self.all_var
+
+    def get_pred_action(self, feed_dict):
+        return self.sess.run(self.action, feed_dict=feed_dict)
+
+    def get_input_placeholder(self):
+        return self.baseline_net.get_input_placeholder()
+
     return
 
 class deep_Q_network(network):
-    def __init__(self, sess, name, config, action_space_size):
+    def __init__(self, sess, name, config, action_space_size,
+                 target_network=None):
         # init the parent class and build the baseline model
+        self.target_network = target_network
+        if target_network == None:
+            logger.info('building the target_network')
+        else:
+            logger.info('building the prediction_network')
         with tf.varaible_scope(name):
             super(self.__class__, self).__init__(sess, name, config)
         
@@ -87,7 +101,92 @@ class deep_Q_network(network):
                           data_format=self.data_format, name='output')
 
         self.action = tf.argmax(self.output, dimension=1)
-        return
+        self.max_Q_value = tf.max(self.self.out, dimension=0)
+
+        # build the loss function
+        self.input_screen = self.baseline_net.get_input_placeholder()
+
+        # if it is the target network, then we could just return
+        if self.target_network is None:
+            return
+
+        # for the prediction network, we need to do something else
+        self.Q_next_state_input = tf.placeholder('float32', [None])
+        self.reward_input = tf.placeholder('float32', [None])
+        self.action_input = tf.placeholder('int64', [None])
+        
+        self.actions_one_hot = tf.one_hot(self.actions, self.env.action_size,
+                                          1.0, 0.0, name='action_one_hot')
+        self.pred_state_action_value = tf.reduce_sum(
+            self.outputs * self.actions_one_hot,
+            reduction_indices=1, name='action_state_value')
+
+        self.td_loss = self.Q_next_state - \
+            self.reward - self.pred_state_action_value
+        self.td_loss = tf.where(tf.abs(self.td_loss) < 1.0, 
+                                0.5 * tf.square(self.td_loss), 
+                                tf.abs(self.td_loss) - 0.5,
+                                name='clipped_loss')
+        self.td_loss = tf.reduce_mean(self.td_loss, name='final_loss')
+
+        self.init_training()
+    
+    def get_next_state_value(self, end_states):
+        assert self.target_network is None, logger.error(
+            'You should call the target network to generate the value')
+        return self.sess.run(
+            self.max_Q_value,
+            feed_dict={self.input_screen:end_states})
+
+    def train_step(self, start_states, end_states, actions, rewards):
+        assert self.target_network is not None, logger.error(
+            'You should call the prediction network')
+
+        # get the target prediction
+        Q_next_state = self.target_network.get_next_state_value(end_states)
+        _, current_loss, current_step = self.sess.run(
+            [self.optim, self.td_loss, self.step_count],
+            feed_dict={self.action_input:actions,
+                       self.reward_input: rewards,
+                       self.Q_next_state_input: Q_next_state,
+                       self.input_screen: start_states})
+        logger.info('step: {}, current TD loss: {}'.format(
+            current_step, current_loss))
+
+        # increment the step parameters
+        self.sess.run(self.step_add_op)
+        return current_step
+
+    def init_training(self):
+        '''
+            @brief: here we init the network training procedure
+        '''
+
+        # build the timestep variable to use during learning rate decay
+        self.step_count = tf.Variable(0, trainable=False, name='t')
+        self.step_add_op = self.step_count.assign_add(1)
+
+        self.learning_rate_op = tf.maximum(
+            self.config.TRAIN.learning_rate_minimum,
+            tf.train.exponential_decay(
+                self.config.TRAIN.learning_rate,
+                self.step_count,
+                self.config.TRAIN.decay_step,
+                self.config.TRAIN.decay_rate,
+                staircase=True))
+
+        self.optimizer = tf.train.RMSPropOptimizer(
+            self.learning_rate_op, momentum=0.95, epsilon=0.01)
+
+        if self.config.TRAIN.max_grad_norm != None:
+            grads_and_vars = self.optimizer.compute_gradients(self.td_loss)
+            for idx, (grad, var) in enumerate(grads_and_vars):
+                if grad is not None:
+                    grads_and_vars[idx] = (tf.clip_by_norm(grad, self.max_grad_norm), var)
+            self.optim = self.optimizer.apply_gradients(grads_and_vars)
+        else:
+            self.optim = self.optimizer.minimize(self.loss)
+         
     return
 
 class actor_critic_network(network):

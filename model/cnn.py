@@ -17,7 +17,7 @@ class basebone_network(object):
         self.network_basebone = network_basebone
 
         self.config = config.NETWORK
-        self.batch_size = config.TRAIN.batch_size
+        self.batch_size = None
         self.screen_size = config.GAME.screen_size
         self.history_length = config.GAME.history_length
         self.data_format = self.config.data_format
@@ -95,4 +95,6 @@ class basebone_network(object):
 
     def get_output_layer(self):
         return self.output
+    def get_input_placeholder(self):
+        return self.input_screen
     return

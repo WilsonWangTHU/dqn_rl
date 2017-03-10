@@ -22,11 +22,14 @@ __C.TEST = edict()
 __C.TRAIN.batch_size = 32
 __C.TRAIN.gradient_clip = 10
 __C.TRAIN.learning_rate = 0.0001
+__C.TRAIN.learning_rate_minimum = 0.0001
 __C.TRAIN.beta1 = 0.5
 __C.TRAIN.beta2 = 0.999
 
 __C.TRAIN.max_step_size = 100000
 __C.TRAIN.snapshot_step = 2000  # save the snapshot every 1000 epoches
+# after how many training step, do we update the network
+__C.TRAIN.update_network_freq = 1000
 
 
 # configurations about the game
@@ -42,3 +45,5 @@ __C.GAME.return_cumulated_reward = 4
 
 # configuration about the experience shop
 __C.EXPERIENCE.size = 1000000  # 1e6
+# the number of episodes to play / the number of training step
+__C.EXPERIENCE.exp_train_ratio = 4

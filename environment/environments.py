@@ -41,12 +41,13 @@ class game_environment(object):
     def step(self):
         raise NotImplementedError()
 
-    def get_action_space_size(self):
-    	return self.env.action_space.n
-
     return
 
 class atari_environment(object):
+    '''
+        @brief:
+            for the atari game, action space is discrete
+    '''
     def __init__(self, env_name, n_action_repeat,
                  n_random_action, screen_size,
                  display, data_format, return_cumulated_reward=False,
@@ -64,7 +65,7 @@ class atari_environment(object):
             self.screen_size, self.random_start_max))
 
         # display not implemented
-        if self.display: logger.error('Rendering not implemented/working!')
+        if self.display: logger.error('Rendering not implemented / working!')
         return
 
     def new_game(self, run_random_action=False):
@@ -137,5 +138,8 @@ class atari_environment(object):
         screen = imresize(screen, [self.screen_size, self.screen_size])
 
         return screen
+
+    def get_action_space_size(self):
+    	return self.env.action_space.n
 
     return

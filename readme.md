@@ -18,5 +18,7 @@ ipython, opencv2 (pip install)
 
 # Note
 
-Things to consider: not using feeddict, but use a queue runner.
-And implement the NCWC things
+Things to consider: 
+
+## the display option
+## not using feeddict, but use a queue runner.
