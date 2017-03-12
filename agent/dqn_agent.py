@@ -10,34 +10,44 @@ from ..environment.environments import atari_environment
 from ..model.network import deep_Q_network
 from .experience import experience_shop, history_recorder
 import tensorflow as tf
+import random
+import init_path
+import os
+
 
 class qlearning_agent(object):
-    def __init__(self, sess, config, env_name):
+
+    def __init__(self, sess, config, env_name, restore_path=None):
         '''
             @brief:
                 The agent has several components:
                 @self.env:
                     It is the structure that keep the game environments.
                 @self.target_net:
-                    The network that changes slowly
+                    The network that's responsible for producing experiences,
+                    and the network that changes slowly
                 @self.predict_net:
-                    The network that changes quickly
+                    The network that's responsible for training and this
+                    network changes quickly
                 @self.experience:
                     The structure used to record past experience
                 @self.summary_handle:
                     The structure that handles all the summary recording
-                
-            @what it should do
-                define how to train the network, train the network.
+            @what it should do:
+                It is a master mind of different functions. But details of
+                different function should not appear here (say training,
+                storing experience, record summary)
         '''
         self.config = config
         self.env_name = env_name
         self.sess = sess
         logger.info(
             'Constructing a q-learning agent to play {}'.format(env_name))
-        self.step = 0  # steps are useful for the training process
-        self.episode = 0  # episodes are useful for the generating process
-        
+
+        # self.step is just a shadow of the self.step_count in the
+        # self.predict_net
+        self.step = 0
+
         # construct the environment
         if self.config.GAME.type == 'atari':
             self.env = atari_environment(
@@ -57,6 +67,8 @@ class qlearning_agent(object):
         self.predict_network = deep_Q_network(
             self.sess, 'predict_network', self.config, self.n_action,
             target_network=self.target_network)
+
+        # construct the operation of copying weights.
         self.target_network.set_all_var_copy_op(
             self.predict_network.get_var_dict())
 
@@ -67,16 +79,46 @@ class qlearning_agent(object):
                                         self.config.TRAIN.batch_size)
         self.history_recorder = history_recorder(
             self.config.GAME.history_length, self.config.GAME.screen_size)
+
+        # init the network saver and restore
+        self.saver = tf.train.Saver()
+        if restore_path is not None:
+            self.restore_all(restore_path)
+        else:
+            self.sess.run(tf.global_variables_initializer())
+            self.step = 0
+
         return
 
     def save_all(self):
-        # save all the network parameters and experiences
-        raise NotImplementedError()
+        '''
+            @brief:
+                save all the network parameters and experiences
+        '''
+        base_path = init_path.get_base_dir()
+        path = os.path.join(base_path,
+                            'checkpoint', 'dqn_' + str(self.step) + '.ckpt')
+        self.saver.save(self.sess, path)
+
+        logger.info('checkpoint saved to {}'.format(path))
+        # save the experience shop
+        self.exp_shop.save(path)
         return
 
-    def restore_all(path, syn_target_net):
-        # restore the network and the experiences
-        raise NotImplementedError()
+    def restore_all(self, restore_path):
+        '''
+            @brief:
+                restore the network, the experience shop and the history
+                recorder
+        '''
+        # restore the tf network
+        self.saver.restore(self.sess, restore_path)
+        logger.info('checkpoint restored from {}'.format(restore_path))
+        logger.info('continues from step {}'.format(self.step))
+        self.step = self.predict_network.get_step_count()
+
+        # restore the experience shop
+        self.exp_shop.restore(restore_path)
         return
 
     def train_process(self):
@@ -90,48 +132,67 @@ class qlearning_agent(object):
         # TODO: make sure the two network are indentical if ...
         while True:
             # generating played sequences
-            for i_exp in range(self.config.EXPERIENCE.exp_train_ratio):
-                # play the whole episodes
-                observation, reward, terminal = self.env.new_game(
-                    run_random_action=True)
-                self.history_recorder.init_history(observation)
-                while terminal == False:
-                    # get the predicted action
+            self.generate_experience()
+
+            # train the network
+            self.train_step()
+
+            # save the network if needed
+            if self.step % self.config.TRAIN.snapshot_step == 0:
+                self.save_all()
+        return
+
+    def generate_experience(self):
+        for i_exp in range(self.config.EXPERIENCE.exp_train_ratio):
+            # play the whole episodes
+            observation, reward, terminal = self.env.new_game(
+                run_random_action=True)
+            self.history_recorder.init_history(observation)
+            while terminal is False:
+                # get the predicted action, note we all use training step
+                # instead of episode count
+                epsilon = self.get_epsilon(
+                    self.config.TRAIN.ep_end,
+                    self.config.TRAIN.ep_start,
+                    self.config.TRAIN.max_episode_size,
+                    self.config.TRAIN.training_start_episodes)
+
+                if random.uniform(0, 1) > epsilon:
+                    pred_action = random.randint(0, self.n_action - 1)
+                else:
                     feed_dict = {}
                     feed_dict[self.predict_network.get_input_placeholder()] = \
                         self.history_recorder.get_history()
                     pred_action = self.predict_network.get_pred_action(
                         feed_dict)
-                    
-                    # do the action and record it in the experience shop
-                    observation, reward, terminal, _ = \
-                        self.env.step(pred_action)
-                    self.exp_shop.push(
-                        pred_action, reward, observation, terminal)
 
-            # train the network, only after we have at least one batch
-            if self.exp_shop.count < self.TRAIN.batch_size:
-                continue
-            else:
-                start_states, end_states, actions, rewards, terminal = \
-                    self.exp_shop.pop()
-                # train the network
-                self.step = self.predict_network.train_step(
-                    start_states, end_states, actions, rewards)
+                # do the action and record it in the experience shop
+                observation, reward, terminal, _ = self.env.step(pred_action)
+                self.exp_shop.push(pred_action, reward, observation, terminal)
+
         return
 
-    def init_training(self, restore_path=None):
-        tf.global_variables_initializer()
-        if restore_path is not None:
-            self.restore_all(restore_path)
+    def train_step(self):
+        if self.exp_shop.count < self.TRAIN.training_start_episodes:
+            return
         else:
-            self.target_network.run_copy()  # make two network identical
+            # update the target network if needed. by doing this, we also make
+            # sure that the original values in two networks are the same
+            if self.step % self.config.update_network_freq == 0:
+                self.target_network.run_copy()
+                logger.info('At time step {},' +
+                            ' the target_network is updated'.format(self.step))
 
-        # run the game and init history
-        self.history
-
-    def generate_experience(self):
+            # fetch the data and train the network
+            start_states, end_states, actions, rewards, terminal = \
+                self.exp_shop.pop()
+            self.step = self.predict_network.train_step(
+                start_states, end_states, actions, rewards)
         return
 
-    def train_network(self):
-        return
+    def get_epsilon(self, ep_end, ep_start, t_ep_end, t_learn_start):
+        current_episode = self.exp_shop.episode
+        effective_length = t_ep_end - max(0., current_episode - t_learn_start)
+        epsilon = ep_end + \
+            max(0., (ep_start - ep_end)) * effective_length / float(t_ep_end)
+        return epsilon

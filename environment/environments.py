@@ -1,6 +1,7 @@
 # ------------------------------------------------------------------------------
 #   @brief:
-#       In this function, we define a good environment interface for the 
+#       In this function, we define a good environment interface for the atari.
+#       It's worth mentioning that the we are just sort of add one extra layer
 #   @author:
 #       Tingwu Wang
 # ------------------------------------------------------------------------------
@@ -15,8 +16,9 @@ __init_path.bypass_frost_warning()
 
 
 class game_environment(object):
-    def __init__(self, env_name, n_action_repeat, 
-                 display, data_format, return_cumulated_reward=False,
+
+    def __init__(self, env_name, n_action_repeat,
+                 display, data_format='NCHW', return_cumulated_reward=False,
                  is_training=True):
         '''
             @brief: init the environment
@@ -31,6 +33,11 @@ class game_environment(object):
         self.data_format = data_format
         self.display = display
         self.return_cumulated_reward = return_cumulated_reward
+        self.is_train = is_training
+
+        if self.data_format != 'NCHW':
+            logger.warning('You sure you want to use NWHC format?')
+
         assert n_action_repeat >= 1, \
             logger.error('Action must be at least used once')
         logger.info('Init game environments {}'.format(self.name))
@@ -43,19 +50,21 @@ class game_environment(object):
 
     return
 
+
 class atari_environment(object):
     '''
         @brief:
             for the atari game, action space is discrete
     '''
+
     def __init__(self, env_name, n_action_repeat,
                  n_random_action, screen_size,
-                 display, data_format, return_cumulated_reward=False,
+                 display, data_format='NCHW', return_cumulated_reward=False,
                  is_training=True):
 
         # init the base environment class
         super(self.__class__, self).__init__(
-            env_name, n_action_repeat, display, 
+            env_name, n_action_repeat, display,
             data_format, return_cumulated_reward, is_training)
 
         self.n_random_action = n_random_action
@@ -64,8 +73,9 @@ class atari_environment(object):
         logger.info('Game set image size: {}, random walk step: {}'.format(
             self.screen_size, self.random_start_max))
 
-        # display not implemented
-        if self.display: logger.error('Rendering not implemented / working!')
+        # TODO: display not implemented
+        if self.display:
+            logger.error('Rendering not implemented / working!')
         return
 
     def new_game(self, run_random_action=False):
@@ -81,15 +91,16 @@ class atari_environment(object):
         # if run random for some steps
         if run_random_action:
             # @TODO: about early terminaled games?
-            for _ in range(random.randint(0, self.n_random_action)):
+            for i_random_walk in range(random.randint(0, self.n_random_action)):
                 screen, reward, terminal, _ = self.env.step(0)  # noop action
                 if terminal:  # set for a new game if terminated
                     screen = self.env.reset()
                     screen, reward, terminal, _ = self.env.step(0)
-                    logger.warning('Invalid new game! Already terminated')
-
+                    logger.warning('New game terminated after {} step'.format(
+                        i_random_walk))
         # rendering
-        if self.display: self.env.render()
+        if self.display:
+            self.env.render()
 
         # now return the true observation, reward, terminal, ...
         self.lives = self.env.ale.lives()
@@ -100,6 +111,8 @@ class atari_environment(object):
         return observation, reward, terminal
 
     def step(self, action):
+        assert self.lives >= 0, logger.error(
+            'Why negative lives? did you run new_game()?')
         cumulated_reward = 0
         screen, reward, terminal, _ = self.env.step(action)
 
@@ -107,7 +120,7 @@ class atari_environment(object):
             screen, reward, terminal, _ = self.env.step(action)
             cumulated_reward += reward
             current_lives = self.env.ale.lives()
-            
+
             # in training, even dead by once, we regard as an end of game
             if terminal or (self.is_train and self.lives > current_lives):
                 terminal = True
@@ -116,11 +129,14 @@ class atari_environment(object):
             self.lives = self.env.ale.lives()
 
         # rendering
-        if self.display: self.env.render()
-        
+        if self.display:
+            self.env.render()
+
         # get what is needed to be returned
         if not terminal:
             self.lives = current_lives
+        else:  # to make sure that no one run game without init
+            self.lives = -1
         if self.return_cumulated_reward:
             reward = cumulated_reward
         screen = self.get_observation(screen)
@@ -140,6 +156,8 @@ class atari_environment(object):
         return screen
 
     def get_action_space_size(self):
-    	return self.env.action_space.n
-
+        '''
+            @brief: the network will need to know the size of action
+        '''
+        return self.env.action_space.n
     return

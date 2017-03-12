@@ -9,7 +9,13 @@ import numpy as np
 import random
 from ..util import logger
 
+
 class experience_shop(object):
+    '''
+        @brief:
+            everything you need about the experience
+    '''
+
     def __init__(self, history_length, memory_length, screen_size, batch_size):
         logger.info('building the experience shop')
 
@@ -21,15 +27,16 @@ class experience_shop(object):
         # the FIFO pointer
         self.current = 0
         self.count = 0
+        self.total_episode = 0
 
         # locate the memory
-        self.action = np.empty(self.memory_length, dtype=np.uint8)
+        self.actions = np.empty(self.memory_length, dtype=np.uint8)
         self.rewards = np.empty(self.memory_length, dtype=np.int8)
-        self.observation = np.empty(
+        self.observations = np.empty(
             [self.memory_length, self.screen_size, self.screen_size],
             dtype=np.uint8)
-        self.terminal = np.empty(self.memory_length, dtype=np.bool)
-        
+        self.terminals = np.empty(self.memory_length, dtype=np.bool)
+
         # the actual output
         self.start_state = np.empty(
             [self.batch_size, self.history_length,
@@ -41,22 +48,49 @@ class experience_shop(object):
 
         return
 
-    def save(self):
+    def save(self, path):
+        path = path.replace('.ckpt', 'npy')
+        data_dict = {'count': self.count,
+                     'actions': self.actions[:self.count],
+                     'rewards': self.rewards[:self.count],
+                     'observations': self.observations[:self.count, :, :],
+                     'terminals': self.terminals[:self.count],
+                     'current': self.current,
+                     'total_episode': self.total_episode}
+
+        np.save(path, data_dict)
+        logger.info('Experience shop saved to {}'.format(path))
         return
 
-    def restore(self):
+    def restore(self, path):
+        path = path.replace('.ckpt', 'npy')
+        data_dict = np.load(path)
+        data_dict = data_dict[()]
+
+        logger.info('Experience shop restored from {}'.format(path))
+        self.count = data_dict['count']
+        logger.info('{} data in the experience shop now'.format(self.count))
+
+        # restore the data
+        self.actions[:self.count] = data_dict['actions']
+        self.rewards[:self.count] = data_dict['rewards']
+        self.observations[:self.count, :, :] = data_dict['observations']
+        self.terminals[:self.count] = data_dict['terminals']
+        self.current = data_dict['current']
+        self.total_episode = data_dict['total_episode']
         return
 
     def push(self, action, rewards, observation, terminal):
         # record the data
-        self.action[self.current] = action
+        self.actions[self.current] = action
         self.rewards[self.current] = rewards
-        self.observation[self.current] = observation
-        self.terminal[self.current] = terminal
+        self.observations[self.current] = observation
+        self.terminals[self.current] = terminal
 
         # update parameters
         self.current = (self.current + 1) % self.memory_length
         self.count = max(self.count + 1, self.memory_length)
+        self.episode += 1
 
         return
 
@@ -67,30 +101,36 @@ class experience_shop(object):
         for i_batch in range(self.batch_size):
             # find length = self.history_length frames, that don't have
             # terminal signals in between, loop until found
-            while True: 
+            while True:
                 index = random.randint(self.history_length, self.count - 1)
 
                 # test if it is a valid state: is_broken_experience
                 if (index >= self.current) and \
-                        (index - self.history_length < self.current): 
+                        (index - self.history_length < self.current):
                     continue
                 # test if it is a valid state: is_multiple_play
-                if self.terminal[index - self.history_length: index].any():
+                if self.terminals[index - self.history_length: index].any():
                     continue
 
                 # test past, use this index as a training sample
                 batch_id.append(index)
-                self.start_state[i_batch, ...] = \
+                self.start_states[i_batch, ...] = \
                     self.observations[index - self.history_length: index, ...]
 
-                self.end_state[i_batch, ...] = \
+                self.end_states[i_batch, ...] = \
                     self.observations[index - self.history_length + 1:
                                       index + 1, ...]
 
-        return self.start_state, self.end_state, self.action[batch_id], \
-            self.rewards[batch_id], self.terminal[batch_id]
+        return self.start_states, self.end_states, self.actions[batch_id], \
+            self.rewards[batch_id], self.terminals[batch_id]
+
+    @property
+    def episode(self):
+        return self.total_episode
+
 
 class history_recorder(object):
+
     def __init__(self, history_length, screen_size):
         self.size = screen_size
         self.history_length = history_length

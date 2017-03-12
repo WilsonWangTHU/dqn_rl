@@ -5,7 +5,6 @@
 # -----------------------------------------------------------------------------
 
 
-
 import tensorflow as tf
 from functools import reduce
 from tensorflow.contrib.layers.python.layers import initializers
