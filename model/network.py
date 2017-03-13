@@ -8,11 +8,12 @@
 #       Tingwu Wang, 1st/Mar/2017
 # -----------------------------------------------------------------------------
 
-
+import __init_path
 import tensorflow as tf
-from . import cnn
-from . import layers
-from ..util import logger
+import cnn
+import layers
+from util import logger
+__init_path.bypass_frost_warning()
 
 
 class network(object):
@@ -95,8 +96,6 @@ class network(object):
     def get_input_placeholder(self):
         return self.baseline_net.get_input_placeholder()
 
-    return
-
 
 class deep_Q_network(network):
     '''
@@ -121,12 +120,12 @@ class deep_Q_network(network):
         else:
             logger.info('building the pred network, name: {}'.format(name))
 
-        with tf.varaible_scope(name):
+        with tf.variable_scope(name):
             super(self.__class__, self).__init__(sess, name, config)
 
             # build the model and record all the trainable variables
-            self.build_model()
             self.action_space_size = action_space_size
+            self.build_model()
 
             # build the whole model
             self.set_all_var()
@@ -138,7 +137,7 @@ class deep_Q_network(network):
         # size [b, number_action], no relu, we get the logit
         self.output, self.all_var['w_out'], self.all_var['b_out'] = \
             layers.linear(self.intermediate_layer, self.action_space_size,
-                          data_format=self.data_format, name='output')
+                          name='output')
 
         self.action = tf.argmax(self.output, dimension=1)
         self.max_Q_value = tf.max(self.self.out, dimension=0)
@@ -175,14 +174,15 @@ class deep_Q_network(network):
         return self.sess.run(
             self.max_Q_value, feed_dict={self.input_screen: end_states})
 
-    def train_step(self, start_states, end_states, actions, rewards):
+    def train_step(self, start_states, end_states, actions, rewards,
+                   td_loss_summary):
         assert self.target_network is not None, logger.error(
             'You should call the prediction network')
 
         # get the target prediction
         Q_next_state = self.target_network.get_next_state_value(end_states)
-        _, current_loss, current_step = self.sess.run(
-            [self.optim, self.td_loss, self.step_count],
+        _, current_loss, current_step, td_loss = self.sess.run(
+            [self.optim, self.td_loss, self.step_count, td_loss_summary],
             feed_dict={self.action_input: actions,
                        self.reward_input: rewards,
                        self.Q_next_state_input: Q_next_state,
@@ -192,7 +192,7 @@ class deep_Q_network(network):
 
         # increment the step parameters
         self.sess.run(self.step_add_op)
-        return current_step
+        return current_step, td_loss
 
     def init_training(self):
         '''
@@ -234,18 +234,20 @@ class deep_Q_network(network):
                 tell the agent what time it is
         '''
         return self.sess.run(self.step_count)
-    return
+
+    def get_td_loss(self):
+        return self.td_loss
 
 
 class actor_critic_network(network):
 
     def __init__(self):
         raise NotImplementedError()
-    return
+        return
 
 
 class dueling_network(network):
 
     def __init__(self):
         raise NotImplementedError()
-    return
+        return

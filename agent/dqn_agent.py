@@ -5,13 +5,14 @@
 #       Tingwu Wang
 # -----------------------------------------------------------------------------
 
-from ..util import logger
-from ..environment.environments import atari_environment
-from ..model.network import deep_Q_network
-from .experience import experience_shop, history_recorder
+import __init_path
+from util import logger
+from environment.environments import atari_environment
+from model.network import deep_Q_network
+from experience import experience_shop, history_recorder
+from summary_handler import gym_summary_handler
 import tensorflow as tf
 import random
-import init_path
 import os
 
 
@@ -80,6 +81,11 @@ class qlearning_agent(object):
         self.history_recorder = history_recorder(
             self.config.GAME.history_length, self.config.GAME.screen_size)
 
+        # construct the summary recorder
+        self.summary_handler = gym_summary_handler(
+            self.sess, self.predict_network.get_td_loss(),
+            self.config.TRAIN.update_tensorboard_episode_length)
+
         # init the network saver and restore
         self.saver = tf.train.Saver()
         if restore_path is not None:
@@ -87,7 +93,6 @@ class qlearning_agent(object):
         else:
             self.sess.run(tf.global_variables_initializer())
             self.step = 0
-
         return
 
     def save_all(self):
@@ -95,7 +100,7 @@ class qlearning_agent(object):
             @brief:
                 save all the network parameters and experiences
         '''
-        base_path = init_path.get_base_dir()
+        base_path = __init_path.get_base_dir()
         path = os.path.join(base_path,
                             'checkpoint', 'dqn_' + str(self.step) + '.ckpt')
         self.saver.save(self.sess, path)
@@ -146,8 +151,10 @@ class qlearning_agent(object):
         for i_exp in range(self.config.EXPERIENCE.exp_train_ratio):
             # play the whole episodes
             observation, reward, terminal = self.env.new_game(
-                run_random_action=True)
+                run_random_action=self.env.get_if_run_random_action())
             self.history_recorder.init_history(observation)
+            num_step_in_episode = 0
+            total_reward = 0
             while terminal is False:
                 # get the predicted action, note we all use training step
                 # instead of episode count
@@ -169,6 +176,12 @@ class qlearning_agent(object):
                 # do the action and record it in the experience shop
                 observation, reward, terminal, _ = self.env.step(pred_action)
                 self.exp_shop.push(pred_action, reward, observation, terminal)
+                num_step_in_episode += 1
+                total_reward += reward
+
+            # add it to the summary handler
+            self.summary_handler.add_stat(total_reward, num_step_in_episode,
+                                          self.exp_shop.episode)
 
         return
 
@@ -186,8 +199,13 @@ class qlearning_agent(object):
             # fetch the data and train the network
             start_states, end_states, actions, rewards, terminal = \
                 self.exp_shop.pop()
-            self.step = self.predict_network.train_step(
-                start_states, end_states, actions, rewards)
+            self.step, td_loss = self.predict_network.train_step(
+                start_states, end_states, actions, rewards,
+                self.summary_handler.get_td_loss_summary())
+
+            # record the summary of loss
+            self.summary_handler.train_writer.add_summary(
+                td_loss, self.step)
         return
 
     def get_epsilon(self, ep_end, ep_start, t_ep_end, t_learn_start):

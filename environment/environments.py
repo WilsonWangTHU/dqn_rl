@@ -6,7 +6,7 @@
 #       Tingwu Wang
 # ------------------------------------------------------------------------------
 
-import __init_path.py
+import __init_path
 from util import logger
 from scipy.misc import imresize
 import gym
@@ -48,10 +48,8 @@ class game_environment(object):
     def step(self):
         raise NotImplementedError()
 
-    return
 
-
-class atari_environment(object):
+class atari_environment(game_environment):
     '''
         @brief:
             for the atari game, action space is discrete
@@ -68,10 +66,12 @@ class atari_environment(object):
             data_format, return_cumulated_reward, is_training)
 
         self.n_random_action = n_random_action
+        if self.n_random_action > 0:
+            self.run_random_action = True
         self.screen_size = screen_size
 
         logger.info('Game set image size: {}, random walk step: {}'.format(
-            self.screen_size, self.random_start_max))
+            self.screen_size, self.n_random_action))
 
         # TODO: display not implemented
         if self.display:
@@ -160,4 +160,6 @@ class atari_environment(object):
             @brief: the network will need to know the size of action
         '''
         return self.env.action_space.n
-    return
+
+    def get_if_run_random_action(self):
+        return self.run_random_action

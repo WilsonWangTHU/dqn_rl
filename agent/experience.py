@@ -5,9 +5,12 @@
 #       Tingwu Wang
 # -----------------------------------------------------------------------------
 
+import __init_path
 import numpy as np
 import random
-from ..util import logger
+from util import logger
+
+__init_path.bypass_frost_warning()
 
 
 class experience_shop(object):
@@ -154,4 +157,3 @@ class history_recorder(object):
     def clean_history(self):
         self.history_exp = np.empty(
             [self.history_length, self.size, self.size], np.uint8)
-    return

@@ -1,0 +1,8 @@
+[32m[0312 20:14:15 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0312-201415.log
+[32m[0312 20:14:15 @train_gym.py:35][0m Session starts, using gpu: 0
+[32m[0312 20:14:15 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0
+[32m[0312 20:14:15 @environments.py:43][0m Init game environments Breakout-v0
+[32m[0312 20:14:15 @environments.py:74][0m Game set image size: 80, random walk step: 30
+[32m[0312 20:14:15 @network.py:119][0m building the target network, name: target_network
+[32m[0312 20:14:15 @network.py:48][0m Building network of type: dqn, using basebone: nips
+[32m[0312 20:14:15 @cnn.py:21][0m building the basebone network, using nips format

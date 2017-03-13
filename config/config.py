@@ -7,7 +7,7 @@
 
 
 from easydict import EasyDict as edict
-from .network_config import network_config
+from network_config import network_config
 
 __C = edict()
 base_config = __C
@@ -16,7 +16,7 @@ __C.NETWORK = network_config
 __C.ATARI = edict()
 __C.EXPERIENCE = edict()
 __C.TRAIN = edict()
-__C.TEST = edict()
+__C.GAME = edict()
 
 # basic training parameters
 __C.TRAIN.batch_size = 32
@@ -49,13 +49,16 @@ __C.TRAIN.training_start_episodes = 50000
 __C.TRAIN.start_epsilon = 1
 __C.TRAIN.end_epsilon = 0.01
 
+# parameters for the summary tensorboard
+__C.TRAIN.update_tensorboard_episode_length = 0.01
+
 # configurations about the game
 __C.GAME.type = 'atari'
 __C.GAME.display = False
 __C.GAME.screen_size = 80
 __C.GAME.history_length = 4
 __C.GAME.n_action_repeat = 4
-__C.GAME.n_random_action = 4
+__C.GAME.n_random_action = 30
 __C.GAME.max_reward_clip = 1
 __C.GAME.return_cumulated_reward = 4
 

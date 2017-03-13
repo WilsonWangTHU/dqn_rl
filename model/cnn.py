@@ -3,9 +3,11 @@
 #       In this file, we define some basebone network for the rl-network
 # -----------------------------------------------------------------------------
 
+import __init_path
 import tensorflow as tf
-from ..util import logger
-from . import layers
+from util import logger
+import layers
+__init_path.bypass_frost_warning()
 
 
 class basebone_network(object):
@@ -25,7 +27,7 @@ class basebone_network(object):
         self.batch_size = None
         self.screen_size = config.GAME.screen_size
         self.history_length = config.GAME.history_length
-        self.data_format = self.config.data_format
+        self.data_format = config.NETWORK.data_format
 
         self.config = config.NETWORK
 
@@ -88,7 +90,7 @@ class basebone_network(object):
 
             # self.l3: size [b, 512], relu used
             self.l3, self.var['l3_w'], self.var['l3_h'] = layers.linear(
-                self.l3, 256, activation_fn=tf.nn.relu, name='fc_3')
+                self.l2, 256, activation_fn=tf.nn.relu, name='fc_3')
 
             self.output = self.l3
         else:
@@ -105,4 +107,3 @@ class basebone_network(object):
 
     def get_input_placeholder(self):
         return self.input_screen
-    return
