@@ -6,14 +6,17 @@
 #
 #   @author:
 #       Tingwu Wang, 1st/Mar/2017
+#   @possible compatible issues:
+#       tf.max is no longer valid after tf 1.0, it's transformed into
+#       tf.reduce_max
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 import tensorflow as tf
 import cnn
 import layers
 from util import logger
-__init_path.bypass_frost_warning()
+init_path.bypass_frost_warning()
 
 
 class network(object):
@@ -62,18 +65,21 @@ class network(object):
         # get the parameters in the baseline network recorded
         assert len(self.all_var) > 0, logger.error(
             'Wait? Where are the output parameters?')
-        self.all_var.update(self.baseline_net.get_all_var())
+        baseline_var = self.baseline_net.get_all_var()
+
+        for var_name in baseline_var:
+            self.all_var['base_' + var_name] = baseline_var[var_name]
         return
 
     def set_all_var_copy_op(self, prediction_network_var):
         # get the variables in the baseline network
         copy_op = []
 
-        for var in self.all_var:
-            copy_op.append(var.assign(prediction_network_var[var.name]))
+        for var_name in self.all_var:
+            copy_op.append(self.all_var[var_name].assign(
+                prediction_network_var[var_name]))
 
         self.copy_op = tf.group(*copy_op, name='copy_to_target_network')
-
         return
 
     def run_copy(self):
@@ -84,10 +90,7 @@ class network(object):
         '''
             @brief: it is going to be called by the prediction network
         '''
-        var_dict = {}
-        for var in self.all_var:
-            var_dict[var.name] = var
-        return var_dict
+        return self.all_var
 
     def get_pred_action(self, feed_dict):
         # TODO: we might want to know how to deal with asyn
@@ -140,7 +143,8 @@ class deep_Q_network(network):
                           name='output')
 
         self.action = tf.argmax(self.output, dimension=1)
-        self.max_Q_value = tf.max(self.self.out, dimension=0)
+
+        self.max_Q_value = tf.reduce_max(self.output, axis=0)
 
         # if it is the target network, then we could just return
         if self.target_network is None:
@@ -151,14 +155,15 @@ class deep_Q_network(network):
         self.reward_input = tf.placeholder('float32', [None])
         self.action_input = tf.placeholder('int64', [None])
 
-        self.actions_one_hot = tf.one_hot(self.actions, self.env.action_size,
+        self.actions_one_hot = tf.one_hot(self.action_input,
+                                          self.action_space_size,
                                           1.0, 0.0, name='action_one_hot')
         self.pred_state_action_value = tf.reduce_sum(
-            self.outputs * self.actions_one_hot,
+            self.output * self.actions_one_hot,
             reduction_indices=1, name='action_state_value')
 
-        self.td_loss = self.Q_next_state - \
-            self.reward - self.config.TRAIN.value_decay_factor * \
+        self.td_loss = self.Q_next_state_input - \
+            self.reward_input - self.config.TRAIN.value_decay_factor * \
             self.pred_state_action_value
         self.td_loss = tf.where(tf.abs(self.td_loss) < 1.0,
                                 0.5 * tf.square(self.td_loss),
@@ -226,7 +231,7 @@ class deep_Q_network(network):
                         (tf.clip_by_norm(grad, self.max_grad_norm), var)
             self.optim = self.optimizer.apply_gradients(grads_and_vars)
         else:
-            self.optim = self.optimizer.minimize(self.loss)
+            self.optim = self.optimizer.minimize(self.td_loss)
 
     def get_step_count(self):
         '''

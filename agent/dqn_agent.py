@@ -5,7 +5,7 @@
 #       Tingwu Wang
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 from util import logger
 from environment.environments import atari_environment
 from model.network import deep_Q_network
@@ -100,7 +100,7 @@ class qlearning_agent(object):
             @brief:
                 save all the network parameters and experiences
         '''
-        base_path = __init_path.get_base_dir()
+        base_path = init_path.get_base_dir()
         path = os.path.join(base_path,
                             'checkpoint', 'dqn_' + str(self.step) + '.ckpt')
         self.saver.save(self.sess, path)
@@ -143,12 +143,12 @@ class qlearning_agent(object):
             self.train_step()
 
             # save the network if needed
-            if self.step % self.config.TRAIN.snapshot_step == 0:
+            if self.step % self.config.TRAIN.snapshot_step == 1:
                 self.save_all()
         return
 
     def generate_experience(self):
-        for i_exp in range(self.config.EXPERIENCE.exp_train_ratio):
+        for i_exp in range(self.config.TRAIN.exp_train_ratio):
             # play the whole episodes
             observation, reward, terminal = self.env.new_game(
                 run_random_action=self.env.get_if_run_random_action())
@@ -159,12 +159,12 @@ class qlearning_agent(object):
                 # get the predicted action, note we all use training step
                 # instead of episode count
                 epsilon = self.get_epsilon(
-                    self.config.TRAIN.ep_end,
-                    self.config.TRAIN.ep_start,
+                    self.config.TRAIN.end_epsilon,
+                    self.config.TRAIN.start_epsilon,
                     self.config.TRAIN.max_episode_size,
                     self.config.TRAIN.training_start_episodes)
 
-                if random.uniform(0, 1) > epsilon:
+                if random.uniform(0, 1) < epsilon:
                     pred_action = random.randint(0, self.n_action - 1)
                 else:
                     feed_dict = {}
@@ -178,6 +178,10 @@ class qlearning_agent(object):
                 self.exp_shop.push(pred_action, reward, observation, terminal)
                 num_step_in_episode += 1
                 total_reward += reward
+            logger.info(
+                'Playing at episode: {}, this time we got reward {}'.format(
+                    self.exp_shop.episode, total_reward))
+            logger.info('   Epsilon: {}'.format(epsilon))
 
             # add it to the summary handler
             self.summary_handler.add_stat(total_reward, num_step_in_episode,
@@ -186,15 +190,15 @@ class qlearning_agent(object):
         return
 
     def train_step(self):
-        if self.exp_shop.count < self.TRAIN.training_start_episodes:
+        if self.exp_shop.count < self.config.TRAIN.training_start_episodes:
             return
         else:
             # update the target network if needed. by doing this, we also make
             # sure that the original values in two networks are the same
-            if self.step % self.config.update_network_freq == 0:
+            if self.step % self.config.TRAIN.update_network_freq == 0:
                 self.target_network.run_copy()
-                logger.info('At time step {},' +
-                            ' the target_network is updated'.format(self.step))
+                logger.info('At time step {},'.format(self.step) +
+                            ' the target_network is updated')
 
             # fetch the data and train the network
             start_states, end_states, actions, rewards, terminal = \
@@ -206,6 +210,9 @@ class qlearning_agent(object):
             # record the summary of loss
             self.summary_handler.train_writer.add_summary(
                 td_loss, self.step)
+            logger.info(
+                'Training at step: {}, this time we got mean loss {}'.format(
+                    self.step, td_loss))
         return
 
     def get_epsilon(self, ep_end, ep_start, t_ep_end, t_learn_start):

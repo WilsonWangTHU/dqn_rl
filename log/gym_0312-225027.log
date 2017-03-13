@@ -1,0 +1,29 @@
+[32m[0312 22:50:27 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0312-225027.log
+[32m[0312 22:50:27 @train_gym.py:35][0m Session starts, using gpu: 0
+[32m[0312 22:50:27 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0
+[32m[0312 22:50:27 @environments.py:43][0m Init game environments Breakout-v0
+[32m[0312 22:50:27 @environments.py:74][0m Game set image size: 80, random walk step: 30
+[32m[0312 22:50:27 @network.py:122][0m building the target network, name: target_network
+[32m[0312 22:50:27 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0312 22:50:27 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0312 22:50:27 @network.py:124][0m building the pred network, name: predict_network
+[32m[0312 22:50:27 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0312 22:50:27 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0312 22:50:27 @experience.py:23][0m building the experience shop
+[32m[0312 22:50:27 @summary_handler.py:30][0m summary write initialized, writing to /mnt/rl_playground/tool/../agent/../checkpoint
+[32m[0312 22:50:34 @dqn_agent.py:182][0m Playing at 1999, got reward 0.0
+[32m[0312 22:50:34 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 22:50:34 @summary_handler.py:93][0m At episode: 1999, average reward: 0.0 (over 0.01 episodes)
+[32m[0312 22:50:34 @summary_handler.py:97][0m At episode: 1999, average length: 0.0 (over 1999.0 episodes)
+[32m[0312 22:50:41 @dqn_agent.py:182][0m Playing at 3994, got reward 0.0
+[32m[0312 22:50:41 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 22:50:41 @summary_handler.py:93][0m At episode: 3994, average reward: 0.0 (over 0.01 episodes)
+[32m[0312 22:50:41 @summary_handler.py:97][0m At episode: 3994, average length: 0.0 (over 1995.0 episodes)
+[32m[0312 22:50:48 @dqn_agent.py:182][0m Playing at 5991, got reward 0.0
+[32m[0312 22:50:48 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 22:50:48 @summary_handler.py:93][0m At episode: 5991, average reward: 0.0 (over 0.01 episodes)
+[32m[0312 22:50:48 @summary_handler.py:97][0m At episode: 5991, average length: 0.0 (over 1997.0 episodes)
+[32m[0312 22:50:55 @dqn_agent.py:182][0m Playing at 7988, got reward 0.0
+[32m[0312 22:50:55 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 22:50:55 @summary_handler.py:93][0m At episode: 7988, average reward: 0.0 (over 0.01 episodes)
+[32m[0312 22:50:55 @summary_handler.py:97][0m At episode: 7988, average length: 0.0 (over 1997.0 episodes)

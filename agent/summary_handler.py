@@ -5,7 +5,7 @@
 #       Tingwu Wang
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 from util import logger
 import tensorflow as tf
 import os
@@ -23,7 +23,7 @@ class summary_handler(object):
         # the interface we need
         self.summary = None
         self.sess = sess
-        self.path = os.path.join(__init_path.get_base_dir(), 'checkpoint')
+        self.path = os.path.join(init_path.get_base_dir(), 'checkpoint')
         self.train_writer = tf.summary.FileWriter(self.path, sess.graph)
 
         logger.info(
@@ -47,7 +47,7 @@ class gym_summary_handler(summary_handler):
     def __init__(self, sess, td_loss, update_frequency):
         super(self.__class__, self).__init__(sess)
         self.loss_td_sum = tf.summary.scalar('td_loss', td_loss)
-        self.updata_frequency_episode = update_frequency
+        self.update_frequency_episode = update_frequency
 
         # init the reward
         self.reset_stat()
@@ -74,7 +74,7 @@ class gym_summary_handler(summary_handler):
         self.reward_total += reward
         self.episode_length_total += length
         self.count += 1
-        if self.count > self.updata_frequency_episode:
+        if self.count > self.update_frequency_episode:
             # record the data into the summary
             self.episode_length_total = \
                 self.episode_length_total / float(self.count)
@@ -88,13 +88,12 @@ class gym_summary_handler(summary_handler):
 
             logger.info('Flushing to the summary writer')
             logger.info(
-                'At episode: {}, average reward: {} (over {} episodes)'.format(
+                'At episode: {}, Reward: {} (over {} episodes)'.format(
                     episode_count, self.reward_total,
-                    self.updata_frequency_episode))
+                    self.update_frequency_episode))
             logger.info(
-                'At episode: {}, average length: {} (over {} episodes)'.format(
-                    episode_count, self.reward_total,
-                    self.episode_length_total))
+                ' - - - - - - -, Length: {} (over {} episodes)'.format(
+                    self.reward_total, self.episode_length_total))
 
             self.reset_stat()
         return

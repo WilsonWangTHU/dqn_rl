@@ -7,13 +7,13 @@
 #       1. Change the feed-dict into multi-thread-fashion
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 from util import logger
 from agent import dqn_agent
 from config.config import base_config as config
 import tensorflow as tf
 import argparse
-__init_path.bypass_frost_warning()
+init_path.bypass_frost_warning()
 
 if __name__ == '__main__':
     # the parser

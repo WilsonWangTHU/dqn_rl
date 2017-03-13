@@ -6,13 +6,13 @@
 #       Tingwu Wang
 # ------------------------------------------------------------------------------
 
-import __init_path
+import init_path
 from util import logger
 from scipy.misc import imresize
 import gym
 import random
 import numpy as np
-__init_path.bypass_frost_warning()
+init_path.bypass_frost_warning()
 
 
 class game_environment(object):
@@ -73,9 +73,6 @@ class atari_environment(game_environment):
         logger.info('Game set image size: {}, random walk step: {}'.format(
             self.screen_size, self.n_random_action))
 
-        # TODO: display not implemented
-        if self.display:
-            logger.error('Rendering not implemented / working!')
         return
 
     def new_game(self, run_random_action=False):
@@ -86,16 +83,16 @@ class atari_environment(game_environment):
                 @n_random_action: if not 0, than we do some 'noop' action
         '''
         screen = self.env.reset()  # set for new game
-        screen, reward, terminal, _ = self.env.step(0)  # the noop action
+        screen, reward, terminal, info = self.env.step(0)  # the noop action
 
         # if run random for some steps
         if run_random_action:
             # @TODO: about early terminaled games?
             for i_random_walk in range(random.randint(0, self.n_random_action)):
-                screen, reward, terminal, _ = self.env.step(0)  # noop action
+                screen, reward, terminal, info = self.env.step(0)  # noop action
                 if terminal:  # set for a new game if terminated
                     screen = self.env.reset()
-                    screen, reward, terminal, _ = self.env.step(0)
+                    screen, reward, terminal, info = self.env.step(0)
                     logger.warning('New game terminated after {} step'.format(
                         i_random_walk))
         # rendering
@@ -103,7 +100,7 @@ class atari_environment(game_environment):
             self.env.render()
 
         # now return the true observation, reward, terminal, ...
-        self.lives = self.env.ale.lives()
+        self.lives = info['ale.lives']
         terminal = False
         reward = 0
         observation = self.get_observation(screen)
@@ -117,16 +114,16 @@ class atari_environment(game_environment):
         screen, reward, terminal, _ = self.env.step(action)
 
         for _ in range(self.n_action_repeat):
-            screen, reward, terminal, _ = self.env.step(action)
+            screen, reward, terminal, info = self.env.step(action)
             cumulated_reward += reward
-            current_lives = self.env.ale.lives()
+            current_lives = info['ale.lives']
 
             # in training, even dead by once, we regard as an end of game
             if terminal or (self.is_train and self.lives > current_lives):
                 terminal = True
                 break
 
-            self.lives = self.env.ale.lives()
+            self.lives = info['ale.lives']
 
         # rendering
         if self.display:
@@ -141,7 +138,7 @@ class atari_environment(game_environment):
             reward = cumulated_reward
         screen = self.get_observation(screen)
 
-        return screen, reward, terminal, {}
+        return screen, reward, terminal, info
 
     def get_observation(self, screen):
         '''

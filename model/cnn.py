@@ -3,11 +3,11 @@
 #       In this file, we define some basebone network for the rl-network
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 import tensorflow as tf
 from util import logger
 import layers
-__init_path.bypass_frost_warning()
+init_path.bypass_frost_warning()
 
 
 class basebone_network(object):

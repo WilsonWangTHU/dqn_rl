@@ -1,0 +1,702 @@
+[32m[0312 23:11:52 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0312-231152.log
+[32m[0312 23:11:53 @train_gym.py:35][0m Session starts, using gpu: 0
+[32m[0312 23:11:53 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0
+[32m[0312 23:11:53 @environments.py:43][0m Init game environments Breakout-v0
+[32m[0312 23:11:53 @environments.py:74][0m Game set image size: 80, random walk step: 30
+[32m[0312 23:11:53 @network.py:122][0m building the target network, name: target_network
+[32m[0312 23:11:53 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0312 23:11:53 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0312 23:11:53 @network.py:124][0m building the pred network, name: predict_network
+[32m[0312 23:11:53 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0312 23:11:53 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0312 23:11:53 @experience.py:23][0m building the experience shop
+[32m[0312 23:11:53 @summary_handler.py:30][0m summary write initialized, writing to /mnt/rl_playground/tool/../agent/../checkpoint
+[32m[0312 23:11:54 @dqn_agent.py:183][0m Playing at episode: 8, this time we got reward 0.0
+[32m[0312 23:11:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:55 @dqn_agent.py:183][0m Playing at episode: 15, this time we got reward 0.0
+[32m[0312 23:11:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:55 @dqn_agent.py:183][0m Playing at episode: 22, this time we got reward 0.0
+[32m[0312 23:11:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:55 @dqn_agent.py:183][0m Playing at episode: 29, this time we got reward 0.0
+[32m[0312 23:11:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:55 @dqn_agent.py:183][0m Playing at episode: 31, this time we got reward 0.0
+[32m[0312 23:11:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:56 @dqn_agent.py:183][0m Playing at episode: 39, this time we got reward 0.0
+[32m[0312 23:11:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:56 @dqn_agent.py:183][0m Playing at episode: 48, this time we got reward 0.0
+[32m[0312 23:11:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:56 @dqn_agent.py:183][0m Playing at episode: 61, this time we got reward 0.0
+[32m[0312 23:11:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:57 @dqn_agent.py:183][0m Playing at episode: 68, this time we got reward 0.0
+[32m[0312 23:11:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:57 @dqn_agent.py:183][0m Playing at episode: 75, this time we got reward 0.0
+[32m[0312 23:11:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:57 @dqn_agent.py:183][0m Playing at episode: 84, this time we got reward 0.0
+[32m[0312 23:11:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:58 @dqn_agent.py:183][0m Playing at episode: 95, this time we got reward 0.0
+[32m[0312 23:11:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:58 @dqn_agent.py:183][0m Playing at episode: 115, this time we got reward 1.0
+[32m[0312 23:11:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:59 @dqn_agent.py:183][0m Playing at episode: 121, this time we got reward 0.0
+[32m[0312 23:11:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:11:59 @dqn_agent.py:183][0m Playing at episode: 141, this time we got reward 0.0
+[32m[0312 23:11:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:00 @dqn_agent.py:183][0m Playing at episode: 169, this time we got reward 2.0
+[32m[0312 23:12:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:01 @dqn_agent.py:183][0m Playing at episode: 177, this time we got reward 0.0
+[32m[0312 23:12:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:02 @dqn_agent.py:183][0m Playing at episode: 204, this time we got reward 2.0
+[32m[0312 23:12:02 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:02 @dqn_agent.py:183][0m Playing at episode: 227, this time we got reward 1.0
+[32m[0312 23:12:02 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:03 @dqn_agent.py:183][0m Playing at episode: 247, this time we got reward 1.0
+[32m[0312 23:12:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:03 @dqn_agent.py:183][0m Playing at episode: 254, this time we got reward 0.0
+[32m[0312 23:12:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:04 @dqn_agent.py:183][0m Playing at episode: 264, this time we got reward 0.0
+[32m[0312 23:12:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:04 @dqn_agent.py:183][0m Playing at episode: 270, this time we got reward 0.0
+[32m[0312 23:12:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:04 @dqn_agent.py:183][0m Playing at episode: 277, this time we got reward 0.0
+[32m[0312 23:12:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:05 @dqn_agent.py:183][0m Playing at episode: 285, this time we got reward 0.0
+[32m[0312 23:12:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:05 @dqn_agent.py:183][0m Playing at episode: 292, this time we got reward 0.0
+[32m[0312 23:12:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:05 @dqn_agent.py:183][0m Playing at episode: 299, this time we got reward 0.0
+[32m[0312 23:12:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:06 @dqn_agent.py:183][0m Playing at episode: 310, this time we got reward 0.0
+[32m[0312 23:12:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:06 @dqn_agent.py:183][0m Playing at episode: 315, this time we got reward 0.0
+[32m[0312 23:12:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:07 @dqn_agent.py:183][0m Playing at episode: 334, this time we got reward 0.0
+[32m[0312 23:12:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:07 @dqn_agent.py:183][0m Playing at episode: 354, this time we got reward 1.0
+[32m[0312 23:12:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:07 @dqn_agent.py:183][0m Playing at episode: 355, this time we got reward 0.0
+[32m[0312 23:12:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:07 @dqn_agent.py:183][0m Playing at episode: 357, this time we got reward 0.0
+[32m[0312 23:12:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:08 @dqn_agent.py:183][0m Playing at episode: 364, this time we got reward 0.0
+[32m[0312 23:12:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:08 @dqn_agent.py:183][0m Playing at episode: 372, this time we got reward 0.0
+[32m[0312 23:12:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:09 @dqn_agent.py:183][0m Playing at episode: 405, this time we got reward 2.0
+[32m[0312 23:12:09 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:10 @dqn_agent.py:183][0m Playing at episode: 415, this time we got reward 0.0
+[32m[0312 23:12:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:10 @dqn_agent.py:183][0m Playing at episode: 425, this time we got reward 0.0
+[32m[0312 23:12:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:10 @dqn_agent.py:183][0m Playing at episode: 432, this time we got reward 0.0
+[32m[0312 23:12:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:11 @dqn_agent.py:183][0m Playing at episode: 452, this time we got reward 0.0
+[32m[0312 23:12:11 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:11 @dqn_agent.py:183][0m Playing at episode: 457, this time we got reward 0.0
+[32m[0312 23:12:11 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:11 @dqn_agent.py:183][0m Playing at episode: 465, this time we got reward 0.0
+[32m[0312 23:12:11 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:12 @dqn_agent.py:183][0m Playing at episode: 473, this time we got reward 0.0
+[32m[0312 23:12:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:12 @dqn_agent.py:183][0m Playing at episode: 483, this time we got reward 0.0
+[32m[0312 23:12:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:12 @dqn_agent.py:183][0m Playing at episode: 491, this time we got reward 0.0
+[32m[0312 23:12:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:13 @dqn_agent.py:183][0m Playing at episode: 498, this time we got reward 0.0
+[32m[0312 23:12:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:13 @dqn_agent.py:183][0m Playing at episode: 518, this time we got reward 0.0
+[32m[0312 23:12:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:14 @dqn_agent.py:183][0m Playing at episode: 525, this time we got reward 0.0
+[32m[0312 23:12:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:14 @dqn_agent.py:183][0m Playing at episode: 532, this time we got reward 0.0
+[32m[0312 23:12:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:14 @dqn_agent.py:183][0m Playing at episode: 540, this time we got reward 0.0
+[32m[0312 23:12:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:15 @dqn_agent.py:183][0m Playing at episode: 547, this time we got reward 0.0
+[32m[0312 23:12:15 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:15 @dqn_agent.py:183][0m Playing at episode: 561, this time we got reward 1.0
+[32m[0312 23:12:15 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:15 @dqn_agent.py:183][0m Playing at episode: 569, this time we got reward 0.0
+[32m[0312 23:12:15 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:16 @dqn_agent.py:183][0m Playing at episode: 576, this time we got reward 0.0
+[32m[0312 23:12:16 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:16 @dqn_agent.py:183][0m Playing at episode: 583, this time we got reward 0.0
+[32m[0312 23:12:16 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:17 @dqn_agent.py:183][0m Playing at episode: 603, this time we got reward 0.0
+[32m[0312 23:12:17 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:17 @dqn_agent.py:183][0m Playing at episode: 610, this time we got reward 0.0
+[32m[0312 23:12:17 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:17 @dqn_agent.py:183][0m Playing at episode: 611, this time we got reward 0.0
+[32m[0312 23:12:17 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:18 @dqn_agent.py:183][0m Playing at episode: 619, this time we got reward 0.0
+[32m[0312 23:12:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:18 @dqn_agent.py:183][0m Playing at episode: 630, this time we got reward 1.0
+[32m[0312 23:12:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:18 @dqn_agent.py:183][0m Playing at episode: 640, this time we got reward 0.0
+[32m[0312 23:12:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:19 @dqn_agent.py:183][0m Playing at episode: 667, this time we got reward 1.0
+[32m[0312 23:12:19 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:20 @dqn_agent.py:183][0m Playing at episode: 674, this time we got reward 0.0
+[32m[0312 23:12:20 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:20 @dqn_agent.py:183][0m Playing at episode: 694, this time we got reward 1.0
+[32m[0312 23:12:20 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:21 @dqn_agent.py:183][0m Playing at episode: 702, this time we got reward 0.0
+[32m[0312 23:12:21 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:21 @dqn_agent.py:183][0m Playing at episode: 710, this time we got reward 0.0
+[32m[0312 23:12:21 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:22 @dqn_agent.py:183][0m Playing at episode: 727, this time we got reward 0.0
+[32m[0312 23:12:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:22 @dqn_agent.py:183][0m Playing at episode: 733, this time we got reward 0.0
+[32m[0312 23:12:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:22 @dqn_agent.py:183][0m Playing at episode: 740, this time we got reward 0.0
+[32m[0312 23:12:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:23 @dqn_agent.py:183][0m Playing at episode: 753, this time we got reward 0.0
+[32m[0312 23:12:23 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:23 @dqn_agent.py:183][0m Playing at episode: 762, this time we got reward 0.0
+[32m[0312 23:12:23 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:24 @dqn_agent.py:183][0m Playing at episode: 789, this time we got reward 2.0
+[32m[0312 23:12:24 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:25 @dqn_agent.py:183][0m Playing at episode: 815, this time we got reward 2.0
+[32m[0312 23:12:25 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:25 @dqn_agent.py:183][0m Playing at episode: 822, this time we got reward 0.0
+[32m[0312 23:12:25 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:25 @dqn_agent.py:183][0m Playing at episode: 830, this time we got reward 0.0
+[32m[0312 23:12:25 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:26 @dqn_agent.py:183][0m Playing at episode: 833, this time we got reward 0.0
+[32m[0312 23:12:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:26 @dqn_agent.py:183][0m Playing at episode: 839, this time we got reward 0.0
+[32m[0312 23:12:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:26 @dqn_agent.py:183][0m Playing at episode: 846, this time we got reward 0.0
+[32m[0312 23:12:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:26 @dqn_agent.py:183][0m Playing at episode: 853, this time we got reward 0.0
+[32m[0312 23:12:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:27 @dqn_agent.py:183][0m Playing at episode: 859, this time we got reward 0.0
+[32m[0312 23:12:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:27 @dqn_agent.py:183][0m Playing at episode: 871, this time we got reward 0.0
+[32m[0312 23:12:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:27 @dqn_agent.py:183][0m Playing at episode: 878, this time we got reward 0.0
+[32m[0312 23:12:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:28 @dqn_agent.py:183][0m Playing at episode: 885, this time we got reward 0.0
+[32m[0312 23:12:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:28 @dqn_agent.py:183][0m Playing at episode: 892, this time we got reward 0.0
+[32m[0312 23:12:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:28 @dqn_agent.py:183][0m Playing at episode: 899, this time we got reward 0.0
+[32m[0312 23:12:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:28 @dqn_agent.py:183][0m Playing at episode: 906, this time we got reward 0.0
+[32m[0312 23:12:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:29 @dqn_agent.py:183][0m Playing at episode: 914, this time we got reward 0.0
+[32m[0312 23:12:29 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:29 @dqn_agent.py:183][0m Playing at episode: 921, this time we got reward 0.0
+[32m[0312 23:12:29 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:29 @dqn_agent.py:183][0m Playing at episode: 929, this time we got reward 0.0
+[32m[0312 23:12:29 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:30 @dqn_agent.py:183][0m Playing at episode: 944, this time we got reward 0.0
+[32m[0312 23:12:30 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:30 @dqn_agent.py:183][0m Playing at episode: 954, this time we got reward 0.0
+[32m[0312 23:12:30 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:31 @dqn_agent.py:183][0m Playing at episode: 962, this time we got reward 0.0
+[32m[0312 23:12:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:31 @dqn_agent.py:183][0m Playing at episode: 970, this time we got reward 0.0
+[32m[0312 23:12:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:31 @dqn_agent.py:183][0m Playing at episode: 977, this time we got reward 0.0
+[32m[0312 23:12:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:31 @dqn_agent.py:183][0m Playing at episode: 984, this time we got reward 0.0
+[32m[0312 23:12:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:32 @dqn_agent.py:183][0m Playing at episode: 992, this time we got reward 0.0
+[32m[0312 23:12:32 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:33 @dqn_agent.py:183][0m Playing at episode: 1018, this time we got reward 1.0
+[32m[0312 23:12:33 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:33 @dqn_agent.py:183][0m Playing at episode: 1025, this time we got reward 0.0
+[32m[0312 23:12:33 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:34 @dqn_agent.py:183][0m Playing at episode: 1045, this time we got reward 1.0
+[32m[0312 23:12:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:34 @dqn_agent.py:183][0m Playing at episode: 1053, this time we got reward 0.0
+[32m[0312 23:12:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:34 @dqn_agent.py:183][0m Playing at episode: 1060, this time we got reward 0.0
+[32m[0312 23:12:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:34 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 23:12:34 @summary_handler.py:93][0m At episode: 1060, Reward: 0.19801980198 (over 100 episodes)
+[32m[0312 23:12:34 @summary_handler.py:96][0m  - - - - - - -, Length: 0.19801980198 (over 10.495049505 episodes)
+[32m[0312 23:12:35 @dqn_agent.py:183][0m Playing at episode: 1067, this time we got reward 0.0
+[32m[0312 23:12:35 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:35 @dqn_agent.py:183][0m Playing at episode: 1075, this time we got reward 0.0
+[32m[0312 23:12:35 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:35 @dqn_agent.py:183][0m Playing at episode: 1083, this time we got reward 0.0
+[32m[0312 23:12:35 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:36 @dqn_agent.py:183][0m Playing at episode: 1091, this time we got reward 0.0
+[32m[0312 23:12:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:36 @dqn_agent.py:183][0m Playing at episode: 1099, this time we got reward 0.0
+[32m[0312 23:12:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:36 @dqn_agent.py:183][0m Playing at episode: 1106, this time we got reward 0.0
+[32m[0312 23:12:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:37 @dqn_agent.py:183][0m Playing at episode: 1114, this time we got reward 0.0
+[32m[0312 23:12:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:37 @dqn_agent.py:183][0m Playing at episode: 1121, this time we got reward 0.0
+[32m[0312 23:12:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:37 @dqn_agent.py:183][0m Playing at episode: 1127, this time we got reward 0.0
+[32m[0312 23:12:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:38 @dqn_agent.py:183][0m Playing at episode: 1142, this time we got reward 1.0
+[32m[0312 23:12:38 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:38 @dqn_agent.py:183][0m Playing at episode: 1149, this time we got reward 0.0
+[32m[0312 23:12:38 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:38 @dqn_agent.py:183][0m Playing at episode: 1158, this time we got reward 0.0
+[32m[0312 23:12:38 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:39 @dqn_agent.py:183][0m Playing at episode: 1165, this time we got reward 0.0
+[32m[0312 23:12:39 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:39 @dqn_agent.py:183][0m Playing at episode: 1172, this time we got reward 0.0
+[32m[0312 23:12:39 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:39 @dqn_agent.py:183][0m Playing at episode: 1179, this time we got reward 0.0
+[32m[0312 23:12:39 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:40 @dqn_agent.py:183][0m Playing at episode: 1208, this time we got reward 1.0
+[32m[0312 23:12:40 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:40 @dqn_agent.py:183][0m Playing at episode: 1209, this time we got reward 0.0
+[32m[0312 23:12:40 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:41 @dqn_agent.py:183][0m Playing at episode: 1226, this time we got reward 0.0
+[32m[0312 23:12:41 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:41 @dqn_agent.py:183][0m Playing at episode: 1233, this time we got reward 0.0
+[32m[0312 23:12:41 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:41 @dqn_agent.py:183][0m Playing at episode: 1240, this time we got reward 0.0
+[32m[0312 23:12:41 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:42 @dqn_agent.py:183][0m Playing at episode: 1247, this time we got reward 0.0
+[32m[0312 23:12:42 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:42 @dqn_agent.py:183][0m Playing at episode: 1262, this time we got reward 1.0
+[32m[0312 23:12:42 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:43 @dqn_agent.py:183][0m Playing at episode: 1270, this time we got reward 0.0
+[32m[0312 23:12:43 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:43 @dqn_agent.py:183][0m Playing at episode: 1278, this time we got reward 0.0
+[32m[0312 23:12:43 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:43 @dqn_agent.py:183][0m Playing at episode: 1285, this time we got reward 0.0
+[32m[0312 23:12:43 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:44 @dqn_agent.py:183][0m Playing at episode: 1295, this time we got reward 0.0
+[32m[0312 23:12:44 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:45 @dqn_agent.py:183][0m Playing at episode: 1322, this time we got reward 2.0
+[32m[0312 23:12:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:45 @dqn_agent.py:183][0m Playing at episode: 1329, this time we got reward 0.0
+[32m[0312 23:12:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:45 @dqn_agent.py:183][0m Playing at episode: 1341, this time we got reward 1.0
+[32m[0312 23:12:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:46 @dqn_agent.py:183][0m Playing at episode: 1351, this time we got reward 0.0
+[32m[0312 23:12:46 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:46 @dqn_agent.py:183][0m Playing at episode: 1372, this time we got reward 1.0
+[32m[0312 23:12:46 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:47 @dqn_agent.py:183][0m Playing at episode: 1384, this time we got reward 0.0
+[32m[0312 23:12:47 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:47 @dqn_agent.py:183][0m Playing at episode: 1391, this time we got reward 0.0
+[32m[0312 23:12:47 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:48 @dqn_agent.py:183][0m Playing at episode: 1406, this time we got reward 1.0
+[32m[0312 23:12:48 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:48 @dqn_agent.py:183][0m Playing at episode: 1420, this time we got reward 0.0
+[32m[0312 23:12:48 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:49 @dqn_agent.py:183][0m Playing at episode: 1426, this time we got reward 0.0
+[32m[0312 23:12:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:49 @dqn_agent.py:183][0m Playing at episode: 1433, this time we got reward 0.0
+[32m[0312 23:12:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:49 @dqn_agent.py:183][0m Playing at episode: 1440, this time we got reward 0.0
+[32m[0312 23:12:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:49 @dqn_agent.py:183][0m Playing at episode: 1447, this time we got reward 0.0
+[32m[0312 23:12:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:50 @dqn_agent.py:183][0m Playing at episode: 1455, this time we got reward 0.0
+[32m[0312 23:12:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:50 @dqn_agent.py:183][0m Playing at episode: 1462, this time we got reward 0.0
+[32m[0312 23:12:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:50 @dqn_agent.py:183][0m Playing at episode: 1466, this time we got reward 0.0
+[32m[0312 23:12:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:50 @dqn_agent.py:183][0m Playing at episode: 1473, this time we got reward 0.0
+[32m[0312 23:12:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:51 @dqn_agent.py:183][0m Playing at episode: 1483, this time we got reward 0.0
+[32m[0312 23:12:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:51 @dqn_agent.py:183][0m Playing at episode: 1491, this time we got reward 0.0
+[32m[0312 23:12:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:51 @dqn_agent.py:183][0m Playing at episode: 1499, this time we got reward 0.0
+[32m[0312 23:12:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:52 @dqn_agent.py:183][0m Playing at episode: 1508, this time we got reward 0.0
+[32m[0312 23:12:52 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:53 @dqn_agent.py:183][0m Playing at episode: 1527, this time we got reward 1.0
+[32m[0312 23:12:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:53 @dqn_agent.py:183][0m Playing at episode: 1535, this time we got reward 0.0
+[32m[0312 23:12:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:54 @dqn_agent.py:183][0m Playing at episode: 1555, this time we got reward 1.0
+[32m[0312 23:12:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:54 @dqn_agent.py:183][0m Playing at episode: 1562, this time we got reward 0.0
+[32m[0312 23:12:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:54 @dqn_agent.py:183][0m Playing at episode: 1570, this time we got reward 0.0
+[32m[0312 23:12:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:55 @dqn_agent.py:183][0m Playing at episode: 1605, this time we got reward 2.0
+[32m[0312 23:12:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:56 @dqn_agent.py:183][0m Playing at episode: 1612, this time we got reward 0.0
+[32m[0312 23:12:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:56 @dqn_agent.py:183][0m Playing at episode: 1621, this time we got reward 0.0
+[32m[0312 23:12:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:56 @dqn_agent.py:183][0m Playing at episode: 1628, this time we got reward 0.0
+[32m[0312 23:12:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:57 @dqn_agent.py:183][0m Playing at episode: 1636, this time we got reward 0.0
+[32m[0312 23:12:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:57 @dqn_agent.py:183][0m Playing at episode: 1643, this time we got reward 0.0
+[32m[0312 23:12:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:57 @dqn_agent.py:183][0m Playing at episode: 1650, this time we got reward 0.0
+[32m[0312 23:12:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:58 @dqn_agent.py:183][0m Playing at episode: 1657, this time we got reward 0.0
+[32m[0312 23:12:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:58 @dqn_agent.py:183][0m Playing at episode: 1678, this time we got reward 0.0
+[32m[0312 23:12:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:59 @dqn_agent.py:183][0m Playing at episode: 1685, this time we got reward 0.0
+[32m[0312 23:12:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:59 @dqn_agent.py:183][0m Playing at episode: 1695, this time we got reward 0.0
+[32m[0312 23:12:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:12:59 @dqn_agent.py:183][0m Playing at episode: 1702, this time we got reward 0.0
+[32m[0312 23:12:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:00 @dqn_agent.py:183][0m Playing at episode: 1709, this time we got reward 0.0
+[32m[0312 23:13:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:00 @dqn_agent.py:183][0m Playing at episode: 1716, this time we got reward 0.0
+[32m[0312 23:13:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:00 @dqn_agent.py:183][0m Playing at episode: 1723, this time we got reward 0.0
+[32m[0312 23:13:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:01 @dqn_agent.py:183][0m Playing at episode: 1730, this time we got reward 0.0
+[32m[0312 23:13:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:01 @dqn_agent.py:183][0m Playing at episode: 1738, this time we got reward 0.0
+[32m[0312 23:13:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:01 @dqn_agent.py:183][0m Playing at episode: 1750, this time we got reward 0.0
+[32m[0312 23:13:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:02 @dqn_agent.py:183][0m Playing at episode: 1758, this time we got reward 0.0
+[32m[0312 23:13:02 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:03 @dqn_agent.py:183][0m Playing at episode: 1784, this time we got reward 2.0
+[32m[0312 23:13:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:03 @dqn_agent.py:183][0m Playing at episode: 1791, this time we got reward 0.0
+[32m[0312 23:13:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:04 @dqn_agent.py:183][0m Playing at episode: 1820, this time we got reward 1.0
+[32m[0312 23:13:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:04 @dqn_agent.py:183][0m Playing at episode: 1827, this time we got reward 0.0
+[32m[0312 23:13:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:04 @dqn_agent.py:183][0m Playing at episode: 1834, this time we got reward 0.0
+[32m[0312 23:13:04 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:05 @dqn_agent.py:183][0m Playing at episode: 1861, this time we got reward 1.0
+[32m[0312 23:13:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:06 @dqn_agent.py:183][0m Playing at episode: 1863, this time we got reward 0.0
+[32m[0312 23:13:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:06 @dqn_agent.py:183][0m Playing at episode: 1870, this time we got reward 0.0
+[32m[0312 23:13:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:06 @dqn_agent.py:183][0m Playing at episode: 1878, this time we got reward 0.0
+[32m[0312 23:13:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:07 @dqn_agent.py:183][0m Playing at episode: 1905, this time we got reward 2.0
+[32m[0312 23:13:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:08 @dqn_agent.py:183][0m Playing at episode: 1914, this time we got reward 0.0
+[32m[0312 23:13:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:08 @dqn_agent.py:183][0m Playing at episode: 1921, this time we got reward 0.0
+[32m[0312 23:13:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:09 @dqn_agent.py:183][0m Playing at episode: 1941, this time we got reward 1.0
+[32m[0312 23:13:09 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:09 @dqn_agent.py:183][0m Playing at episode: 1948, this time we got reward 0.0
+[32m[0312 23:13:09 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:09 @dqn_agent.py:183][0m Playing at episode: 1958, this time we got reward 0.0
+[32m[0312 23:13:09 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:10 @dqn_agent.py:183][0m Playing at episode: 1966, this time we got reward 0.0
+[32m[0312 23:13:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:10 @dqn_agent.py:183][0m Playing at episode: 1975, this time we got reward 0.0
+[32m[0312 23:13:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:10 @dqn_agent.py:183][0m Playing at episode: 1980, this time we got reward 0.0
+[32m[0312 23:13:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:10 @dqn_agent.py:183][0m Playing at episode: 1987, this time we got reward 0.0
+[32m[0312 23:13:10 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:11 @dqn_agent.py:183][0m Playing at episode: 2004, this time we got reward 1.0
+[32m[0312 23:13:11 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:11 @dqn_agent.py:183][0m Playing at episode: 2013, this time we got reward 0.0
+[32m[0312 23:13:11 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:12 @dqn_agent.py:183][0m Playing at episode: 2017, this time we got reward 0.0
+[32m[0312 23:13:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:12 @dqn_agent.py:183][0m Playing at episode: 2024, this time we got reward 0.0
+[32m[0312 23:13:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:12 @dqn_agent.py:183][0m Playing at episode: 2031, this time we got reward 0.0
+[32m[0312 23:13:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:12 @dqn_agent.py:183][0m Playing at episode: 2033, this time we got reward 0.0
+[32m[0312 23:13:12 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:13 @dqn_agent.py:183][0m Playing at episode: 2040, this time we got reward 0.0
+[32m[0312 23:13:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:13 @dqn_agent.py:183][0m Playing at episode: 2047, this time we got reward 0.0
+[32m[0312 23:13:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:13 @dqn_agent.py:183][0m Playing at episode: 2054, this time we got reward 0.0
+[32m[0312 23:13:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:13 @dqn_agent.py:183][0m Playing at episode: 2057, this time we got reward 0.0
+[32m[0312 23:13:13 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:14 @dqn_agent.py:183][0m Playing at episode: 2066, this time we got reward 0.0
+[32m[0312 23:13:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:14 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 23:13:14 @summary_handler.py:93][0m At episode: 2066, Reward: 0.19801980198 (over 100 episodes)
+[32m[0312 23:13:14 @summary_handler.py:96][0m  - - - - - - -, Length: 0.19801980198 (over 9.9603960396 episodes)
+[32m[0312 23:13:14 @dqn_agent.py:183][0m Playing at episode: 2074, this time we got reward 0.0
+[32m[0312 23:13:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:14 @dqn_agent.py:183][0m Playing at episode: 2080, this time we got reward 0.0
+[32m[0312 23:13:14 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:15 @dqn_agent.py:183][0m Playing at episode: 2090, this time we got reward 0.0
+[32m[0312 23:13:15 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:15 @dqn_agent.py:183][0m Playing at episode: 2094, this time we got reward 0.0
+[32m[0312 23:13:15 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:16 @dqn_agent.py:183][0m Playing at episode: 2116, this time we got reward 1.0
+[32m[0312 23:13:16 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:17 @dqn_agent.py:183][0m Playing at episode: 2156, this time we got reward 2.0
+[32m[0312 23:13:17 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:17 @dqn_agent.py:183][0m Playing at episode: 2164, this time we got reward 0.0
+[32m[0312 23:13:17 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:18 @dqn_agent.py:183][0m Playing at episode: 2172, this time we got reward 0.0
+[32m[0312 23:13:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:18 @dqn_agent.py:183][0m Playing at episode: 2179, this time we got reward 0.0
+[32m[0312 23:13:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:18 @dqn_agent.py:183][0m Playing at episode: 2186, this time we got reward 0.0
+[32m[0312 23:13:18 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:19 @dqn_agent.py:183][0m Playing at episode: 2196, this time we got reward 0.0
+[32m[0312 23:13:19 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:19 @dqn_agent.py:183][0m Playing at episode: 2203, this time we got reward 0.0
+[32m[0312 23:13:19 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:19 @dqn_agent.py:183][0m Playing at episode: 2210, this time we got reward 0.0
+[32m[0312 23:13:19 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:20 @dqn_agent.py:183][0m Playing at episode: 2217, this time we got reward 0.0
+[32m[0312 23:13:20 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:20 @dqn_agent.py:183][0m Playing at episode: 2228, this time we got reward 0.0
+[32m[0312 23:13:20 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:20 @dqn_agent.py:183][0m Playing at episode: 2235, this time we got reward 0.0
+[32m[0312 23:13:20 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:22 @dqn_agent.py:183][0m Playing at episode: 2269, this time we got reward 2.0
+[32m[0312 23:13:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:22 @dqn_agent.py:183][0m Playing at episode: 2276, this time we got reward 0.0
+[32m[0312 23:13:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:22 @dqn_agent.py:183][0m Playing at episode: 2290, this time we got reward 1.0
+[32m[0312 23:13:22 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:23 @dqn_agent.py:183][0m Playing at episode: 2305, this time we got reward 1.0
+[32m[0312 23:13:23 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:23 @dqn_agent.py:183][0m Playing at episode: 2313, this time we got reward 0.0
+[32m[0312 23:13:23 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:24 @dqn_agent.py:183][0m Playing at episode: 2325, this time we got reward 0.0
+[32m[0312 23:13:24 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:24 @dqn_agent.py:183][0m Playing at episode: 2332, this time we got reward 0.0
+[32m[0312 23:13:24 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:24 @dqn_agent.py:183][0m Playing at episode: 2340, this time we got reward 0.0
+[32m[0312 23:13:24 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:25 @dqn_agent.py:183][0m Playing at episode: 2347, this time we got reward 0.0
+[32m[0312 23:13:25 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:25 @dqn_agent.py:183][0m Playing at episode: 2367, this time we got reward 1.0
+[32m[0312 23:13:25 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:26 @dqn_agent.py:183][0m Playing at episode: 2376, this time we got reward 0.0
+[32m[0312 23:13:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:26 @dqn_agent.py:183][0m Playing at episode: 2391, this time we got reward 1.0
+[32m[0312 23:13:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:26 @dqn_agent.py:183][0m Playing at episode: 2401, this time we got reward 0.0
+[32m[0312 23:13:26 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:27 @dqn_agent.py:183][0m Playing at episode: 2402, this time we got reward 0.0
+[32m[0312 23:13:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:27 @dqn_agent.py:183][0m Playing at episode: 2409, this time we got reward 0.0
+[32m[0312 23:13:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:27 @dqn_agent.py:183][0m Playing at episode: 2416, this time we got reward 0.0
+[32m[0312 23:13:27 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:28 @dqn_agent.py:183][0m Playing at episode: 2443, this time we got reward 1.0
+[32m[0312 23:13:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:28 @dqn_agent.py:183][0m Playing at episode: 2450, this time we got reward 0.0
+[32m[0312 23:13:28 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:29 @dqn_agent.py:183][0m Playing at episode: 2457, this time we got reward 0.0
+[32m[0312 23:13:29 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:29 @dqn_agent.py:183][0m Playing at episode: 2478, this time we got reward 1.0
+[32m[0312 23:13:29 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:30 @dqn_agent.py:183][0m Playing at episode: 2480, this time we got reward 0.0
+[32m[0312 23:13:30 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:30 @dqn_agent.py:183][0m Playing at episode: 2483, this time we got reward 0.0
+[32m[0312 23:13:30 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:30 @dqn_agent.py:183][0m Playing at episode: 2489, this time we got reward 0.0
+[32m[0312 23:13:30 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:31 @dqn_agent.py:183][0m Playing at episode: 2515, this time we got reward 2.0
+[32m[0312 23:13:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:31 @dqn_agent.py:183][0m Playing at episode: 2517, this time we got reward 0.0
+[32m[0312 23:13:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:31 @dqn_agent.py:183][0m Playing at episode: 2524, this time we got reward 0.0
+[32m[0312 23:13:31 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:32 @dqn_agent.py:183][0m Playing at episode: 2551, this time we got reward 2.0
+[32m[0312 23:13:32 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:33 @dqn_agent.py:183][0m Playing at episode: 2561, this time we got reward 0.0
+[32m[0312 23:13:33 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:33 @dqn_agent.py:183][0m Playing at episode: 2568, this time we got reward 0.0
+[32m[0312 23:13:33 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:33 @dqn_agent.py:183][0m Playing at episode: 2577, this time we got reward 0.0
+[32m[0312 23:13:33 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:34 @dqn_agent.py:183][0m Playing at episode: 2585, this time we got reward 0.0
+[32m[0312 23:13:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:34 @dqn_agent.py:183][0m Playing at episode: 2592, this time we got reward 0.0
+[32m[0312 23:13:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:34 @dqn_agent.py:183][0m Playing at episode: 2602, this time we got reward 0.0
+[32m[0312 23:13:34 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:35 @dqn_agent.py:183][0m Playing at episode: 2617, this time we got reward 0.0
+[32m[0312 23:13:35 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:35 @dqn_agent.py:183][0m Playing at episode: 2631, this time we got reward 0.0
+[32m[0312 23:13:35 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:36 @dqn_agent.py:183][0m Playing at episode: 2638, this time we got reward 0.0
+[32m[0312 23:13:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:36 @dqn_agent.py:183][0m Playing at episode: 2646, this time we got reward 0.0
+[32m[0312 23:13:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:36 @dqn_agent.py:183][0m Playing at episode: 2653, this time we got reward 0.0
+[32m[0312 23:13:36 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:37 @dqn_agent.py:183][0m Playing at episode: 2660, this time we got reward 0.0
+[32m[0312 23:13:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:37 @dqn_agent.py:183][0m Playing at episode: 2674, this time we got reward 0.0
+[32m[0312 23:13:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:37 @dqn_agent.py:183][0m Playing at episode: 2681, this time we got reward 0.0
+[32m[0312 23:13:37 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:38 @dqn_agent.py:183][0m Playing at episode: 2702, this time we got reward 1.0
+[32m[0312 23:13:38 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:38 @dqn_agent.py:183][0m Playing at episode: 2710, this time we got reward 0.0
+[32m[0312 23:13:38 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:39 @dqn_agent.py:183][0m Playing at episode: 2737, this time we got reward 2.0
+[32m[0312 23:13:39 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:40 @dqn_agent.py:183][0m Playing at episode: 2744, this time we got reward 0.0
+[32m[0312 23:13:40 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:40 @dqn_agent.py:183][0m Playing at episode: 2752, this time we got reward 0.0
+[32m[0312 23:13:40 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:40 @dqn_agent.py:183][0m Playing at episode: 2759, this time we got reward 0.0
+[32m[0312 23:13:40 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:41 @dqn_agent.py:183][0m Playing at episode: 2778, this time we got reward 0.0
+[32m[0312 23:13:41 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:41 @dqn_agent.py:183][0m Playing at episode: 2785, this time we got reward 0.0
+[32m[0312 23:13:41 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:42 @dqn_agent.py:183][0m Playing at episode: 2794, this time we got reward 0.0
+[32m[0312 23:13:42 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:42 @dqn_agent.py:183][0m Playing at episode: 2804, this time we got reward 0.0
+[32m[0312 23:13:42 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:42 @dqn_agent.py:183][0m Playing at episode: 2813, this time we got reward 0.0
+[32m[0312 23:13:42 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:43 @dqn_agent.py:183][0m Playing at episode: 2821, this time we got reward 0.0
+[32m[0312 23:13:43 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:44 @dqn_agent.py:183][0m Playing at episode: 2842, this time we got reward 0.0
+[32m[0312 23:13:44 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:44 @dqn_agent.py:183][0m Playing at episode: 2849, this time we got reward 0.0
+[32m[0312 23:13:44 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:44 @dqn_agent.py:183][0m Playing at episode: 2857, this time we got reward 0.0
+[32m[0312 23:13:44 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:45 @dqn_agent.py:183][0m Playing at episode: 2871, this time we got reward 1.0
+[32m[0312 23:13:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:45 @dqn_agent.py:183][0m Playing at episode: 2880, this time we got reward 0.0
+[32m[0312 23:13:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:45 @dqn_agent.py:183][0m Playing at episode: 2888, this time we got reward 0.0
+[32m[0312 23:13:45 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:46 @dqn_agent.py:183][0m Playing at episode: 2903, this time we got reward 1.0
+[32m[0312 23:13:46 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:46 @dqn_agent.py:183][0m Playing at episode: 2907, this time we got reward 0.0
+[32m[0312 23:13:46 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:46 @dqn_agent.py:183][0m Playing at episode: 2916, this time we got reward 0.0
+[32m[0312 23:13:46 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:47 @dqn_agent.py:183][0m Playing at episode: 2926, this time we got reward 0.0
+[32m[0312 23:13:47 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:47 @dqn_agent.py:183][0m Playing at episode: 2929, this time we got reward 0.0
+[32m[0312 23:13:47 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:47 @dqn_agent.py:183][0m Playing at episode: 2944, this time we got reward 1.0
+[32m[0312 23:13:47 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:48 @dqn_agent.py:183][0m Playing at episode: 2951, this time we got reward 0.0
+[32m[0312 23:13:48 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:48 @dqn_agent.py:183][0m Playing at episode: 2958, this time we got reward 0.0
+[32m[0312 23:13:48 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:49 @dqn_agent.py:183][0m Playing at episode: 2975, this time we got reward 0.0
+[32m[0312 23:13:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:49 @dqn_agent.py:183][0m Playing at episode: 2985, this time we got reward 0.0
+[32m[0312 23:13:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:49 @dqn_agent.py:183][0m Playing at episode: 2993, this time we got reward 0.0
+[32m[0312 23:13:49 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:50 @dqn_agent.py:183][0m Playing at episode: 3000, this time we got reward 0.0
+[32m[0312 23:13:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:50 @dqn_agent.py:183][0m Playing at episode: 3007, this time we got reward 0.0
+[32m[0312 23:13:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:50 @dqn_agent.py:183][0m Playing at episode: 3016, this time we got reward 0.0
+[32m[0312 23:13:50 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:51 @dqn_agent.py:183][0m Playing at episode: 3019, this time we got reward 0.0
+[32m[0312 23:13:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:51 @dqn_agent.py:183][0m Playing at episode: 3026, this time we got reward 0.0
+[32m[0312 23:13:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:51 @dqn_agent.py:183][0m Playing at episode: 3035, this time we got reward 0.0
+[32m[0312 23:13:51 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:52 @dqn_agent.py:183][0m Playing at episode: 3050, this time we got reward 1.0
+[32m[0312 23:13:52 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:52 @dqn_agent.py:183][0m Playing at episode: 3067, this time we got reward 1.0
+[32m[0312 23:13:52 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:53 @dqn_agent.py:183][0m Playing at episode: 3074, this time we got reward 0.0
+[32m[0312 23:13:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:53 @dqn_agent.py:183][0m Playing at episode: 3082, this time we got reward 0.0
+[32m[0312 23:13:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:53 @dqn_agent.py:183][0m Playing at episode: 3089, this time we got reward 0.0
+[32m[0312 23:13:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:53 @dqn_agent.py:183][0m Playing at episode: 3091, this time we got reward 0.0
+[32m[0312 23:13:53 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:54 @dqn_agent.py:183][0m Playing at episode: 3098, this time we got reward 0.0
+[32m[0312 23:13:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:54 @dqn_agent.py:183][0m Playing at episode: 3102, this time we got reward 0.0
+[32m[0312 23:13:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:54 @dqn_agent.py:183][0m Playing at episode: 3104, this time we got reward 0.0
+[32m[0312 23:13:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:54 @summary_handler.py:89][0m Flushing to the summary writer
+[32m[0312 23:13:54 @summary_handler.py:93][0m At episode: 3104, Reward: 0.227722772277 (over 100 episodes)
+[32m[0312 23:13:54 @summary_handler.py:96][0m  - - - - - - -, Length: 0.227722772277 (over 10.2772277228 episodes)
+[32m[0312 23:13:54 @dqn_agent.py:183][0m Playing at episode: 3111, this time we got reward 0.0
+[32m[0312 23:13:54 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:55 @dqn_agent.py:183][0m Playing at episode: 3120, this time we got reward 0.0
+[32m[0312 23:13:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:55 @dqn_agent.py:183][0m Playing at episode: 3134, this time we got reward 1.0
+[32m[0312 23:13:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:55 @dqn_agent.py:183][0m Playing at episode: 3141, this time we got reward 0.0
+[32m[0312 23:13:55 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:56 @dqn_agent.py:183][0m Playing at episode: 3151, this time we got reward 0.0
+[32m[0312 23:13:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:56 @dqn_agent.py:183][0m Playing at episode: 3160, this time we got reward 0.0
+[32m[0312 23:13:56 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:57 @dqn_agent.py:183][0m Playing at episode: 3175, this time we got reward 0.0
+[32m[0312 23:13:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:57 @dqn_agent.py:183][0m Playing at episode: 3182, this time we got reward 0.0
+[32m[0312 23:13:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:57 @dqn_agent.py:183][0m Playing at episode: 3189, this time we got reward 0.0
+[32m[0312 23:13:57 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:58 @dqn_agent.py:183][0m Playing at episode: 3198, this time we got reward 0.0
+[32m[0312 23:13:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:58 @dqn_agent.py:183][0m Playing at episode: 3207, this time we got reward 0.0
+[32m[0312 23:13:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:58 @dqn_agent.py:183][0m Playing at episode: 3213, this time we got reward 0.0
+[32m[0312 23:13:58 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:59 @dqn_agent.py:183][0m Playing at episode: 3220, this time we got reward 0.0
+[32m[0312 23:13:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:59 @dqn_agent.py:183][0m Playing at episode: 3239, this time we got reward 1.0
+[32m[0312 23:13:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:13:59 @dqn_agent.py:183][0m Playing at episode: 3241, this time we got reward 0.0
+[32m[0312 23:13:59 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:00 @dqn_agent.py:183][0m Playing at episode: 3247, this time we got reward 0.0
+[32m[0312 23:14:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:00 @dqn_agent.py:183][0m Playing at episode: 3255, this time we got reward 0.0
+[32m[0312 23:14:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:00 @dqn_agent.py:183][0m Playing at episode: 3267, this time we got reward 0.0
+[32m[0312 23:14:00 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:01 @dqn_agent.py:183][0m Playing at episode: 3275, this time we got reward 0.0
+[32m[0312 23:14:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:01 @dqn_agent.py:183][0m Playing at episode: 3283, this time we got reward 0.0
+[32m[0312 23:14:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:01 @dqn_agent.py:183][0m Playing at episode: 3290, this time we got reward 0.0
+[32m[0312 23:14:01 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:02 @dqn_agent.py:183][0m Playing at episode: 3304, this time we got reward 0.0
+[32m[0312 23:14:02 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:02 @dqn_agent.py:183][0m Playing at episode: 3323, this time we got reward 1.0
+[32m[0312 23:14:02 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:03 @dqn_agent.py:183][0m Playing at episode: 3330, this time we got reward 0.0
+[32m[0312 23:14:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:03 @dqn_agent.py:183][0m Playing at episode: 3337, this time we got reward 0.0
+[32m[0312 23:14:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:03 @dqn_agent.py:183][0m Playing at episode: 3344, this time we got reward 0.0
+[32m[0312 23:14:03 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:05 @dqn_agent.py:183][0m Playing at episode: 3378, this time we got reward 1.0
+[32m[0312 23:14:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:05 @dqn_agent.py:183][0m Playing at episode: 3385, this time we got reward 0.0
+[32m[0312 23:14:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:05 @dqn_agent.py:183][0m Playing at episode: 3392, this time we got reward 0.0
+[32m[0312 23:14:05 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:06 @dqn_agent.py:183][0m Playing at episode: 3411, this time we got reward 0.0
+[32m[0312 23:14:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:06 @dqn_agent.py:183][0m Playing at episode: 3425, this time we got reward 0.0
+[32m[0312 23:14:06 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:07 @dqn_agent.py:183][0m Playing at episode: 3433, this time we got reward 0.0
+[32m[0312 23:14:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:07 @dqn_agent.py:183][0m Playing at episode: 3443, this time we got reward 0.0
+[32m[0312 23:14:07 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:08 @dqn_agent.py:183][0m Playing at episode: 3463, this time we got reward 1.0
+[32m[0312 23:14:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:08 @dqn_agent.py:183][0m Playing at episode: 3470, this time we got reward 0.0
+[32m[0312 23:14:08 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:09 @dqn_agent.py:183][0m Playing at episode: 3481, this time we got reward 0.0
+[32m[0312 23:14:09 @dqn_agent.py:184][0m    Epsilon: 1.0
+[32m[0312 23:14:09 @dqn_agent.py:183][0m Playing at episode: 3496, this time we got reward 1.0
+[32m[0312 23:14:09 @dqn_agent.py:184][0m    Epsilon: 1.0

@@ -5,12 +5,12 @@
 #       Tingwu Wang
 # -----------------------------------------------------------------------------
 
-import __init_path
+import init_path
 import numpy as np
 import random
 from util import logger
 
-__init_path.bypass_frost_warning()
+init_path.bypass_frost_warning()
 
 
 class experience_shop(object):
@@ -41,18 +41,18 @@ class experience_shop(object):
         self.terminals = np.empty(self.memory_length, dtype=np.bool)
 
         # the actual output
-        self.start_state = np.empty(
+        self.start_states = np.empty(
             [self.batch_size, self.history_length,
                 self.screen_size, self.screen_size])
 
-        self.end_state = np.empty(
+        self.end_states = np.empty(
             [self.batch_size, self.history_length,
                 self.screen_size, self.screen_size])
 
         return
 
     def save(self, path):
-        path = path.replace('.ckpt', 'npy')
+        path = path.replace('.ckpt', '.npy')
         data_dict = {'count': self.count,
                      'actions': self.actions[:self.count],
                      'rewards': self.rewards[:self.count],
@@ -62,11 +62,11 @@ class experience_shop(object):
                      'total_episode': self.total_episode}
 
         np.save(path, data_dict)
-        logger.info('Experience shop saved to {}'.format(path))
+        logger.info('   Experience shop saved to {}'.format(path))
         return
 
     def restore(self, path):
-        path = path.replace('.ckpt', 'npy')
+        path = path.replace('.ckpt', '.npy')
         data_dict = np.load(path)
         data_dict = data_dict[()]
 
@@ -92,8 +92,8 @@ class experience_shop(object):
 
         # update parameters
         self.current = (self.current + 1) % self.memory_length
-        self.count = max(self.count + 1, self.memory_length)
-        self.episode += 1
+        self.count = min(self.count + 1, self.memory_length)
+        self.total_episode += 1
 
         return
 
@@ -152,7 +152,10 @@ class history_recorder(object):
         return
 
     def get_history(self):
-        return self.history_exp
+        '''
+            @return (batch_size, history_length, screen_size, screen_size)
+        '''
+        return np.expand_dims(self.history_exp, axis=0)
 
     def clean_history(self):
         self.history_exp = np.empty(
