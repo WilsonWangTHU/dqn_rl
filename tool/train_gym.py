@@ -21,7 +21,8 @@ if __name__ == '__main__':
     parser.add_argument('--gpu', default=0)
     parser.add_argument('--restore', help='the path of model to restore',
                         default=None)
-    parser.add_argument('--env_name', help='the game to play',
+    parser.add_argument('--env_name',
+                        help='the game to play, add the deterministic flag',
                         default='Breakout-v0')
 
     args = parser.parse_args()

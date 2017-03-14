@@ -1,3 +1,0 @@
-[32m[0312 20:09:23 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0312-200923.log
-[32m[0312 20:09:23 @train_gym.py:35][0m Session starts, using gpu: 0
-[32m[0312 20:09:23 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0

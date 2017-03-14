@@ -123,6 +123,8 @@ class experience_shop(object):
                 self.end_states[i_batch, ...] = \
                     self.observations[index - self.history_length + 1:
                                       index + 1, ...]
+                # move on to the next point
+                break
 
         return self.start_states, self.end_states, self.actions[batch_id], \
             self.rewards[batch_id], self.terminals[batch_id]

@@ -30,8 +30,10 @@ class game_environment(object):
         self.name = env_name
         self.n_action_repeat = n_action_repeat
         self.env = gym.make(env_name)
+        self.temp_env = None
         self.data_format = data_format
         self.display = display
+        self.display_backup = self.display
         self.return_cumulated_reward = return_cumulated_reward
         self.is_train = is_training
 
@@ -47,6 +49,17 @@ class game_environment(object):
 
     def step(self):
         raise NotImplementedError()
+
+    def set_monitor(self, save_path):
+        self.temp_env = self.env
+        self.env = gym.wrappers.Monitor(self.env, save_path)
+        self.display = True
+        return
+
+    def unset_monitor(self):
+        self.env = self.temp_env
+        self.display = self.display_backup
+        return
 
 
 class atari_environment(game_environment):
@@ -91,10 +104,10 @@ class atari_environment(game_environment):
             for i_random_walk in range(random.randint(0, self.n_random_action)):
                 screen, reward, terminal, info = self.env.step(0)  # noop action
                 if terminal:  # set for a new game if terminated
-                    screen = self.env.reset()
-                    screen, reward, terminal, info = self.env.step(0)
                     logger.warning('New game terminated after {} step'.format(
                         i_random_walk))
+                    screen = self.env.reset()
+                    screen, reward, terminal, info = self.env.step(0)
         # rendering
         if self.display:
             self.env.render()

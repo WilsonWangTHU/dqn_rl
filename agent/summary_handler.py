@@ -86,14 +86,11 @@ class gym_summary_handler(summary_handler):
             self.manually_add_scalar_summary(
                 'avg_episode_length', self.episode_length_total, episode_count)
 
-            logger.info('Flushing to the summary writer')
             logger.info(
                 'At episode: {}, Reward: {} (over {} episodes)'.format(
                     episode_count, self.reward_total,
                     self.update_frequency_episode))
-            logger.info(
-                ' - - - - - - -, Length: {} (over {} episodes)'.format(
-                    self.reward_total, self.episode_length_total))
+            logger.info('Length: {}'.format(self.episode_length_total))
 
             self.reset_stat()
         return

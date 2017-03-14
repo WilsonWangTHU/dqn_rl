@@ -114,9 +114,10 @@ class deep_Q_network(network):
     '''
 
     def __init__(self, sess, name, config, action_space_size,
-                 target_network=None):
+                 target_network=None, update_freq=100):
         # init the parent class and build the baseline model
         self.target_network = target_network
+        self.update_freq = update_freq
 
         if target_network is None:
             logger.info('building the target network, name: {}'.format(name))
@@ -144,7 +145,7 @@ class deep_Q_network(network):
 
         self.action = tf.argmax(self.output, dimension=1)
 
-        self.max_Q_value = tf.reduce_max(self.output, axis=0)
+        self.max_Q_value = tf.reduce_max(self.output, axis=1)
 
         # if it is the target network, then we could just return
         if self.target_network is None:
@@ -162,14 +163,14 @@ class deep_Q_network(network):
             self.output * self.actions_one_hot,
             reduction_indices=1, name='action_state_value')
 
-        self.td_loss = self.Q_next_state_input - \
+        self.td_diff = self.Q_next_state_input - \
             self.reward_input - self.config.TRAIN.value_decay_factor * \
             self.pred_state_action_value
-        self.td_loss = tf.where(tf.abs(self.td_loss) < 1.0,
-                                0.5 * tf.square(self.td_loss),
-                                tf.abs(self.td_loss) - 0.5,
-                                name='clipped_loss')
-        self.td_loss = tf.reduce_mean(self.td_loss, name='final_loss')
+        self.td_diff_clipped = tf.where(tf.abs(self.td_diff) < 1.0,
+                                        0.5 * tf.square(self.td_diff),
+                                        tf.abs(self.td_diff) - 0.5,
+                                        name='clipped_loss')
+        self.td_loss = tf.reduce_mean(self.td_diff_clipped, name='final_loss')
 
         self.init_training()
 
@@ -186,18 +187,20 @@ class deep_Q_network(network):
 
         # get the target prediction
         Q_next_state = self.target_network.get_next_state_value(end_states)
-        _, current_loss, current_step, td_loss = self.sess.run(
+
+        _, current_loss, current_step, td_loss_sum = self.sess.run(
             [self.optim, self.td_loss, self.step_count, td_loss_summary],
             feed_dict={self.action_input: actions,
                        self.reward_input: rewards,
                        self.Q_next_state_input: Q_next_state,
                        self.input_screen: start_states})
-        logger.info('step: {}, current TD loss: {}'.format(
-            current_step, current_loss))
+        if current_step % self.update_freq == 0:
+            logger.info('step: {}, current TD loss: {}'.format(
+                current_step, current_loss))
 
         # increment the step parameters
         self.sess.run(self.step_add_op)
-        return current_step, td_loss
+        return current_step, td_loss_sum
 
     def init_training(self):
         '''

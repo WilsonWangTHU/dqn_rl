@@ -21,8 +21,8 @@ __C.GAME = edict()
 # basic training parameters
 __C.TRAIN.batch_size = 32
 __C.TRAIN.gradient_clip = 10  # it is actually deprecated
-__C.TRAIN.learning_rate = 0.0001
-__C.TRAIN.learning_rate_minimum = 0.0001
+__C.TRAIN.learning_rate = 0.00025  # 0.001 (suggested)
+__C.TRAIN.learning_rate_minimum = 0.00025
 __C.TRAIN.decay_step = 50000
 __C.TRAIN.decay_rate = 0.96
 __C.TRAIN.max_grad_norm = None
@@ -33,31 +33,29 @@ __C.TRAIN.value_decay_factor = 0.99
 # the number of episodes to play / the number of training step
 __C.TRAIN.exp_train_ratio = 4
 
-# __C.TRAIN.beta1 = 0.5
-# __C.TRAIN.beta2 = 0.999
+__C.TRAIN.max_step_size = 5000 * 10000 / __C.TRAIN.exp_train_ratio
+__C.TRAIN.snapshot_step = 200000 / __C.TRAIN.exp_train_ratio
 
-__C.TRAIN.max_step_size = 100000
-__C.TRAIN.max_episode_size = __C.TRAIN.max_step_size / __C.TRAIN.exp_train_ratio
-__C.TRAIN.snapshot_step = 2000  # save the snapshot every 1000 epoches
-
-# number of episodes to play / number of target network update
+# number of steps to update target network
 __C.TRAIN.update_network_freq = 10000 / __C.TRAIN.exp_train_ratio
-# when to start the training
-__C.TRAIN.training_start_episodes = 200 # 50000
+__C.TRAIN.play_and_save_video = 100000 / __C.TRAIN.exp_train_ratio
 
 # parameters for the exploration
 __C.TRAIN.start_epsilon = 1
 __C.TRAIN.end_epsilon = 0.01
+# when to start the training
+__C.TRAIN.training_start_episode = 50000
+__C.TRAIN.end_epsilon_episode = 1000000
 
 # parameters for the summary tensorboard
 __C.TRAIN.update_tensorboard_episode_length = 100
 
 # configurations about the game
 __C.GAME.type = 'atari'
-__C.GAME.display = True
+__C.GAME.display = False
 __C.GAME.screen_size = 80
 __C.GAME.history_length = 4
-__C.GAME.n_action_repeat = 4
+__C.GAME.n_action_repeat = 4  # TODO: they already have the skip of frame
 __C.GAME.n_random_action = 30
 __C.GAME.max_reward_clip = 1
 __C.GAME.return_cumulated_reward = 4

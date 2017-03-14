@@ -67,7 +67,8 @@ class qlearning_agent(object):
             self.sess, 'target_network', self.config, self.n_action)
         self.predict_network = deep_Q_network(
             self.sess, 'predict_network', self.config, self.n_action,
-            target_network=self.target_network)
+            target_network=self.target_network,
+            update_freq=self.config.TRAIN.update_tensorboard_episode_length)
 
         # construct the operation of copying weights.
         self.target_network.set_all_var_copy_op(
@@ -145,24 +146,44 @@ class qlearning_agent(object):
             # save the network if needed
             if self.step % self.config.TRAIN.snapshot_step == 1:
                 self.save_all()
+
+            # save the played video if needed
+            if self.step % self.config.TRAIN.play_and_save_video == 1:
+                self.play_game_and_save()
         return
 
-    def generate_experience(self):
-        for i_exp in range(self.config.TRAIN.exp_train_ratio):
+    def play_game_and_save(self):
+        # save the video and play a little bit
+        base_path = init_path.get_base_dir()
+        path = os.path.join(base_path, 'video',
+                            init_path.get_time() + 'dqn_' +
+                            str(self.step) + '_' + self.env_name)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        for i_video in range(10):
+            self.env.set_monitor(os.path.join(path, str(i_video)))
+            self.generate_experience(num_episode=1)
+            self.env.unset_monitor()
+        return
+
+    def generate_experience(self, num_episode=None):
+        if num_episode is None:
+            num_episode = self.config.TRAIN.exp_train_ratio
+        for i_exp in range(num_episode):
             # play the whole episodes
             observation, reward, terminal = self.env.new_game(
                 run_random_action=self.env.get_if_run_random_action())
             self.history_recorder.init_history(observation)
             num_step_in_episode = 0
-            total_reward = 0
+            total_reward = reward
             while terminal is False:
                 # get the predicted action, note we all use training step
                 # instead of episode count
                 epsilon = self.get_epsilon(
                     self.config.TRAIN.end_epsilon,
                     self.config.TRAIN.start_epsilon,
-                    self.config.TRAIN.max_episode_size,
-                    self.config.TRAIN.training_start_episodes)
+                    self.config.TRAIN.end_epsilon_episode,
+                    self.config.TRAIN.training_start_episode)
 
                 if random.uniform(0, 1) < epsilon:
                     pred_action = random.randint(0, self.n_action - 1)
@@ -178,10 +199,11 @@ class qlearning_agent(object):
                 self.exp_shop.push(pred_action, reward, observation, terminal)
                 num_step_in_episode += 1
                 total_reward += reward
-            logger.info(
-                'Playing at episode: {}, this time we got reward {}'.format(
-                    self.exp_shop.episode, total_reward))
-            logger.info('   Epsilon: {}'.format(epsilon))
+
+            # show some information
+            if self.exp_shop.episode % 1000 == 0:
+                logger.info('episode: {}, epsilon: {}'.format(
+                    self.exp_shop.episode, epsilon))
 
             # add it to the summary handler
             self.summary_handler.add_stat(total_reward, num_step_in_episode,
@@ -190,7 +212,7 @@ class qlearning_agent(object):
         return
 
     def train_step(self):
-        if self.exp_shop.count < self.config.TRAIN.training_start_episodes:
+        if self.exp_shop.count < self.config.TRAIN.training_start_episode:
             return
         else:
             # update the target network if needed. by doing this, we also make
@@ -210,9 +232,6 @@ class qlearning_agent(object):
             # record the summary of loss
             self.summary_handler.train_writer.add_summary(
                 td_loss, self.step)
-            logger.info(
-                'Training at step: {}, this time we got mean loss {}'.format(
-                    self.step, td_loss))
         return
 
     def get_epsilon(self, ep_end, ep_start, t_ep_end, t_learn_start):
