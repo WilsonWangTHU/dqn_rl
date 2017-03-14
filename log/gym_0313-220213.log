@@ -1,0 +1,63 @@
+[32m[0313 22:02:13 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0313-220213.log
+[32m[0313 22:02:13 @train_gym.py:36][0m Session starts, using gpu: 0
+[32m[0313 22:02:13 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0
+[32m[0313 22:02:13 @environments.py:45][0m Init game environments Breakout-v0
+[32m[0313 22:02:13 @environments.py:87][0m Game set image size: 80, random walk step: 30
+[32m[0313 22:02:13 @network.py:123][0m building the target network, name: target_network
+[32m[0313 22:02:13 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0313 22:02:13 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0313 22:02:13 @network.py:125][0m building the pred network, name: predict_network
+[32m[0313 22:02:13 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0313 22:02:13 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0313 22:02:13 @experience.py:23][0m building the experience shop
+[32m[0313 22:02:13 @summary_handler.py:30][0m summary write initialized, writing to /mnt/rl_playground/tool/../agent/../checkpoint
+[32m[0313 22:02:18 @dqn_agent.py:206][0m episode: 1000, epsilon: 1.0
+[32m[0313 22:02:18 @summary_handler.py:92][0m At episode: 1035, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 22:02:18 @summary_handler.py:93][0m Length: 10.2475247525
+[32m[0313 22:02:22 @summary_handler.py:92][0m At episode: 2148, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 22:02:22 @summary_handler.py:93][0m Length: 11.0198019802
+[32m[0313 22:02:27 @summary_handler.py:92][0m At episode: 3209, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 22:02:27 @summary_handler.py:93][0m Length: 10.504950495
+[32m[0313 22:02:31 @summary_handler.py:92][0m At episode: 4256, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 22:02:31 @summary_handler.py:93][0m Length: 10.3663366337
+[32m[0313 22:02:35 @summary_handler.py:92][0m At episode: 5360, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 22:02:35 @summary_handler.py:93][0m Length: 10.9306930693
+[32m[0313 22:02:40 @summary_handler.py:92][0m At episode: 6335, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 22:02:40 @summary_handler.py:93][0m Length: 9.65346534653
+[32m[0313 22:02:44 @summary_handler.py:92][0m At episode: 7314, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 22:02:44 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 22:02:48 @summary_handler.py:92][0m At episode: 8312, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 22:02:48 @summary_handler.py:93][0m Length: 9.88118811881
+[32m[0313 22:02:53 @summary_handler.py:92][0m At episode: 9516, Reward: 0.356435643564 (over 100 episodes)
+[32m[0313 22:02:53 @summary_handler.py:93][0m Length: 11.9207920792
+[32m[0313 22:02:57 @summary_handler.py:92][0m At episode: 10502, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 22:02:57 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 22:03:01 @summary_handler.py:92][0m At episode: 11519, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 22:03:01 @summary_handler.py:93][0m Length: 10.0693069307
+[32m[0313 22:03:03 @dqn_agent.py:206][0m episode: 12000, epsilon: 1.0
+[32m[0313 22:03:06 @summary_handler.py:92][0m At episode: 12687, Reward: 0.405940594059 (over 100 episodes)
+[32m[0313 22:03:06 @summary_handler.py:93][0m Length: 11.5643564356
+[32m[0313 22:03:11 @summary_handler.py:92][0m At episode: 13851, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 22:03:11 @summary_handler.py:93][0m Length: 11.5247524752
+[32m[0313 22:03:15 @summary_handler.py:92][0m At episode: 14812, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 22:03:15 @summary_handler.py:93][0m Length: 9.51485148515
+[32m[0313 22:03:19 @summary_handler.py:92][0m At episode: 15850, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 22:03:19 @summary_handler.py:93][0m Length: 10.2772277228
+[32m[0313 22:03:24 @summary_handler.py:92][0m At episode: 16915, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 22:03:24 @summary_handler.py:93][0m Length: 10.5445544554
+[32m[0313 22:03:28 @summary_handler.py:92][0m At episode: 17944, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 22:03:28 @summary_handler.py:93][0m Length: 10.1881188119
+[32m[0313 22:03:32 @summary_handler.py:92][0m At episode: 18892, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 22:03:32 @summary_handler.py:93][0m Length: 9.38613861386
+[32m[0313 22:03:37 @summary_handler.py:92][0m At episode: 19878, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 22:03:37 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 22:03:41 @summary_handler.py:92][0m At episode: 20944, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 22:03:41 @summary_handler.py:93][0m Length: 10.5544554455
+[32m[0313 22:03:45 @summary_handler.py:92][0m At episode: 21965, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 22:03:45 @summary_handler.py:93][0m Length: 10.1089108911
+[32m[0313 22:03:50 @summary_handler.py:92][0m At episode: 23009, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 22:03:50 @summary_handler.py:93][0m Length: 10.3366336634
+[32m[0313 22:03:54 @summary_handler.py:92][0m At episode: 24116, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 22:03:54 @summary_handler.py:93][0m Length: 10.9603960396
+[32m[0313 22:03:59 @summary_handler.py:92][0m At episode: 25239, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 22:03:59 @summary_handler.py:93][0m Length: 11.1188118812

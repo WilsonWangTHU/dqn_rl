@@ -144,8 +144,10 @@ class qlearning_agent(object):
             self.train_step()
 
             # save the network if needed
+            '''
             if self.step % self.config.TRAIN.snapshot_step == 1:
                 self.save_all()
+            '''
 
             # save the played video if needed
             if self.step % self.config.TRAIN.play_and_save_video == 1:
@@ -204,6 +206,8 @@ class qlearning_agent(object):
             if self.exp_shop.episode % 1000 == 0:
                 logger.info('episode: {}, epsilon: {}'.format(
                     self.exp_shop.episode, epsilon))
+            if self.step % 100 == 0:
+                print('{}, {}'.format(i_exp, total_reward))
 
             # add it to the summary handler
             self.summary_handler.add_stat(total_reward, num_step_in_episode,

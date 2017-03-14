@@ -34,11 +34,11 @@ __C.TRAIN.value_decay_factor = 0.99
 __C.TRAIN.exp_train_ratio = 4
 
 __C.TRAIN.max_step_size = 5000 * 10000 / __C.TRAIN.exp_train_ratio
-__C.TRAIN.snapshot_step = 200000 / __C.TRAIN.exp_train_ratio
+__C.TRAIN.snapshot_step = 20000 / __C.TRAIN.exp_train_ratio  # 200000
 
 # number of steps to update target network
 __C.TRAIN.update_network_freq = 10000 / __C.TRAIN.exp_train_ratio
-__C.TRAIN.play_and_save_video = 100000 / __C.TRAIN.exp_train_ratio
+__C.TRAIN.play_and_save_video = 10000 / __C.TRAIN.exp_train_ratio  # 100000
 
 # parameters for the exploration
 __C.TRAIN.start_epsilon = 1

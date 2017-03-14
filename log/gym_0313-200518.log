@@ -1,0 +1,2007 @@
+[32m[0313 20:05:18 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0313-200518.log
+[32m[0313 20:05:19 @train_gym.py:36][0m Session starts, using gpu: 0
+[32m[0313 20:05:19 @dqn_agent.py:46][0m Constructing a q-learning agent to play Breakout-v0
+[32m[0313 20:05:19 @environments.py:45][0m Init game environments Breakout-v0
+[32m[0313 20:05:19 @environments.py:87][0m Game set image size: 80, random walk step: 30
+[32m[0313 20:05:19 @network.py:123][0m building the target network, name: target_network
+[32m[0313 20:05:19 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0313 20:05:19 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0313 20:05:19 @network.py:125][0m building the pred network, name: predict_network
+[32m[0313 20:05:19 @network.py:51][0m Building network of type: dqn, using basebone: nips
+[32m[0313 20:05:19 @cnn.py:21][0m building the basebone network, using nips format
+[32m[0313 20:05:19 @experience.py:23][0m building the experience shop
+[32m[0313 20:05:19 @summary_handler.py:30][0m summary write initialized, writing to /mnt/rl_playground/tool/../agent/../checkpoint
+[32m[0313 20:05:23 @summary_handler.py:92][0m At episode: 972, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:05:23 @summary_handler.py:93][0m Length: 9.62376237624
+[32m[0313 20:05:28 @summary_handler.py:92][0m At episode: 2133, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:05:28 @summary_handler.py:93][0m Length: 11.495049505
+[32m[0313 20:05:32 @summary_handler.py:92][0m At episode: 3133, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:05:32 @summary_handler.py:93][0m Length: 9.90099009901
+[32m[0313 20:05:36 @summary_handler.py:92][0m At episode: 4161, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:05:36 @summary_handler.py:93][0m Length: 10.1782178218
+[32m[0313 20:05:40 @summary_handler.py:92][0m At episode: 5129, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:05:40 @summary_handler.py:93][0m Length: 9.58415841584
+[32m[0313 20:05:44 @summary_handler.py:92][0m At episode: 6137, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:05:44 @summary_handler.py:93][0m Length: 9.9801980198
+[32m[0313 20:05:49 @summary_handler.py:92][0m At episode: 7172, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:05:49 @summary_handler.py:93][0m Length: 10.2475247525
+[32m[0313 20:05:53 @summary_handler.py:92][0m At episode: 8197, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:05:53 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:05:57 @summary_handler.py:92][0m At episode: 9373, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:05:57 @summary_handler.py:93][0m Length: 11.6435643564
+[32m[0313 20:06:02 @summary_handler.py:92][0m At episode: 10441, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:06:02 @summary_handler.py:93][0m Length: 10.5742574257
+[32m[0313 20:06:06 @summary_handler.py:92][0m At episode: 11510, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:06:06 @summary_handler.py:93][0m Length: 10.5841584158
+[32m[0313 20:06:11 @summary_handler.py:92][0m At episode: 12589, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:06:11 @summary_handler.py:93][0m Length: 10.6831683168
+[32m[0313 20:06:12 @dqn_agent.py:206][0m episode: 13000, epsilon: 1.0
+[32m[0313 20:06:15 @summary_handler.py:92][0m At episode: 13620, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:06:15 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:06:19 @summary_handler.py:92][0m At episode: 14675, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:06:19 @summary_handler.py:93][0m Length: 10.4455445545
+[32m[0313 20:06:23 @summary_handler.py:92][0m At episode: 15796, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:06:23 @summary_handler.py:93][0m Length: 11.099009901
+[32m[0313 20:06:28 @summary_handler.py:92][0m At episode: 16859, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:06:28 @summary_handler.py:93][0m Length: 10.5247524752
+[32m[0313 20:06:33 @summary_handler.py:92][0m At episode: 18075, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:06:33 @summary_handler.py:93][0m Length: 12.0396039604
+[32m[0313 20:06:37 @summary_handler.py:92][0m At episode: 19103, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:06:37 @summary_handler.py:93][0m Length: 10.1782178218
+[32m[0313 20:06:41 @summary_handler.py:92][0m At episode: 20230, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:06:41 @summary_handler.py:93][0m Length: 11.1584158416
+[32m[0313 20:06:46 @summary_handler.py:92][0m At episode: 21306, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:06:46 @summary_handler.py:93][0m Length: 10.6534653465
+[32m[0313 20:06:50 @summary_handler.py:92][0m At episode: 22452, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:06:50 @summary_handler.py:93][0m Length: 11.3465346535
+[32m[0313 20:06:54 @summary_handler.py:92][0m At episode: 23397, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:06:54 @summary_handler.py:93][0m Length: 9.35643564356
+[32m[0313 20:06:57 @dqn_agent.py:206][0m episode: 24000, epsilon: 1.0
+[32m[0313 20:06:58 @summary_handler.py:92][0m At episode: 24372, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:06:58 @summary_handler.py:93][0m Length: 9.65346534653
+[32m[0313 20:07:03 @summary_handler.py:92][0m At episode: 25434, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:07:03 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:07:07 @summary_handler.py:92][0m At episode: 26432, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:07:07 @summary_handler.py:93][0m Length: 9.88118811881
+[32m[0313 20:07:11 @summary_handler.py:92][0m At episode: 27511, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:07:11 @summary_handler.py:93][0m Length: 10.6831683168
+[32m[0313 20:07:13 @dqn_agent.py:206][0m episode: 28000, epsilon: 1.0
+[32m[0313 20:07:16 @summary_handler.py:92][0m At episode: 28472, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:07:16 @summary_handler.py:93][0m Length: 9.51485148515
+[32m[0313 20:07:20 @summary_handler.py:92][0m At episode: 29616, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:07:20 @summary_handler.py:93][0m Length: 11.3267326733
+[32m[0313 20:07:25 @summary_handler.py:92][0m At episode: 30683, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:07:25 @summary_handler.py:93][0m Length: 10.5643564356
+[32m[0313 20:07:29 @summary_handler.py:92][0m At episode: 31751, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:07:29 @summary_handler.py:93][0m Length: 10.5742574257
+[32m[0313 20:07:33 @summary_handler.py:92][0m At episode: 32847, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:07:33 @summary_handler.py:93][0m Length: 10.8514851485
+[32m[0313 20:07:38 @summary_handler.py:92][0m At episode: 33970, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:07:38 @summary_handler.py:93][0m Length: 11.1188118812
+[32m[0313 20:07:42 @summary_handler.py:92][0m At episode: 35063, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:07:42 @summary_handler.py:93][0m Length: 10.8217821782
+[32m[0313 20:07:46 @dqn_agent.py:206][0m episode: 36000, epsilon: 1.0
+[32m[0313 20:07:47 @summary_handler.py:92][0m At episode: 36215, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:07:47 @summary_handler.py:93][0m Length: 11.4059405941
+[32m[0313 20:07:51 @summary_handler.py:92][0m At episode: 37214, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:07:51 @summary_handler.py:93][0m Length: 9.89108910891
+[32m[0313 20:07:55 @summary_handler.py:92][0m At episode: 38374, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:07:55 @summary_handler.py:93][0m Length: 11.4851485149
+[32m[0313 20:08:00 @summary_handler.py:92][0m At episode: 39463, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:08:00 @summary_handler.py:93][0m Length: 10.7821782178
+[32m[0313 20:08:04 @summary_handler.py:92][0m At episode: 40456, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:08:04 @summary_handler.py:93][0m Length: 9.83168316832
+[32m[0313 20:08:06 @dqn_agent.py:206][0m episode: 41000, epsilon: 1.0
+[32m[0313 20:08:08 @summary_handler.py:92][0m At episode: 41534, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:08:08 @summary_handler.py:93][0m Length: 10.6732673267
+[32m[0313 20:08:13 @summary_handler.py:92][0m At episode: 42676, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:08:13 @summary_handler.py:93][0m Length: 11.3069306931
+[32m[0313 20:08:17 @summary_handler.py:92][0m At episode: 43781, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:08:17 @summary_handler.py:93][0m Length: 10.9405940594
+[32m[0313 20:08:22 @summary_handler.py:92][0m At episode: 44888, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:08:22 @summary_handler.py:93][0m Length: 10.9603960396
+[32m[0313 20:08:26 @summary_handler.py:92][0m At episode: 45976, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:08:26 @summary_handler.py:93][0m Length: 10.7722772277
+[32m[0313 20:08:31 @summary_handler.py:92][0m At episode: 47106, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:08:31 @summary_handler.py:93][0m Length: 11.1881188119
+[32m[0313 20:08:35 @summary_handler.py:92][0m At episode: 48133, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:08:35 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:08:39 @summary_handler.py:92][0m At episode: 49187, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:08:39 @summary_handler.py:93][0m Length: 10.4356435644
+[32m[0313 20:08:42 @dqn_agent.py:223][0m At time step 0, the target_network is updated
+[32m[0313 20:08:42 @network.py:199][0m step: 0, current TD loss: 0.0960782393813
+[32m[0313 20:08:43 @dqn_agent.py:223][0m At time step 0, the target_network is updated
+[32m[0313 20:08:43 @dqn_agent.py:109][0m checkpoint saved to /mnt/rl_playground/tool/../agent/../checkpoint/dqn_1.ckpt
+[32m[0313 20:08:46 @experience.py:65][0m    Experience shop saved to /mnt/rl_playground/tool/../agent/../checkpoint/dqn_1.npy
+[32m[0313 20:09:09 @summary_handler.py:92][0m At episode: 50379, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:09:09 @summary_handler.py:93][0m Length: 11.801980198
+[32m[0313 20:09:14 @summary_handler.py:92][0m At episode: 51546, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:09:14 @summary_handler.py:93][0m Length: 11.5544554455
+[32m[0313 20:09:19 @summary_handler.py:92][0m At episode: 52819, Reward: 0.425742574257 (over 100 episodes)
+[32m[0313 20:09:19 @summary_handler.py:93][0m Length: 12.603960396
+[32m[0313 20:09:23 @summary_handler.py:92][0m At episode: 53843, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:09:23 @summary_handler.py:93][0m Length: 10.1386138614
+[32m[0313 20:09:27 @network.py:199][0m step: 100, current TD loss: 0.0592391937971
+[32m[0313 20:09:28 @summary_handler.py:92][0m At episode: 54907, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:09:28 @summary_handler.py:93][0m Length: 10.5346534653
+[32m[0313 20:09:33 @summary_handler.py:92][0m At episode: 56031, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:09:33 @summary_handler.py:93][0m Length: 11.1287128713
+[32m[0313 20:09:37 @dqn_agent.py:206][0m episode: 57000, epsilon: 0.99307099
+[32m[0313 20:09:37 @summary_handler.py:92][0m At episode: 57021, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:09:37 @summary_handler.py:93][0m Length: 9.80198019802
+[32m[0313 20:09:42 @summary_handler.py:92][0m At episode: 57955, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:09:42 @summary_handler.py:93][0m Length: 9.24752475248
+[32m[0313 20:09:45 @network.py:199][0m step: 200, current TD loss: 0.0011520908447
+[32m[0313 20:09:46 @summary_handler.py:92][0m At episode: 58986, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:09:46 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:09:47 @dqn_agent.py:206][0m episode: 59000, epsilon: 0.99109099
+[32m[0313 20:09:51 @summary_handler.py:92][0m At episode: 60013, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:09:51 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:09:56 @summary_handler.py:92][0m At episode: 61044, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:09:56 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:10:00 @summary_handler.py:92][0m At episode: 62016, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:10:00 @summary_handler.py:93][0m Length: 9.62376237624
+[32m[0313 20:10:03 @network.py:199][0m step: 300, current TD loss: 0.0300860777497
+[32m[0313 20:10:05 @summary_handler.py:92][0m At episode: 63114, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:10:05 @summary_handler.py:93][0m Length: 10.8712871287
+[32m[0313 20:10:09 @dqn_agent.py:206][0m episode: 64000, epsilon: 0.98614099
+[32m[0313 20:10:09 @summary_handler.py:92][0m At episode: 64109, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:10:09 @summary_handler.py:93][0m Length: 9.85148514851
+[32m[0313 20:10:14 @summary_handler.py:92][0m At episode: 65202, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:10:14 @summary_handler.py:93][0m Length: 10.8217821782
+[32m[0313 20:10:18 @summary_handler.py:92][0m At episode: 66258, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:10:18 @summary_handler.py:93][0m Length: 10.4554455446
+[32m[0313 20:10:21 @network.py:199][0m step: 400, current TD loss: 0.0142412297428
+[32m[0313 20:10:23 @summary_handler.py:92][0m At episode: 67237, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:10:23 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:10:27 @summary_handler.py:92][0m At episode: 68271, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:10:27 @summary_handler.py:93][0m Length: 10.2376237624
+[32m[0313 20:10:32 @summary_handler.py:92][0m At episode: 69297, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:10:32 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:10:36 @summary_handler.py:92][0m At episode: 70323, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:10:36 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:10:39 @network.py:199][0m step: 500, current TD loss: 0.0156052205712
+[32m[0313 20:10:41 @summary_handler.py:92][0m At episode: 71355, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:10:41 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:10:46 @summary_handler.py:92][0m At episode: 72373, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:10:46 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:10:51 @summary_handler.py:92][0m At episode: 73442, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:10:51 @summary_handler.py:93][0m Length: 10.5841584158
+[32m[0313 20:10:55 @summary_handler.py:92][0m At episode: 74394, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:10:55 @summary_handler.py:93][0m Length: 9.42574257426
+[32m[0313 20:10:57 @network.py:199][0m step: 600, current TD loss: 0.00181710661855
+[32m[0313 20:10:59 @summary_handler.py:92][0m At episode: 75415, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:10:59 @summary_handler.py:93][0m Length: 10.1089108911
+[32m[0313 20:11:04 @summary_handler.py:92][0m At episode: 76481, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:11:04 @summary_handler.py:93][0m Length: 10.5544554455
+[32m[0313 20:11:08 @summary_handler.py:92][0m At episode: 77449, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:11:08 @summary_handler.py:93][0m Length: 9.58415841584
+[32m[0313 20:11:13 @summary_handler.py:92][0m At episode: 78530, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:11:13 @summary_handler.py:93][0m Length: 10.702970297
+[32m[0313 20:11:15 @network.py:199][0m step: 700, current TD loss: 0.0299003981054
+[32m[0313 20:11:17 @summary_handler.py:92][0m At episode: 79574, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:11:17 @summary_handler.py:93][0m Length: 10.3366336634
+[32m[0313 20:11:22 @summary_handler.py:92][0m At episode: 80650, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:11:22 @summary_handler.py:93][0m Length: 10.6534653465
+[32m[0313 20:11:23 @dqn_agent.py:206][0m episode: 81000, epsilon: 0.96931099
+[32m[0313 20:11:27 @summary_handler.py:92][0m At episode: 81736, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:11:27 @summary_handler.py:93][0m Length: 10.7524752475
+[32m[0313 20:11:31 @summary_handler.py:92][0m At episode: 82725, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:11:31 @summary_handler.py:93][0m Length: 9.79207920792
+[32m[0313 20:11:33 @network.py:199][0m step: 800, current TD loss: 0.0140433898196
+[32m[0313 20:11:36 @summary_handler.py:92][0m At episode: 83799, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:11:36 @summary_handler.py:93][0m Length: 10.6336633663
+[32m[0313 20:11:40 @summary_handler.py:92][0m At episode: 84797, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:11:40 @summary_handler.py:93][0m Length: 9.88118811881
+[32m[0313 20:11:44 @summary_handler.py:92][0m At episode: 85815, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:11:44 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:11:49 @summary_handler.py:92][0m At episode: 86730, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:11:49 @summary_handler.py:93][0m Length: 9.05940594059
+[32m[0313 20:11:50 @dqn_agent.py:206][0m episode: 87000, epsilon: 0.96337099
+[32m[0313 20:11:51 @network.py:199][0m step: 900, current TD loss: 0.0159563571215
+[32m[0313 20:11:53 @summary_handler.py:92][0m At episode: 87767, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:11:53 @summary_handler.py:93][0m Length: 10.2673267327
+[32m[0313 20:11:58 @summary_handler.py:92][0m At episode: 88763, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:11:58 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:12:02 @summary_handler.py:92][0m At episode: 89842, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:12:02 @summary_handler.py:93][0m Length: 10.6831683168
+[32m[0313 20:12:07 @summary_handler.py:92][0m At episode: 90868, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:12:07 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:12:09 @network.py:199][0m step: 1000, current TD loss: 0.0287609659135
+[32m[0313 20:12:11 @summary_handler.py:92][0m At episode: 91803, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:12:11 @summary_handler.py:93][0m Length: 9.25742574257
+[32m[0313 20:12:16 @summary_handler.py:92][0m At episode: 92865, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:12:16 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:12:21 @summary_handler.py:92][0m At episode: 93973, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:12:21 @summary_handler.py:93][0m Length: 10.9702970297
+[32m[0313 20:12:25 @summary_handler.py:92][0m At episode: 95002, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:12:25 @summary_handler.py:93][0m Length: 10.1881188119
+[32m[0313 20:12:27 @network.py:199][0m step: 1100, current TD loss: 0.0157344061881
+[32m[0313 20:12:29 @dqn_agent.py:206][0m episode: 96000, epsilon: 0.95446099
+[32m[0313 20:12:30 @summary_handler.py:92][0m At episode: 96108, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:12:30 @summary_handler.py:93][0m Length: 10.9504950495
+[32m[0313 20:12:34 @summary_handler.py:92][0m At episode: 97108, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:12:34 @summary_handler.py:93][0m Length: 9.90099009901
+[32m[0313 20:12:39 @summary_handler.py:92][0m At episode: 98252, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:12:39 @summary_handler.py:93][0m Length: 11.3267326733
+[32m[0313 20:12:44 @summary_handler.py:92][0m At episode: 99394, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:12:44 @summary_handler.py:93][0m Length: 11.3069306931
+[32m[0313 20:12:45 @network.py:199][0m step: 1200, current TD loss: 0.0289677120745
+[32m[0313 20:12:48 @summary_handler.py:92][0m At episode: 100422, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:12:48 @summary_handler.py:93][0m Length: 10.1782178218
+[32m[0313 20:12:53 @summary_handler.py:92][0m At episode: 101474, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:12:53 @summary_handler.py:93][0m Length: 10.4158415842
+[32m[0313 20:12:57 @summary_handler.py:92][0m At episode: 102527, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:12:57 @summary_handler.py:93][0m Length: 10.4257425743
+[32m[0313 20:13:02 @summary_handler.py:92][0m At episode: 103528, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:13:02 @summary_handler.py:93][0m Length: 9.91089108911
+[32m[0313 20:13:03 @network.py:199][0m step: 1300, current TD loss: 0.000520326313563
+[32m[0313 20:13:06 @summary_handler.py:92][0m At episode: 104577, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:13:06 @summary_handler.py:93][0m Length: 10.3861386139
+[32m[0313 20:13:11 @summary_handler.py:92][0m At episode: 105552, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:13:11 @summary_handler.py:93][0m Length: 9.65346534653
+[32m[0313 20:13:15 @summary_handler.py:92][0m At episode: 106624, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:13:15 @summary_handler.py:93][0m Length: 10.6138613861
+[32m[0313 20:13:20 @summary_handler.py:92][0m At episode: 107682, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:13:20 @summary_handler.py:93][0m Length: 10.4752475248
+[32m[0313 20:13:21 @network.py:199][0m step: 1400, current TD loss: 0.016149526462
+[32m[0313 20:13:25 @summary_handler.py:92][0m At episode: 108781, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:13:25 @summary_handler.py:93][0m Length: 10.8811881188
+[32m[0313 20:13:29 @summary_handler.py:92][0m At episode: 109801, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:13:29 @summary_handler.py:93][0m Length: 10.099009901
+[32m[0313 20:13:35 @summary_handler.py:92][0m At episode: 110948, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:13:35 @summary_handler.py:93][0m Length: 11.3564356436
+[32m[0313 20:13:35 @dqn_agent.py:206][0m episode: 111000, epsilon: 0.93961099
+[32m[0313 20:13:39 @summary_handler.py:92][0m At episode: 111937, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:13:39 @summary_handler.py:93][0m Length: 9.79207920792
+[32m[0313 20:13:40 @network.py:199][0m step: 1500, current TD loss: 0.0317567139864
+[32m[0313 20:13:44 @summary_handler.py:92][0m At episode: 112869, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 20:13:44 @summary_handler.py:93][0m Length: 9.22772277228
+[32m[0313 20:13:49 @summary_handler.py:92][0m At episode: 113846, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:13:49 @summary_handler.py:93][0m Length: 9.67326732673
+[32m[0313 20:13:54 @summary_handler.py:92][0m At episode: 114878, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:13:54 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:13:58 @dqn_agent.py:206][0m episode: 116000, epsilon: 0.93466099
+[32m[0313 20:13:59 @summary_handler.py:92][0m At episode: 116068, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:13:59 @summary_handler.py:93][0m Length: 11.7821782178
+[32m[0313 20:13:59 @network.py:199][0m step: 1600, current TD loss: 0.0280466061085
+[32m[0313 20:14:03 @summary_handler.py:92][0m At episode: 117131, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:14:03 @summary_handler.py:93][0m Length: 10.5247524752
+[32m[0313 20:14:08 @summary_handler.py:92][0m At episode: 118193, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:14:08 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:14:11 @dqn_agent.py:206][0m episode: 119000, epsilon: 0.93169099
+[32m[0313 20:14:12 @summary_handler.py:92][0m At episode: 119105, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:14:12 @summary_handler.py:93][0m Length: 9.0297029703
+[32m[0313 20:14:16 @summary_handler.py:92][0m At episode: 120134, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:14:16 @summary_handler.py:93][0m Length: 10.1881188119
+[32m[0313 20:14:17 @network.py:199][0m step: 1700, current TD loss: 0.0154086556286
+[32m[0313 20:14:21 @summary_handler.py:92][0m At episode: 121137, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:14:21 @summary_handler.py:93][0m Length: 9.93069306931
+[32m[0313 20:14:26 @summary_handler.py:92][0m At episode: 122271, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:14:26 @summary_handler.py:93][0m Length: 11.2277227723
+[32m[0313 20:14:30 @summary_handler.py:92][0m At episode: 123394, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:14:30 @summary_handler.py:93][0m Length: 11.1188118812
+[32m[0313 20:14:35 @summary_handler.py:92][0m At episode: 124494, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:14:35 @summary_handler.py:93][0m Length: 10.8910891089
+[32m[0313 20:14:35 @network.py:199][0m step: 1800, current TD loss: 0.0299876146019
+[32m[0313 20:14:39 @summary_handler.py:92][0m At episode: 125453, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:14:39 @summary_handler.py:93][0m Length: 9.49504950495
+[32m[0313 20:14:44 @summary_handler.py:92][0m At episode: 126396, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:14:44 @summary_handler.py:93][0m Length: 9.33663366337
+[32m[0313 20:14:46 @dqn_agent.py:206][0m episode: 127000, epsilon: 0.92377099
+[32m[0313 20:14:48 @summary_handler.py:92][0m At episode: 127536, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:14:48 @summary_handler.py:93][0m Length: 11.2871287129
+[32m[0313 20:14:53 @summary_handler.py:92][0m At episode: 128562, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:14:53 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:14:53 @network.py:199][0m step: 1900, current TD loss: 0.0320449545979
+[32m[0313 20:14:57 @summary_handler.py:92][0m At episode: 129555, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:14:57 @summary_handler.py:93][0m Length: 9.83168316832
+[32m[0313 20:15:02 @summary_handler.py:92][0m At episode: 130598, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:15:02 @summary_handler.py:93][0m Length: 10.3267326733
+[32m[0313 20:15:04 @dqn_agent.py:206][0m episode: 131000, epsilon: 0.91981099
+[32m[0313 20:15:06 @summary_handler.py:92][0m At episode: 131616, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:15:06 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:15:11 @summary_handler.py:92][0m At episode: 132649, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:15:11 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 20:15:11 @network.py:199][0m step: 2000, current TD loss: 0.000422519806307
+[32m[0313 20:15:16 @summary_handler.py:92][0m At episode: 133762, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:15:16 @summary_handler.py:93][0m Length: 11.0198019802
+[32m[0313 20:15:20 @summary_handler.py:92][0m At episode: 134706, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:15:20 @summary_handler.py:93][0m Length: 9.34653465347
+[32m[0313 20:15:25 @summary_handler.py:92][0m At episode: 135933, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:15:25 @summary_handler.py:93][0m Length: 12.1485148515
+[32m[0313 20:15:29 @network.py:199][0m step: 2100, current TD loss: 0.0292110964656
+[32m[0313 20:15:30 @summary_handler.py:92][0m At episode: 137105, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:15:30 @summary_handler.py:93][0m Length: 11.603960396
+[32m[0313 20:15:34 @summary_handler.py:92][0m At episode: 138064, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:15:34 @summary_handler.py:93][0m Length: 9.49504950495
+[32m[0313 20:15:38 @summary_handler.py:92][0m At episode: 139088, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:15:38 @summary_handler.py:93][0m Length: 10.1386138614
+[32m[0313 20:15:43 @summary_handler.py:92][0m At episode: 140176, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:15:43 @summary_handler.py:93][0m Length: 10.7722772277
+[32m[0313 20:15:47 @dqn_agent.py:206][0m episode: 141000, epsilon: 0.90991099
+[32m[0313 20:15:47 @network.py:199][0m step: 2200, current TD loss: 0.0304068438709
+[32m[0313 20:15:48 @summary_handler.py:92][0m At episode: 141178, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:15:48 @summary_handler.py:93][0m Length: 9.92079207921
+[32m[0313 20:15:52 @summary_handler.py:92][0m At episode: 142158, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:15:52 @summary_handler.py:93][0m Length: 9.70297029703
+[32m[0313 20:15:57 @summary_handler.py:92][0m At episode: 143219, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:15:57 @summary_handler.py:93][0m Length: 10.504950495
+[32m[0313 20:16:01 @summary_handler.py:92][0m At episode: 144270, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:16:01 @summary_handler.py:93][0m Length: 10.4059405941
+[32m[0313 20:16:05 @network.py:199][0m step: 2300, current TD loss: 0.0151643762365
+[32m[0313 20:16:06 @summary_handler.py:92][0m At episode: 145329, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:16:06 @summary_handler.py:93][0m Length: 10.4851485149
+[32m[0313 20:16:09 @dqn_agent.py:206][0m episode: 146000, epsilon: 0.90496099
+[32m[0313 20:16:10 @summary_handler.py:92][0m At episode: 146330, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:16:10 @summary_handler.py:93][0m Length: 9.91089108911
+[32m[0313 20:16:15 @summary_handler.py:92][0m At episode: 147412, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:16:15 @summary_handler.py:93][0m Length: 10.7128712871
+[32m[0313 20:16:19 @summary_handler.py:92][0m At episode: 148573, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:16:19 @summary_handler.py:93][0m Length: 11.495049505
+[32m[0313 20:16:23 @network.py:199][0m step: 2400, current TD loss: 0.03072790429
+[32m[0313 20:16:24 @summary_handler.py:92][0m At episode: 149612, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:16:24 @summary_handler.py:93][0m Length: 10.2871287129
+[32m[0313 20:16:26 @dqn_agent.py:206][0m episode: 150000, epsilon: 0.90100099
+[32m[0313 20:16:28 @summary_handler.py:92][0m At episode: 150618, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:16:28 @summary_handler.py:93][0m Length: 9.9603960396
+[32m[0313 20:16:33 @summary_handler.py:92][0m At episode: 151703, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:16:33 @summary_handler.py:93][0m Length: 10.7425742574
+[32m[0313 20:16:37 @summary_handler.py:92][0m At episode: 152695, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:16:37 @summary_handler.py:93][0m Length: 9.82178217822
+[32m[0313 20:16:41 @network.py:199][0m step: 2500, current TD loss: 0.0286608692259
+[32m[0313 20:16:41 @dqn_agent.py:223][0m At time step 2500, the target_network is updated
+[32m[0313 20:16:42 @summary_handler.py:92][0m At episode: 153725, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:16:42 @summary_handler.py:93][0m Length: 10.198019802
+[32m[0313 20:16:46 @summary_handler.py:92][0m At episode: 154670, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:16:46 @summary_handler.py:93][0m Length: 9.35643564356
+[32m[0313 20:16:51 @summary_handler.py:92][0m At episode: 155691, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:16:51 @summary_handler.py:93][0m Length: 10.1089108911
+[32m[0313 20:16:55 @summary_handler.py:92][0m At episode: 156803, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:16:55 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:16:59 @network.py:199][0m step: 2600, current TD loss: 0.0146941132843
+[32m[0313 20:17:00 @summary_handler.py:92][0m At episode: 157896, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:17:00 @summary_handler.py:93][0m Length: 10.8217821782
+[32m[0313 20:17:05 @summary_handler.py:92][0m At episode: 158964, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:17:05 @summary_handler.py:93][0m Length: 10.5742574257
+[32m[0313 20:17:09 @summary_handler.py:92][0m At episode: 160042, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:17:09 @summary_handler.py:93][0m Length: 10.6732673267
+[32m[0313 20:17:14 @summary_handler.py:92][0m At episode: 161026, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:17:14 @summary_handler.py:93][0m Length: 9.74257425743
+[32m[0313 20:17:18 @network.py:199][0m step: 2700, current TD loss: 0.0443289726973
+[32m[0313 20:17:19 @summary_handler.py:92][0m At episode: 162309, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:17:19 @summary_handler.py:93][0m Length: 12.702970297
+[32m[0313 20:17:24 @summary_handler.py:92][0m At episode: 163335, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:17:24 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:17:28 @summary_handler.py:92][0m At episode: 164447, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:17:28 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:17:33 @summary_handler.py:92][0m At episode: 165430, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:17:33 @summary_handler.py:93][0m Length: 9.73267326733
+[32m[0313 20:17:36 @network.py:199][0m step: 2800, current TD loss: 0.000568102579564
+[32m[0313 20:17:38 @summary_handler.py:92][0m At episode: 166576, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:17:38 @summary_handler.py:93][0m Length: 11.3465346535
+[32m[0313 20:17:42 @summary_handler.py:92][0m At episode: 167627, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:17:42 @summary_handler.py:93][0m Length: 10.4059405941
+[32m[0313 20:17:47 @summary_handler.py:92][0m At episode: 168549, Reward: 0.0990099009901 (over 100 episodes)
+[32m[0313 20:17:47 @summary_handler.py:93][0m Length: 9.12871287129
+[32m[0313 20:17:51 @summary_handler.py:92][0m At episode: 169512, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:17:51 @summary_handler.py:93][0m Length: 9.53465346535
+[32m[0313 20:17:54 @network.py:199][0m step: 2900, current TD loss: 0.0451040491462
+[32m[0313 20:17:56 @summary_handler.py:92][0m At episode: 170562, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:17:56 @summary_handler.py:93][0m Length: 10.396039604
+[32m[0313 20:18:01 @summary_handler.py:92][0m At episode: 171749, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:18:01 @summary_handler.py:93][0m Length: 11.7524752475
+[32m[0313 20:18:05 @summary_handler.py:92][0m At episode: 172756, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:18:05 @summary_handler.py:93][0m Length: 9.9702970297
+[32m[0313 20:18:10 @summary_handler.py:92][0m At episode: 173847, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:18:10 @summary_handler.py:93][0m Length: 10.801980198
+[32m[0313 20:18:12 @network.py:199][0m step: 3000, current TD loss: 0.0150183681399
+[32m[0313 20:18:14 @summary_handler.py:92][0m At episode: 174846, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:18:14 @summary_handler.py:93][0m Length: 9.89108910891
+[32m[0313 20:18:19 @summary_handler.py:92][0m At episode: 176025, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:18:19 @summary_handler.py:93][0m Length: 11.6732673267
+[32m[0313 20:18:24 @summary_handler.py:92][0m At episode: 177004, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:18:24 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:18:28 @summary_handler.py:92][0m At episode: 177951, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:18:28 @summary_handler.py:93][0m Length: 9.37623762376
+[32m[0313 20:18:31 @network.py:199][0m step: 3100, current TD loss: 0.0150329433382
+[32m[0313 20:18:33 @summary_handler.py:92][0m At episode: 178977, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:18:33 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:18:37 @summary_handler.py:92][0m At episode: 180079, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:18:37 @summary_handler.py:93][0m Length: 10.9108910891
+[32m[0313 20:18:42 @summary_handler.py:92][0m At episode: 181055, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:18:42 @summary_handler.py:93][0m Length: 9.66336633663
+[32m[0313 20:18:46 @summary_handler.py:92][0m At episode: 182098, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:18:46 @summary_handler.py:93][0m Length: 10.3267326733
+[32m[0313 20:18:49 @network.py:199][0m step: 3200, current TD loss: 0.0432963185012
+[32m[0313 20:18:51 @summary_handler.py:92][0m At episode: 183094, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:18:51 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:18:55 @summary_handler.py:92][0m At episode: 184097, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:18:55 @summary_handler.py:93][0m Length: 9.93069306931
+[32m[0313 20:18:59 @dqn_agent.py:206][0m episode: 185000, epsilon: 0.86635099
+[32m[0313 20:19:00 @summary_handler.py:92][0m At episode: 185129, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:19:00 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:19:05 @summary_handler.py:92][0m At episode: 186174, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:19:05 @summary_handler.py:93][0m Length: 10.3465346535
+[32m[0313 20:19:07 @network.py:199][0m step: 3300, current TD loss: 0.0440716817975
+[32m[0313 20:19:09 @summary_handler.py:92][0m At episode: 187185, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:19:09 @summary_handler.py:93][0m Length: 10.0099009901
+[32m[0313 20:19:13 @dqn_agent.py:206][0m episode: 188000, epsilon: 0.86338099
+[32m[0313 20:19:14 @summary_handler.py:92][0m At episode: 188142, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:19:14 @summary_handler.py:93][0m Length: 9.47524752475
+[32m[0313 20:19:18 @summary_handler.py:92][0m At episode: 189152, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:19:18 @summary_handler.py:93][0m Length: 10.0
+[32m[0313 20:19:23 @summary_handler.py:92][0m At episode: 190167, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:19:23 @summary_handler.py:93][0m Length: 10.0495049505
+[32m[0313 20:19:25 @network.py:199][0m step: 3400, current TD loss: 0.00143828964792
+[32m[0313 20:19:27 @summary_handler.py:92][0m At episode: 191300, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:19:27 @summary_handler.py:93][0m Length: 11.2178217822
+[32m[0313 20:19:32 @summary_handler.py:92][0m At episode: 192365, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:19:32 @summary_handler.py:93][0m Length: 10.5445544554
+[32m[0313 20:19:37 @summary_handler.py:92][0m At episode: 193556, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:19:37 @summary_handler.py:93][0m Length: 11.7920792079
+[32m[0313 20:19:41 @summary_handler.py:92][0m At episode: 194512, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:19:41 @summary_handler.py:93][0m Length: 9.46534653465
+[32m[0313 20:19:43 @network.py:199][0m step: 3500, current TD loss: 0.0298669077456
+[32m[0313 20:19:46 @summary_handler.py:92][0m At episode: 195560, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:19:46 @summary_handler.py:93][0m Length: 10.3762376238
+[32m[0313 20:19:51 @summary_handler.py:92][0m At episode: 196618, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:19:51 @summary_handler.py:93][0m Length: 10.4752475248
+[32m[0313 20:19:55 @summary_handler.py:92][0m At episode: 197660, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:19:55 @summary_handler.py:93][0m Length: 10.3168316832
+[32m[0313 20:20:00 @summary_handler.py:92][0m At episode: 198741, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:20:00 @summary_handler.py:93][0m Length: 10.702970297
+[32m[0313 20:20:02 @network.py:199][0m step: 3600, current TD loss: 0.0286262407899
+[32m[0313 20:20:05 @summary_handler.py:92][0m At episode: 199835, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:20:05 @summary_handler.py:93][0m Length: 10.8316831683
+[32m[0313 20:20:09 @summary_handler.py:92][0m At episode: 200887, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:20:09 @summary_handler.py:93][0m Length: 10.4158415842
+[32m[0313 20:20:14 @summary_handler.py:92][0m At episode: 201914, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:20:14 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:20:14 @dqn_agent.py:206][0m episode: 202000, epsilon: 0.84952099
+[32m[0313 20:20:18 @summary_handler.py:92][0m At episode: 202908, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:20:18 @summary_handler.py:93][0m Length: 9.84158415842
+[32m[0313 20:20:20 @network.py:199][0m step: 3700, current TD loss: 0.000441855983809
+[32m[0313 20:20:23 @summary_handler.py:92][0m At episode: 204051, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:20:23 @summary_handler.py:93][0m Length: 11.3168316832
+[32m[0313 20:20:28 @summary_handler.py:92][0m At episode: 205147, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:20:28 @summary_handler.py:93][0m Length: 10.8514851485
+[32m[0313 20:20:32 @dqn_agent.py:206][0m episode: 206000, epsilon: 0.84556099
+[32m[0313 20:20:32 @summary_handler.py:92][0m At episode: 206065, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:20:32 @summary_handler.py:93][0m Length: 9.08910891089
+[32m[0313 20:20:37 @summary_handler.py:92][0m At episode: 207252, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:20:37 @summary_handler.py:93][0m Length: 11.7524752475
+[32m[0313 20:20:39 @network.py:199][0m step: 3800, current TD loss: 0.0447508320212
+[32m[0313 20:20:42 @summary_handler.py:92][0m At episode: 208367, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:20:42 @summary_handler.py:93][0m Length: 11.0396039604
+[32m[0313 20:20:47 @summary_handler.py:92][0m At episode: 209485, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:20:47 @summary_handler.py:93][0m Length: 11.0693069307
+[32m[0313 20:20:52 @summary_handler.py:92][0m At episode: 210629, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:20:52 @summary_handler.py:93][0m Length: 11.3267326733
+[32m[0313 20:20:57 @summary_handler.py:92][0m At episode: 211844, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:20:57 @summary_handler.py:93][0m Length: 12.0297029703
+[32m[0313 20:20:58 @dqn_agent.py:206][0m episode: 212000, epsilon: 0.83962099
+[32m[0313 20:20:58 @network.py:199][0m step: 3900, current TD loss: 0.0159324575216
+[32m[0313 20:21:01 @summary_handler.py:92][0m At episode: 212895, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:21:01 @summary_handler.py:93][0m Length: 10.4059405941
+[32m[0313 20:21:06 @summary_handler.py:92][0m At episode: 214019, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:21:06 @summary_handler.py:93][0m Length: 11.1287128713
+[32m[0313 20:21:11 @summary_handler.py:92][0m At episode: 215053, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:21:11 @summary_handler.py:93][0m Length: 10.2376237624
+[32m[0313 20:21:16 @summary_handler.py:92][0m At episode: 216038, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:21:16 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:21:17 @network.py:199][0m step: 4000, current TD loss: 0.0446910634637
+[32m[0313 20:21:21 @summary_handler.py:92][0m At episode: 217124, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:21:21 @summary_handler.py:93][0m Length: 10.7524752475
+[32m[0313 20:21:25 @summary_handler.py:92][0m At episode: 218020, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:21:25 @summary_handler.py:93][0m Length: 8.87128712871
+[32m[0313 20:21:30 @summary_handler.py:92][0m At episode: 219112, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:21:30 @summary_handler.py:93][0m Length: 10.8118811881
+[32m[0313 20:21:35 @summary_handler.py:92][0m At episode: 220157, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:21:35 @summary_handler.py:93][0m Length: 10.3465346535
+[32m[0313 20:21:36 @network.py:199][0m step: 4100, current TD loss: 0.0152562242001
+[32m[0313 20:21:40 @summary_handler.py:92][0m At episode: 221258, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:21:40 @summary_handler.py:93][0m Length: 10.900990099
+[32m[0313 20:21:44 @summary_handler.py:92][0m At episode: 222352, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:21:44 @summary_handler.py:93][0m Length: 10.8316831683
+[32m[0313 20:21:49 @summary_handler.py:92][0m At episode: 223479, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:21:49 @summary_handler.py:93][0m Length: 11.1584158416
+[32m[0313 20:21:54 @summary_handler.py:92][0m At episode: 224598, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:21:54 @summary_handler.py:93][0m Length: 11.0792079208
+[32m[0313 20:21:55 @network.py:199][0m step: 4200, current TD loss: 0.0163932349533
+[32m[0313 20:21:59 @summary_handler.py:92][0m At episode: 225656, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:21:59 @summary_handler.py:93][0m Length: 10.4752475248
+[32m[0313 20:22:04 @summary_handler.py:92][0m At episode: 226754, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:22:04 @summary_handler.py:93][0m Length: 10.8712871287
+[32m[0313 20:22:09 @summary_handler.py:92][0m At episode: 227866, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:22:09 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:22:13 @summary_handler.py:92][0m At episode: 228857, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:22:13 @summary_handler.py:93][0m Length: 9.81188118812
+[32m[0313 20:22:14 @network.py:199][0m step: 4300, current TD loss: 0.0286867320538
+[32m[0313 20:22:18 @summary_handler.py:92][0m At episode: 229827, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:22:18 @summary_handler.py:93][0m Length: 9.60396039604
+[32m[0313 20:22:22 @summary_handler.py:92][0m At episode: 230792, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:22:22 @summary_handler.py:93][0m Length: 9.55445544554
+[32m[0313 20:22:27 @summary_handler.py:92][0m At episode: 231788, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:22:27 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:22:32 @summary_handler.py:92][0m At episode: 232789, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:22:32 @summary_handler.py:93][0m Length: 9.91089108911
+[32m[0313 20:22:32 @network.py:199][0m step: 4400, current TD loss: 0.01504530292
+[32m[0313 20:22:36 @summary_handler.py:92][0m At episode: 233779, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:22:36 @summary_handler.py:93][0m Length: 9.80198019802
+[32m[0313 20:22:41 @summary_handler.py:92][0m At episode: 234937, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:22:41 @summary_handler.py:93][0m Length: 11.4653465347
+[32m[0313 20:22:46 @summary_handler.py:92][0m At episode: 235926, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:22:46 @summary_handler.py:93][0m Length: 9.79207920792
+[32m[0313 20:22:50 @summary_handler.py:92][0m At episode: 236880, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:22:50 @summary_handler.py:93][0m Length: 9.44554455446
+[32m[0313 20:22:50 @network.py:199][0m step: 4500, current TD loss: 0.0303274095058
+[32m[0313 20:22:54 @summary_handler.py:92][0m At episode: 237787, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:22:54 @summary_handler.py:93][0m Length: 8.9801980198
+[32m[0313 20:22:59 @summary_handler.py:92][0m At episode: 238820, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:22:59 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 20:23:04 @summary_handler.py:92][0m At episode: 239867, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:23:04 @summary_handler.py:93][0m Length: 10.3663366337
+[32m[0313 20:23:08 @network.py:199][0m step: 4600, current TD loss: 0.0301490984857
+[32m[0313 20:23:08 @summary_handler.py:92][0m At episode: 240877, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:23:08 @summary_handler.py:93][0m Length: 10.0
+[32m[0313 20:23:13 @summary_handler.py:92][0m At episode: 242097, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:23:13 @summary_handler.py:93][0m Length: 12.0792079208
+[32m[0313 20:23:19 @summary_handler.py:92][0m At episode: 243327, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:23:19 @summary_handler.py:93][0m Length: 12.1782178218
+[32m[0313 20:23:23 @summary_handler.py:92][0m At episode: 244350, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:23:23 @summary_handler.py:93][0m Length: 10.1287128713
+[32m[0313 20:23:26 @dqn_agent.py:206][0m episode: 245000, epsilon: 0.80695099
+[32m[0313 20:23:28 @network.py:199][0m step: 4700, current TD loss: 0.0154807372019
+[32m[0313 20:23:28 @summary_handler.py:92][0m At episode: 245440, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:23:28 @summary_handler.py:93][0m Length: 10.7920792079
+[32m[0313 20:23:32 @summary_handler.py:92][0m At episode: 246430, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:23:32 @summary_handler.py:93][0m Length: 9.80198019802
+[32m[0313 20:23:35 @dqn_agent.py:206][0m episode: 247000, epsilon: 0.80497099
+[32m[0313 20:23:37 @summary_handler.py:92][0m At episode: 247451, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:23:37 @summary_handler.py:93][0m Length: 10.1089108911
+[32m[0313 20:23:42 @summary_handler.py:92][0m At episode: 248508, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:23:42 @summary_handler.py:93][0m Length: 10.4653465347
+[32m[0313 20:23:46 @network.py:199][0m step: 4800, current TD loss: 0.0159274376929
+[32m[0313 20:23:46 @summary_handler.py:92][0m At episode: 249494, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:23:46 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 20:23:51 @summary_handler.py:92][0m At episode: 250632, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:23:51 @summary_handler.py:93][0m Length: 11.2673267327
+[32m[0313 20:23:56 @summary_handler.py:92][0m At episode: 251628, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:23:56 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:24:01 @summary_handler.py:92][0m At episode: 252889, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:24:01 @summary_handler.py:93][0m Length: 12.4851485149
+[32m[0313 20:24:05 @network.py:199][0m step: 4900, current TD loss: 0.0310669075698
+[32m[0313 20:24:06 @summary_handler.py:92][0m At episode: 253915, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:24:06 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:24:11 @summary_handler.py:92][0m At episode: 255101, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:24:11 @summary_handler.py:93][0m Length: 11.7425742574
+[32m[0313 20:24:15 @summary_handler.py:92][0m At episode: 256133, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:24:15 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:24:19 @summary_handler.py:92][0m At episode: 257081, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:24:19 @summary_handler.py:93][0m Length: 9.38613861386
+[32m[0313 20:24:23 @network.py:199][0m step: 5000, current TD loss: 0.0157688353211
+[32m[0313 20:24:24 @dqn_agent.py:223][0m At time step 5000, the target_network is updated
+[32m[0313 20:24:24 @summary_handler.py:92][0m At episode: 258123, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:24:24 @summary_handler.py:93][0m Length: 10.3168316832
+[32m[0313 20:24:28 @summary_handler.py:92][0m At episode: 259059, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:24:28 @summary_handler.py:93][0m Length: 9.26732673267
+[32m[0313 20:24:33 @summary_handler.py:92][0m At episode: 260090, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:24:33 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:24:38 @summary_handler.py:92][0m At episode: 261075, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:24:38 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:24:41 @network.py:199][0m step: 5100, current TD loss: 0.0438895896077
+[32m[0313 20:24:42 @summary_handler.py:92][0m At episode: 262164, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:24:42 @summary_handler.py:93][0m Length: 10.7821782178
+[32m[0313 20:24:47 @summary_handler.py:92][0m At episode: 263170, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:24:47 @summary_handler.py:93][0m Length: 9.9603960396
+[32m[0313 20:24:52 @summary_handler.py:92][0m At episode: 264360, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:24:52 @summary_handler.py:93][0m Length: 11.7821782178
+[32m[0313 20:24:57 @summary_handler.py:92][0m At episode: 265422, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:24:57 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:25:00 @network.py:199][0m step: 5200, current TD loss: 0.000870743300766
+[32m[0313 20:25:01 @summary_handler.py:92][0m At episode: 266454, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:25:01 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:25:06 @summary_handler.py:92][0m At episode: 267450, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:25:06 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:25:08 @dqn_agent.py:206][0m episode: 268000, epsilon: 0.78418099
+[32m[0313 20:25:11 @summary_handler.py:92][0m At episode: 268533, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:25:11 @summary_handler.py:93][0m Length: 10.7227722772
+[32m[0313 20:25:15 @summary_handler.py:92][0m At episode: 269607, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:25:15 @summary_handler.py:93][0m Length: 10.6336633663
+[32m[0313 20:25:19 @network.py:199][0m step: 5300, current TD loss: 0.0439773909748
+[32m[0313 20:25:20 @summary_handler.py:92][0m At episode: 270819, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:25:20 @summary_handler.py:93][0m Length: 12.0
+[32m[0313 20:25:25 @summary_handler.py:92][0m At episode: 271732, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:25:25 @summary_handler.py:93][0m Length: 9.0396039604
+[32m[0313 20:25:29 @summary_handler.py:92][0m At episode: 272750, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:25:29 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:25:34 @summary_handler.py:92][0m At episode: 273861, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:25:34 @summary_handler.py:93][0m Length: 11.0
+[32m[0313 20:25:37 @network.py:199][0m step: 5400, current TD loss: 0.0156498402357
+[32m[0313 20:25:39 @summary_handler.py:92][0m At episode: 274983, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:25:39 @summary_handler.py:93][0m Length: 11.1089108911
+[32m[0313 20:25:44 @summary_handler.py:92][0m At episode: 276052, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:25:44 @summary_handler.py:93][0m Length: 10.5841584158
+[32m[0313 20:25:48 @summary_handler.py:92][0m At episode: 277070, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:25:48 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:25:53 @summary_handler.py:92][0m At episode: 278224, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:25:53 @summary_handler.py:93][0m Length: 11.4257425743
+[32m[0313 20:25:56 @network.py:199][0m step: 5500, current TD loss: 0.0145567990839
+[32m[0313 20:25:58 @summary_handler.py:92][0m At episode: 279300, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:25:58 @summary_handler.py:93][0m Length: 10.6534653465
+[32m[0313 20:26:03 @summary_handler.py:92][0m At episode: 280332, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:26:03 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:26:07 @summary_handler.py:92][0m At episode: 281274, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:26:07 @summary_handler.py:93][0m Length: 9.32673267327
+[32m[0313 20:26:12 @summary_handler.py:92][0m At episode: 282271, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:26:12 @summary_handler.py:93][0m Length: 9.87128712871
+[32m[0313 20:26:14 @network.py:199][0m step: 5600, current TD loss: 0.0147122815251
+[32m[0313 20:26:16 @summary_handler.py:92][0m At episode: 283275, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:26:16 @summary_handler.py:93][0m Length: 9.94059405941
+[32m[0313 20:26:21 @summary_handler.py:92][0m At episode: 284387, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:26:21 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:26:26 @summary_handler.py:92][0m At episode: 285539, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:26:26 @summary_handler.py:93][0m Length: 11.4059405941
+[32m[0313 20:26:31 @summary_handler.py:92][0m At episode: 286631, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:26:31 @summary_handler.py:93][0m Length: 10.8118811881
+[32m[0313 20:26:33 @network.py:199][0m step: 5700, current TD loss: 0.013766406104
+[32m[0313 20:26:36 @summary_handler.py:92][0m At episode: 287751, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:26:36 @summary_handler.py:93][0m Length: 11.0891089109
+[32m[0313 20:26:40 @summary_handler.py:92][0m At episode: 288776, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:26:40 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:26:45 @summary_handler.py:92][0m At episode: 289843, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:26:45 @summary_handler.py:93][0m Length: 10.5643564356
+[32m[0313 20:26:46 @dqn_agent.py:206][0m episode: 290000, epsilon: 0.76240099
+[32m[0313 20:26:49 @summary_handler.py:92][0m At episode: 290822, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:26:49 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:26:51 @network.py:199][0m step: 5800, current TD loss: 0.000671593239531
+[32m[0313 20:26:54 @summary_handler.py:92][0m At episode: 291762, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:26:54 @summary_handler.py:93][0m Length: 9.30693069307
+[32m[0313 20:26:58 @summary_handler.py:92][0m At episode: 292793, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:26:58 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:27:03 @summary_handler.py:92][0m At episode: 293885, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:27:03 @summary_handler.py:93][0m Length: 10.8118811881
+[32m[0313 20:27:09 @summary_handler.py:92][0m At episode: 294959, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:27:09 @summary_handler.py:93][0m Length: 10.6336633663
+[32m[0313 20:27:10 @network.py:199][0m step: 5900, current TD loss: 0.0288179647177
+[32m[0313 20:27:13 @summary_handler.py:92][0m At episode: 295886, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:27:13 @summary_handler.py:93][0m Length: 9.17821782178
+[32m[0313 20:27:18 @summary_handler.py:92][0m At episode: 296887, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:27:18 @summary_handler.py:93][0m Length: 9.91089108911
+[32m[0313 20:27:23 @summary_handler.py:92][0m At episode: 297878, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:27:23 @summary_handler.py:93][0m Length: 9.81188118812
+[32m[0313 20:27:28 @summary_handler.py:92][0m At episode: 298901, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:27:28 @summary_handler.py:93][0m Length: 10.1287128713
+[32m[0313 20:27:30 @network.py:199][0m step: 6000, current TD loss: 0.0307144187391
+[32m[0313 20:27:32 @summary_handler.py:92][0m At episode: 299928, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:27:32 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:27:37 @summary_handler.py:92][0m At episode: 300908, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:27:37 @summary_handler.py:93][0m Length: 9.70297029703
+[32m[0313 20:27:43 @summary_handler.py:92][0m At episode: 301940, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:27:43 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:27:48 @summary_handler.py:92][0m At episode: 303097, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:27:48 @summary_handler.py:93][0m Length: 11.4554455446
+[32m[0313 20:27:50 @network.py:199][0m step: 6100, current TD loss: 0.0292845983058
+[32m[0313 20:27:53 @summary_handler.py:92][0m At episode: 304263, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:27:53 @summary_handler.py:93][0m Length: 11.5445544554
+[32m[0313 20:27:57 @summary_handler.py:92][0m At episode: 305235, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:27:57 @summary_handler.py:93][0m Length: 9.62376237624
+[32m[0313 20:28:02 @summary_handler.py:92][0m At episode: 306312, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:28:02 @summary_handler.py:93][0m Length: 10.6633663366
+[32m[0313 20:28:07 @summary_handler.py:92][0m At episode: 307343, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:28:07 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:28:08 @network.py:199][0m step: 6200, current TD loss: 0.000806307012681
+[32m[0313 20:28:12 @summary_handler.py:92][0m At episode: 308363, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:28:12 @summary_handler.py:93][0m Length: 10.099009901
+[32m[0313 20:28:16 @summary_handler.py:92][0m At episode: 309467, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:28:16 @summary_handler.py:93][0m Length: 10.9306930693
+[32m[0313 20:28:21 @summary_handler.py:92][0m At episode: 310383, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:28:21 @summary_handler.py:93][0m Length: 9.06930693069
+[32m[0313 20:28:26 @summary_handler.py:92][0m At episode: 311654, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:28:26 @summary_handler.py:93][0m Length: 12.5841584158
+[32m[0313 20:28:28 @network.py:199][0m step: 6300, current TD loss: 0.000473342719488
+[32m[0313 20:28:31 @summary_handler.py:92][0m At episode: 312698, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:28:31 @summary_handler.py:93][0m Length: 10.3366336634
+[32m[0313 20:28:33 @dqn_agent.py:206][0m episode: 313000, epsilon: 0.73963099
+[32m[0313 20:28:36 @summary_handler.py:92][0m At episode: 313677, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:28:36 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:28:40 @summary_handler.py:92][0m At episode: 314707, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:28:40 @summary_handler.py:93][0m Length: 10.198019802
+[32m[0313 20:28:45 @summary_handler.py:92][0m At episode: 315612, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:28:45 @summary_handler.py:93][0m Length: 8.9603960396
+[32m[0313 20:28:46 @network.py:199][0m step: 6400, current TD loss: 0.00123678857926
+[32m[0313 20:28:50 @summary_handler.py:92][0m At episode: 316646, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:28:50 @summary_handler.py:93][0m Length: 10.2376237624
+[32m[0313 20:28:54 @summary_handler.py:92][0m At episode: 317672, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:28:54 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:28:59 @summary_handler.py:92][0m At episode: 318685, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:28:59 @summary_handler.py:93][0m Length: 10.0297029703
+[32m[0313 20:29:04 @summary_handler.py:92][0m At episode: 319830, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:29:04 @summary_handler.py:93][0m Length: 11.3366336634
+[32m[0313 20:29:05 @network.py:199][0m step: 6500, current TD loss: 0.000711827829946
+[32m[0313 20:29:09 @summary_handler.py:92][0m At episode: 320848, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:29:09 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:29:14 @summary_handler.py:92][0m At episode: 321769, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:29:14 @summary_handler.py:93][0m Length: 9.11881188119
+[32m[0313 20:29:19 @summary_handler.py:92][0m At episode: 322825, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:29:19 @summary_handler.py:93][0m Length: 10.4554455446
+[32m[0313 20:29:24 @summary_handler.py:92][0m At episode: 323956, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:29:24 @summary_handler.py:93][0m Length: 11.198019802
+[32m[0313 20:29:24 @dqn_agent.py:206][0m episode: 324000, epsilon: 0.72874099
+[32m[0313 20:29:25 @network.py:199][0m step: 6600, current TD loss: 0.0153737273067
+[32m[0313 20:29:29 @summary_handler.py:92][0m At episode: 324941, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:29:29 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:29:33 @summary_handler.py:92][0m At episode: 325924, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:29:33 @summary_handler.py:93][0m Length: 9.73267326733
+[32m[0313 20:29:38 @summary_handler.py:92][0m At episode: 326933, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:29:38 @summary_handler.py:93][0m Length: 9.9900990099
+[32m[0313 20:29:43 @summary_handler.py:92][0m At episode: 327874, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:29:43 @summary_handler.py:93][0m Length: 9.31683168317
+[32m[0313 20:29:44 @network.py:199][0m step: 6700, current TD loss: 0.0157372429967
+[32m[0313 20:29:49 @summary_handler.py:92][0m At episode: 329043, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:29:49 @summary_handler.py:93][0m Length: 11.5742574257
+[32m[0313 20:29:53 @dqn_agent.py:206][0m episode: 330000, epsilon: 0.72280099
+[32m[0313 20:29:54 @summary_handler.py:92][0m At episode: 330151, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:29:54 @summary_handler.py:93][0m Length: 10.9702970297
+[32m[0313 20:29:59 @summary_handler.py:92][0m At episode: 331386, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:29:59 @summary_handler.py:93][0m Length: 12.2277227723
+[32m[0313 20:30:04 @summary_handler.py:92][0m At episode: 332428, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:30:04 @summary_handler.py:93][0m Length: 10.3168316832
+[32m[0313 20:30:05 @network.py:199][0m step: 6800, current TD loss: 0.0147484019399
+[32m[0313 20:30:09 @summary_handler.py:92][0m At episode: 333338, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:30:09 @summary_handler.py:93][0m Length: 9.0099009901
+[32m[0313 20:30:13 @summary_handler.py:92][0m At episode: 334324, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:30:13 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 20:30:18 @summary_handler.py:92][0m At episode: 335427, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:30:18 @summary_handler.py:93][0m Length: 10.9207920792
+[32m[0313 20:30:23 @summary_handler.py:92][0m At episode: 336412, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:30:23 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:30:24 @network.py:199][0m step: 6900, current TD loss: 0.0161493178457
+[32m[0313 20:30:28 @summary_handler.py:92][0m At episode: 337560, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:30:28 @summary_handler.py:93][0m Length: 11.3663366337
+[32m[0313 20:30:33 @summary_handler.py:92][0m At episode: 338480, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:30:33 @summary_handler.py:93][0m Length: 9.10891089109
+[32m[0313 20:30:37 @summary_handler.py:92][0m At episode: 339337, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:30:37 @summary_handler.py:93][0m Length: 8.48514851485
+[32m[0313 20:30:42 @summary_handler.py:92][0m At episode: 340150, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 20:30:42 @summary_handler.py:93][0m Length: 8.0495049505
+[32m[0313 20:30:42 @network.py:199][0m step: 7000, current TD loss: 0.000656255695503
+[32m[0313 20:30:46 @summary_handler.py:92][0m At episode: 341158, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:30:46 @summary_handler.py:93][0m Length: 9.9801980198
+[32m[0313 20:30:51 @summary_handler.py:92][0m At episode: 342148, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:30:51 @summary_handler.py:93][0m Length: 9.80198019802
+[32m[0313 20:30:56 @summary_handler.py:92][0m At episode: 343278, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:30:56 @summary_handler.py:93][0m Length: 11.1881188119
+[32m[0313 20:31:01 @network.py:199][0m step: 7100, current TD loss: 0.0289135538042
+[32m[0313 20:31:01 @summary_handler.py:92][0m At episode: 344342, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:31:01 @summary_handler.py:93][0m Length: 10.5346534653
+[32m[0313 20:31:07 @summary_handler.py:92][0m At episode: 345504, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:31:07 @summary_handler.py:93][0m Length: 11.504950495
+[32m[0313 20:31:11 @summary_handler.py:92][0m At episode: 346472, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:31:11 @summary_handler.py:93][0m Length: 9.58415841584
+[32m[0313 20:31:17 @summary_handler.py:92][0m At episode: 347679, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:31:17 @summary_handler.py:93][0m Length: 11.9504950495
+[32m[0313 20:31:21 @network.py:199][0m step: 7200, current TD loss: 0.0442685112357
+[32m[0313 20:31:21 @summary_handler.py:92][0m At episode: 348667, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:31:21 @summary_handler.py:93][0m Length: 9.78217821782
+[32m[0313 20:31:26 @summary_handler.py:92][0m At episode: 349709, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:31:26 @summary_handler.py:93][0m Length: 10.3168316832
+[32m[0313 20:31:31 @summary_handler.py:92][0m At episode: 350645, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:31:31 @summary_handler.py:93][0m Length: 9.26732673267
+[32m[0313 20:31:36 @summary_handler.py:92][0m At episode: 351665, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:31:36 @summary_handler.py:93][0m Length: 10.099009901
+[32m[0313 20:31:41 @network.py:199][0m step: 7300, current TD loss: 0.0151510816067
+[32m[0313 20:31:41 @summary_handler.py:92][0m At episode: 352884, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:31:41 @summary_handler.py:93][0m Length: 12.0693069307
+[32m[0313 20:31:46 @summary_handler.py:92][0m At episode: 353805, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:31:46 @summary_handler.py:93][0m Length: 9.11881188119
+[32m[0313 20:31:46 @dqn_agent.py:206][0m episode: 354000, epsilon: 0.69904099
+[32m[0313 20:31:50 @summary_handler.py:92][0m At episode: 354835, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:31:50 @summary_handler.py:93][0m Length: 10.198019802
+[32m[0313 20:31:56 @summary_handler.py:92][0m At episode: 355992, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:31:56 @summary_handler.py:93][0m Length: 11.4554455446
+[32m[0313 20:32:00 @network.py:199][0m step: 7400, current TD loss: 0.0151994805783
+[32m[0313 20:32:00 @summary_handler.py:92][0m At episode: 357024, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:32:00 @summary_handler.py:93][0m Length: 10.2178217822
+[32m[0313 20:32:05 @summary_handler.py:92][0m At episode: 358034, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:32:05 @summary_handler.py:93][0m Length: 10.0
+[32m[0313 20:32:11 @summary_handler.py:92][0m At episode: 359211, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:32:11 @summary_handler.py:93][0m Length: 11.6534653465
+[32m[0313 20:32:14 @dqn_agent.py:206][0m episode: 360000, epsilon: 0.69310099
+[32m[0313 20:32:16 @summary_handler.py:92][0m At episode: 360259, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:32:16 @summary_handler.py:93][0m Length: 10.3762376238
+[32m[0313 20:32:19 @dqn_agent.py:206][0m episode: 361000, epsilon: 0.69211099
+[32m[0313 20:32:20 @network.py:199][0m step: 7500, current TD loss: 0.0295786280185
+[32m[0313 20:32:20 @dqn_agent.py:223][0m At time step 7500, the target_network is updated
+[32m[0313 20:32:20 @summary_handler.py:92][0m At episode: 361245, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:32:20 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 20:32:25 @summary_handler.py:92][0m At episode: 362259, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:32:25 @summary_handler.py:93][0m Length: 10.0396039604
+[32m[0313 20:32:30 @summary_handler.py:92][0m At episode: 363286, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:32:30 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:32:35 @summary_handler.py:92][0m At episode: 364415, Reward: 0.356435643564 (over 100 episodes)
+[32m[0313 20:32:35 @summary_handler.py:93][0m Length: 11.1782178218
+[32m[0313 20:32:39 @network.py:199][0m step: 7600, current TD loss: 0.00030930241337
+[32m[0313 20:32:40 @summary_handler.py:92][0m At episode: 365440, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:32:40 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:32:45 @summary_handler.py:92][0m At episode: 366521, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:32:45 @summary_handler.py:93][0m Length: 10.702970297
+[32m[0313 20:32:50 @summary_handler.py:92][0m At episode: 367660, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:32:50 @summary_handler.py:93][0m Length: 11.2772277228
+[32m[0313 20:32:55 @summary_handler.py:92][0m At episode: 368655, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:32:55 @summary_handler.py:93][0m Length: 9.85148514851
+[32m[0313 20:32:59 @network.py:199][0m step: 7700, current TD loss: 0.00023919956584
+[32m[0313 20:33:00 @summary_handler.py:92][0m At episode: 369680, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:33:00 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:33:05 @summary_handler.py:92][0m At episode: 370745, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:33:05 @summary_handler.py:93][0m Length: 10.5445544554
+[32m[0313 20:33:10 @summary_handler.py:92][0m At episode: 371763, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:33:10 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:33:14 @summary_handler.py:92][0m At episode: 372768, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:33:14 @summary_handler.py:93][0m Length: 9.9504950495
+[32m[0313 20:33:18 @network.py:199][0m step: 7800, current TD loss: 0.0151573168114
+[32m[0313 20:33:20 @summary_handler.py:92][0m At episode: 374021, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:33:20 @summary_handler.py:93][0m Length: 12.4059405941
+[32m[0313 20:33:25 @summary_handler.py:92][0m At episode: 375098, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:33:25 @summary_handler.py:93][0m Length: 10.6633663366
+[32m[0313 20:33:30 @summary_handler.py:92][0m At episode: 376230, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:33:30 @summary_handler.py:93][0m Length: 11.2079207921
+[32m[0313 20:33:35 @summary_handler.py:92][0m At episode: 377368, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:33:35 @summary_handler.py:93][0m Length: 11.2673267327
+[32m[0313 20:33:39 @network.py:199][0m step: 7900, current TD loss: 0.0151909841225
+[32m[0313 20:33:40 @summary_handler.py:92][0m At episode: 378418, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:33:40 @summary_handler.py:93][0m Length: 10.396039604
+[32m[0313 20:33:45 @summary_handler.py:92][0m At episode: 379451, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:33:45 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 20:33:50 @summary_handler.py:92][0m At episode: 380353, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:33:50 @summary_handler.py:93][0m Length: 8.93069306931
+[32m[0313 20:33:55 @summary_handler.py:92][0m At episode: 381445, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:33:55 @summary_handler.py:93][0m Length: 10.8118811881
+[32m[0313 20:33:57 @network.py:199][0m step: 8000, current TD loss: 0.0155637999997
+[32m[0313 20:33:59 @summary_handler.py:92][0m At episode: 382369, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:33:59 @summary_handler.py:93][0m Length: 9.14851485149
+[32m[0313 20:34:04 @summary_handler.py:92][0m At episode: 383477, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:34:04 @summary_handler.py:93][0m Length: 10.9702970297
+[32m[0313 20:34:09 @summary_handler.py:92][0m At episode: 384385, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:34:09 @summary_handler.py:93][0m Length: 8.9900990099
+[32m[0313 20:34:14 @summary_handler.py:92][0m At episode: 385306, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:34:14 @summary_handler.py:93][0m Length: 9.11881188119
+[32m[0313 20:34:17 @network.py:199][0m step: 8100, current TD loss: 0.00148997851647
+[32m[0313 20:34:19 @summary_handler.py:92][0m At episode: 386408, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:34:19 @summary_handler.py:93][0m Length: 10.9108910891
+[32m[0313 20:34:24 @summary_handler.py:92][0m At episode: 387489, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:34:24 @summary_handler.py:93][0m Length: 10.702970297
+[32m[0313 20:34:29 @summary_handler.py:92][0m At episode: 388634, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:34:29 @summary_handler.py:93][0m Length: 11.3366336634
+[32m[0313 20:34:34 @summary_handler.py:92][0m At episode: 389816, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:34:34 @summary_handler.py:93][0m Length: 11.702970297
+[32m[0313 20:34:37 @network.py:199][0m step: 8200, current TD loss: 0.0151160769165
+[32m[0313 20:34:39 @summary_handler.py:92][0m At episode: 390898, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:34:39 @summary_handler.py:93][0m Length: 10.7128712871
+[32m[0313 20:34:44 @summary_handler.py:92][0m At episode: 391826, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:34:44 @summary_handler.py:93][0m Length: 9.18811881188
+[32m[0313 20:34:48 @summary_handler.py:92][0m At episode: 392745, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:34:48 @summary_handler.py:93][0m Length: 9.09900990099
+[32m[0313 20:34:53 @summary_handler.py:92][0m At episode: 393611, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:34:53 @summary_handler.py:93][0m Length: 8.57425742574
+[32m[0313 20:34:55 @network.py:199][0m step: 8300, current TD loss: 0.015718607232
+[32m[0313 20:34:58 @summary_handler.py:92][0m At episode: 394921, Reward: 0.376237623762 (over 100 episodes)
+[32m[0313 20:34:58 @summary_handler.py:93][0m Length: 12.9702970297
+[32m[0313 20:35:03 @summary_handler.py:92][0m At episode: 396055, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:35:03 @summary_handler.py:93][0m Length: 11.2277227723
+[32m[0313 20:35:08 @summary_handler.py:92][0m At episode: 397080, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:35:08 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:35:13 @summary_handler.py:92][0m At episode: 398079, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:35:13 @summary_handler.py:93][0m Length: 9.89108910891
+[32m[0313 20:35:15 @network.py:199][0m step: 8400, current TD loss: 0.01555424463
+[32m[0313 20:35:18 @summary_handler.py:92][0m At episode: 399055, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:35:18 @summary_handler.py:93][0m Length: 9.66336633663
+[32m[0313 20:35:23 @summary_handler.py:92][0m At episode: 400064, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:35:23 @summary_handler.py:93][0m Length: 9.9900990099
+[32m[0313 20:35:28 @summary_handler.py:92][0m At episode: 401297, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:35:28 @summary_handler.py:93][0m Length: 12.2079207921
+[32m[0313 20:35:34 @summary_handler.py:92][0m At episode: 402460, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:35:34 @summary_handler.py:93][0m Length: 11.5148514851
+[32m[0313 20:35:36 @network.py:199][0m step: 8500, current TD loss: 0.0426269732416
+[32m[0313 20:35:39 @summary_handler.py:92][0m At episode: 403590, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:35:39 @summary_handler.py:93][0m Length: 11.1881188119
+[32m[0313 20:35:44 @summary_handler.py:92][0m At episode: 404652, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 20:35:44 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:35:49 @summary_handler.py:92][0m At episode: 405747, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:35:49 @summary_handler.py:93][0m Length: 10.8415841584
+[32m[0313 20:35:54 @summary_handler.py:92][0m At episode: 406682, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:35:54 @summary_handler.py:93][0m Length: 9.25742574257
+[32m[0313 20:35:55 @network.py:199][0m step: 8600, current TD loss: 0.000958316493779
+[32m[0313 20:35:58 @summary_handler.py:92][0m At episode: 407667, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:35:58 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:36:03 @summary_handler.py:92][0m At episode: 408677, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:36:03 @summary_handler.py:93][0m Length: 10.0
+[32m[0313 20:36:09 @summary_handler.py:92][0m At episode: 409821, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:36:09 @summary_handler.py:93][0m Length: 11.3267326733
+[32m[0313 20:36:13 @summary_handler.py:92][0m At episode: 410679, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:36:13 @summary_handler.py:93][0m Length: 8.49504950495
+[32m[0313 20:36:15 @network.py:199][0m step: 8700, current TD loss: 0.00107361609116
+[32m[0313 20:36:17 @summary_handler.py:92][0m At episode: 411614, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:36:17 @summary_handler.py:93][0m Length: 9.25742574257
+[32m[0313 20:36:22 @summary_handler.py:92][0m At episode: 412611, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:36:22 @summary_handler.py:93][0m Length: 9.87128712871
+[32m[0313 20:36:27 @summary_handler.py:92][0m At episode: 413582, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:36:27 @summary_handler.py:93][0m Length: 9.61386138614
+[32m[0313 20:36:32 @summary_handler.py:92][0m At episode: 414739, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:36:32 @summary_handler.py:93][0m Length: 11.4554455446
+[32m[0313 20:36:34 @network.py:199][0m step: 8800, current TD loss: 0.0454289838672
+[32m[0313 20:36:37 @summary_handler.py:92][0m At episode: 415758, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:36:37 @summary_handler.py:93][0m Length: 10.0891089109
+[32m[0313 20:36:42 @summary_handler.py:92][0m At episode: 416737, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:36:42 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:36:47 @summary_handler.py:92][0m At episode: 417722, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:36:47 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:36:52 @summary_handler.py:92][0m At episode: 418780, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:36:52 @summary_handler.py:93][0m Length: 10.4752475248
+[32m[0313 20:36:53 @network.py:199][0m step: 8900, current TD loss: 0.0153228612617
+[32m[0313 20:36:57 @summary_handler.py:92][0m At episode: 419757, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:36:57 @summary_handler.py:93][0m Length: 9.67326732673
+[32m[0313 20:37:02 @summary_handler.py:92][0m At episode: 420835, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:37:02 @summary_handler.py:93][0m Length: 10.6732673267
+[32m[0313 20:37:08 @summary_handler.py:92][0m At episode: 422095, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:37:08 @summary_handler.py:93][0m Length: 12.4752475248
+[32m[0313 20:37:12 @dqn_agent.py:206][0m episode: 423000, epsilon: 0.63073099
+[32m[0313 20:37:14 @summary_handler.py:92][0m At episode: 423383, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:37:14 @summary_handler.py:93][0m Length: 12.7524752475
+[32m[0313 20:37:15 @network.py:199][0m step: 9000, current TD loss: 0.000767942809034
+[32m[0313 20:37:20 @summary_handler.py:92][0m At episode: 424623, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:37:20 @summary_handler.py:93][0m Length: 12.2772277228
+[32m[0313 20:37:25 @summary_handler.py:92][0m At episode: 425859, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 20:37:25 @summary_handler.py:93][0m Length: 12.2376237624
+[32m[0313 20:37:30 @summary_handler.py:92][0m At episode: 426971, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:37:30 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:37:31 @dqn_agent.py:206][0m episode: 427000, epsilon: 0.62677099
+[32m[0313 20:37:35 @summary_handler.py:92][0m At episode: 428025, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:37:35 @summary_handler.py:93][0m Length: 10.4356435644
+[32m[0313 20:37:36 @network.py:199][0m step: 9100, current TD loss: 0.0158136636019
+[32m[0313 20:37:41 @summary_handler.py:92][0m At episode: 429180, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:37:41 @summary_handler.py:93][0m Length: 11.4356435644
+[32m[0313 20:37:46 @summary_handler.py:92][0m At episode: 430407, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:37:46 @summary_handler.py:93][0m Length: 12.1485148515
+[32m[0313 20:37:51 @summary_handler.py:92][0m At episode: 431409, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:37:51 @summary_handler.py:93][0m Length: 9.92079207921
+[32m[0313 20:37:56 @summary_handler.py:92][0m At episode: 432329, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:37:56 @summary_handler.py:93][0m Length: 9.10891089109
+[32m[0313 20:37:56 @network.py:199][0m step: 9200, current TD loss: 0.000405323953601
+[32m[0313 20:38:01 @summary_handler.py:92][0m At episode: 433326, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:38:01 @summary_handler.py:93][0m Length: 9.87128712871
+[32m[0313 20:38:06 @summary_handler.py:92][0m At episode: 434439, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:38:06 @summary_handler.py:93][0m Length: 11.0198019802
+[32m[0313 20:38:11 @summary_handler.py:92][0m At episode: 435337, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:38:11 @summary_handler.py:93][0m Length: 8.89108910891
+[32m[0313 20:38:15 @summary_handler.py:92][0m At episode: 436274, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:38:15 @summary_handler.py:93][0m Length: 9.27722772277
+[32m[0313 20:38:16 @network.py:199][0m step: 9300, current TD loss: 0.00065284955781
+[32m[0313 20:38:20 @summary_handler.py:92][0m At episode: 437208, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:38:20 @summary_handler.py:93][0m Length: 9.24752475248
+[32m[0313 20:38:25 @summary_handler.py:92][0m At episode: 438113, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:38:25 @summary_handler.py:93][0m Length: 8.9603960396
+[32m[0313 20:38:29 @summary_handler.py:92][0m At episode: 438952, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:38:29 @summary_handler.py:93][0m Length: 8.30693069307
+[32m[0313 20:38:34 @summary_handler.py:92][0m At episode: 439969, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:38:34 @summary_handler.py:93][0m Length: 10.0693069307
+[32m[0313 20:38:35 @network.py:199][0m step: 9400, current TD loss: 0.00111794704571
+[32m[0313 20:38:40 @summary_handler.py:92][0m At episode: 441253, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:38:40 @summary_handler.py:93][0m Length: 12.7128712871
+[32m[0313 20:38:46 @summary_handler.py:92][0m At episode: 442567, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:38:46 @summary_handler.py:93][0m Length: 13.0099009901
+[32m[0313 20:38:51 @summary_handler.py:92][0m At episode: 443593, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:38:51 @summary_handler.py:93][0m Length: 10.1584158416
+[32m[0313 20:38:55 @summary_handler.py:92][0m At episode: 444581, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:38:55 @summary_handler.py:93][0m Length: 9.78217821782
+[32m[0313 20:38:56 @network.py:199][0m step: 9500, current TD loss: 0.0156362149864
+[32m[0313 20:39:00 @summary_handler.py:92][0m At episode: 445528, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:39:00 @summary_handler.py:93][0m Length: 9.37623762376
+[32m[0313 20:39:02 @dqn_agent.py:206][0m episode: 446000, epsilon: 0.60796099
+[32m[0313 20:39:05 @summary_handler.py:92][0m At episode: 446559, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:39:05 @summary_handler.py:93][0m Length: 10.2079207921
+[32m[0313 20:39:09 @summary_handler.py:92][0m At episode: 447469, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:39:09 @summary_handler.py:93][0m Length: 9.0099009901
+[32m[0313 20:39:14 @network.py:199][0m step: 9600, current TD loss: 0.000671675603371
+[32m[0313 20:39:14 @summary_handler.py:92][0m At episode: 448418, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:39:14 @summary_handler.py:93][0m Length: 9.39603960396
+[32m[0313 20:39:19 @summary_handler.py:92][0m At episode: 449475, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:39:19 @summary_handler.py:93][0m Length: 10.4653465347
+[32m[0313 20:39:25 @summary_handler.py:92][0m At episode: 450575, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:39:25 @summary_handler.py:93][0m Length: 10.8910891089
+[32m[0313 20:39:29 @summary_handler.py:92][0m At episode: 451476, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:39:29 @summary_handler.py:93][0m Length: 8.92079207921
+[32m[0313 20:39:34 @network.py:199][0m step: 9700, current TD loss: 0.0145100001246
+[32m[0313 20:39:34 @summary_handler.py:92][0m At episode: 452544, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:39:34 @summary_handler.py:93][0m Length: 10.5742574257
+[32m[0313 20:39:39 @summary_handler.py:92][0m At episode: 453524, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:39:39 @summary_handler.py:93][0m Length: 9.70297029703
+[32m[0313 20:39:43 @summary_handler.py:92][0m At episode: 454414, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:39:43 @summary_handler.py:93][0m Length: 8.81188118812
+[32m[0313 20:39:47 @summary_handler.py:92][0m At episode: 455278, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:39:47 @summary_handler.py:93][0m Length: 8.55445544554
+[32m[0313 20:39:52 @network.py:199][0m step: 9800, current TD loss: 0.0297585763037
+[32m[0313 20:39:52 @summary_handler.py:92][0m At episode: 456343, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:39:52 @summary_handler.py:93][0m Length: 10.5445544554
+[32m[0313 20:39:57 @summary_handler.py:92][0m At episode: 457283, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:39:57 @summary_handler.py:93][0m Length: 9.30693069307
+[32m[0313 20:40:01 @summary_handler.py:92][0m At episode: 458160, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:40:01 @summary_handler.py:93][0m Length: 8.68316831683
+[32m[0313 20:40:06 @summary_handler.py:92][0m At episode: 459117, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:40:06 @summary_handler.py:93][0m Length: 9.47524752475
+[32m[0313 20:40:10 @network.py:199][0m step: 9900, current TD loss: 0.0143469655886
+[32m[0313 20:40:10 @summary_handler.py:92][0m At episode: 460170, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:40:10 @summary_handler.py:93][0m Length: 10.4257425743
+[32m[0313 20:40:15 @summary_handler.py:92][0m At episode: 461093, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:40:15 @summary_handler.py:93][0m Length: 9.13861386139
+[32m[0313 20:40:20 @summary_handler.py:92][0m At episode: 462016, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:40:20 @summary_handler.py:93][0m Length: 9.13861386139
+[32m[0313 20:40:24 @summary_handler.py:92][0m At episode: 463043, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:40:24 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:40:29 @network.py:199][0m step: 10000, current TD loss: 0.00046797975665
+[32m[0313 20:40:29 @dqn_agent.py:223][0m At time step 10000, the target_network is updated
+[32m[0313 20:40:30 @summary_handler.py:92][0m At episode: 464178, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:40:30 @summary_handler.py:93][0m Length: 11.2376237624
+[32m[0313 20:40:36 @summary_handler.py:92][0m At episode: 465438, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 20:40:36 @summary_handler.py:93][0m Length: 12.4752475248
+[32m[0313 20:40:41 @summary_handler.py:92][0m At episode: 466525, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:40:41 @summary_handler.py:93][0m Length: 10.7623762376
+[32m[0313 20:40:46 @summary_handler.py:92][0m At episode: 467683, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:40:46 @summary_handler.py:93][0m Length: 11.4653465347
+[32m[0313 20:40:51 @network.py:199][0m step: 10100, current TD loss: 0.0294664110988
+[32m[0313 20:40:52 @summary_handler.py:92][0m At episode: 468829, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 20:40:52 @summary_handler.py:93][0m Length: 11.3465346535
+[32m[0313 20:40:57 @summary_handler.py:92][0m At episode: 469966, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:40:57 @summary_handler.py:93][0m Length: 11.2574257426
+[32m[0313 20:41:02 @dqn_agent.py:206][0m episode: 471000, epsilon: 0.58321099
+[32m[0313 20:41:02 @summary_handler.py:92][0m At episode: 471057, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:41:02 @summary_handler.py:93][0m Length: 10.801980198
+[32m[0313 20:41:07 @summary_handler.py:92][0m At episode: 472040, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:41:07 @summary_handler.py:93][0m Length: 9.73267326733
+[32m[0313 20:41:12 @network.py:199][0m step: 10200, current TD loss: 0.0153308352455
+[32m[0313 20:41:13 @summary_handler.py:92][0m At episode: 473410, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 20:41:13 @summary_handler.py:93][0m Length: 13.5643564356
+[32m[0313 20:41:19 @summary_handler.py:92][0m At episode: 474698, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:41:19 @summary_handler.py:93][0m Length: 12.7524752475
+[32m[0313 20:41:25 @summary_handler.py:92][0m At episode: 476043, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:41:25 @summary_handler.py:93][0m Length: 13.3168316832
+[32m[0313 20:41:31 @summary_handler.py:92][0m At episode: 477284, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:41:31 @summary_handler.py:93][0m Length: 12.2871287129
+[32m[0313 20:41:35 @network.py:199][0m step: 10300, current TD loss: 0.000852894620039
+[32m[0313 20:41:36 @summary_handler.py:92][0m At episode: 478390, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:41:36 @summary_handler.py:93][0m Length: 10.9504950495
+[32m[0313 20:41:42 @summary_handler.py:92][0m At episode: 479648, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:41:42 @summary_handler.py:93][0m Length: 12.4554455446
+[32m[0313 20:41:48 @summary_handler.py:92][0m At episode: 480688, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:41:48 @summary_handler.py:93][0m Length: 10.297029703
+[32m[0313 20:41:53 @summary_handler.py:92][0m At episode: 481694, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:41:53 @summary_handler.py:93][0m Length: 9.9603960396
+[32m[0313 20:41:56 @network.py:199][0m step: 10400, current TD loss: 0.0141408108175
+[32m[0313 20:41:57 @summary_handler.py:92][0m At episode: 482688, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:41:57 @summary_handler.py:93][0m Length: 9.84158415842
+[32m[0313 20:41:59 @dqn_agent.py:206][0m episode: 483000, epsilon: 0.57133099
+[32m[0313 20:42:03 @summary_handler.py:92][0m At episode: 483877, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:42:03 @summary_handler.py:93][0m Length: 11.7722772277
+[32m[0313 20:42:03 @dqn_agent.py:206][0m episode: 484000, epsilon: 0.57034099
+[32m[0313 20:42:08 @summary_handler.py:92][0m At episode: 484920, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:42:08 @summary_handler.py:93][0m Length: 10.3267326733
+[32m[0313 20:42:13 @dqn_agent.py:206][0m episode: 486000, epsilon: 0.56836099
+[32m[0313 20:42:13 @summary_handler.py:92][0m At episode: 486043, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:42:13 @summary_handler.py:93][0m Length: 11.1188118812
+[32m[0313 20:42:16 @network.py:199][0m step: 10500, current TD loss: 0.00120051228441
+[32m[0313 20:42:18 @summary_handler.py:92][0m At episode: 487235, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:42:18 @summary_handler.py:93][0m Length: 11.801980198
+[32m[0313 20:42:25 @summary_handler.py:92][0m At episode: 488662, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:42:25 @summary_handler.py:93][0m Length: 14.1287128713
+[32m[0313 20:42:29 @summary_handler.py:92][0m At episode: 489615, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:42:29 @summary_handler.py:93][0m Length: 9.43564356436
+[32m[0313 20:42:34 @summary_handler.py:92][0m At episode: 490652, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:42:34 @summary_handler.py:93][0m Length: 10.2673267327
+[32m[0313 20:42:37 @network.py:199][0m step: 10600, current TD loss: 0.0146318897605
+[32m[0313 20:42:39 @summary_handler.py:92][0m At episode: 491616, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:42:39 @summary_handler.py:93][0m Length: 9.54455445545
+[32m[0313 20:42:44 @summary_handler.py:92][0m At episode: 492442, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:42:44 @summary_handler.py:93][0m Length: 8.17821782178
+[32m[0313 20:42:49 @summary_handler.py:92][0m At episode: 493582, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:42:49 @summary_handler.py:93][0m Length: 11.2871287129
+[32m[0313 20:42:55 @summary_handler.py:92][0m At episode: 494691, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:42:55 @summary_handler.py:93][0m Length: 10.9801980198
+[32m[0313 20:42:56 @dqn_agent.py:206][0m episode: 495000, epsilon: 0.55945099
+[32m[0313 20:42:57 @network.py:199][0m step: 10700, current TD loss: 0.00152051309124
+[32m[0313 20:43:00 @summary_handler.py:92][0m At episode: 495888, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:43:00 @summary_handler.py:93][0m Length: 11.8514851485
+[32m[0313 20:43:05 @summary_handler.py:92][0m At episode: 496960, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:43:05 @summary_handler.py:93][0m Length: 10.6138613861
+[32m[0313 20:43:10 @summary_handler.py:92][0m At episode: 498036, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:43:10 @summary_handler.py:93][0m Length: 10.6534653465
+[32m[0313 20:43:15 @dqn_agent.py:206][0m episode: 499000, epsilon: 0.55549099
+[32m[0313 20:43:15 @summary_handler.py:92][0m At episode: 499000, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:43:15 @summary_handler.py:93][0m Length: 9.54455445545
+[32m[0313 20:43:18 @network.py:199][0m step: 10800, current TD loss: 0.0150706013665
+[32m[0313 20:43:20 @summary_handler.py:92][0m At episode: 500001, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:43:20 @summary_handler.py:93][0m Length: 9.91089108911
+[32m[0313 20:43:25 @summary_handler.py:92][0m At episode: 500891, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:43:25 @summary_handler.py:93][0m Length: 8.81188118812
+[32m[0313 20:43:30 @summary_handler.py:92][0m At episode: 502032, Reward: 0.376237623762 (over 100 episodes)
+[32m[0313 20:43:30 @summary_handler.py:93][0m Length: 11.297029703
+[32m[0313 20:43:36 @summary_handler.py:92][0m At episode: 503275, Reward: 0.405940594059 (over 100 episodes)
+[32m[0313 20:43:36 @summary_handler.py:93][0m Length: 12.3069306931
+[32m[0313 20:43:38 @network.py:199][0m step: 10900, current TD loss: 0.0293274391443
+[32m[0313 20:43:39 @dqn_agent.py:206][0m episode: 504000, epsilon: 0.55054099
+[32m[0313 20:43:41 @summary_handler.py:92][0m At episode: 504326, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:43:41 @summary_handler.py:93][0m Length: 10.4059405941
+[32m[0313 20:43:46 @summary_handler.py:92][0m At episode: 505296, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:43:46 @summary_handler.py:93][0m Length: 9.60396039604
+[32m[0313 20:43:51 @summary_handler.py:92][0m At episode: 506323, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:43:51 @summary_handler.py:93][0m Length: 10.1683168317
+[32m[0313 20:43:57 @summary_handler.py:92][0m At episode: 507631, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:43:57 @summary_handler.py:93][0m Length: 12.9504950495
+[32m[0313 20:44:00 @network.py:199][0m step: 11000, current TD loss: 0.0149353574961
+[32m[0313 20:44:03 @summary_handler.py:92][0m At episode: 508858, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:44:03 @summary_handler.py:93][0m Length: 12.1485148515
+[32m[0313 20:44:08 @summary_handler.py:92][0m At episode: 509899, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:44:08 @summary_handler.py:93][0m Length: 10.3069306931
+[32m[0313 20:44:13 @summary_handler.py:92][0m At episode: 510786, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:44:13 @summary_handler.py:93][0m Length: 8.78217821782
+[32m[0313 20:44:17 @summary_handler.py:92][0m At episode: 511769, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:44:17 @summary_handler.py:93][0m Length: 9.73267326733
+[32m[0313 20:44:19 @network.py:199][0m step: 11100, current TD loss: 0.0289991181344
+[32m[0313 20:44:22 @summary_handler.py:92][0m At episode: 512794, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:44:22 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:44:28 @summary_handler.py:92][0m At episode: 514079, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:44:28 @summary_handler.py:93][0m Length: 12.7227722772
+[32m[0313 20:44:33 @summary_handler.py:92][0m At episode: 515145, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:44:33 @summary_handler.py:93][0m Length: 10.5544554455
+[32m[0313 20:44:37 @summary_handler.py:92][0m At episode: 516034, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:44:37 @summary_handler.py:93][0m Length: 8.80198019802
+[32m[0313 20:44:39 @network.py:199][0m step: 11200, current TD loss: 0.0156916920096
+[32m[0313 20:44:42 @summary_handler.py:92][0m At episode: 516941, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:44:42 @summary_handler.py:93][0m Length: 8.9801980198
+[32m[0313 20:44:47 @summary_handler.py:92][0m At episode: 518111, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:44:47 @summary_handler.py:93][0m Length: 11.5841584158
+[32m[0313 20:44:51 @summary_handler.py:92][0m At episode: 518989, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:44:51 @summary_handler.py:93][0m Length: 8.69306930693
+[32m[0313 20:44:56 @summary_handler.py:92][0m At episode: 519877, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:44:56 @summary_handler.py:93][0m Length: 8.79207920792
+[32m[0313 20:44:57 @network.py:199][0m step: 11300, current TD loss: 0.0290645025671
+[32m[0313 20:45:01 @summary_handler.py:92][0m At episode: 520906, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:45:01 @summary_handler.py:93][0m Length: 10.1881188119
+[32m[0313 20:45:06 @summary_handler.py:92][0m At episode: 521979, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:45:06 @summary_handler.py:93][0m Length: 10.6237623762
+[32m[0313 20:45:10 @summary_handler.py:92][0m At episode: 522931, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:45:10 @summary_handler.py:93][0m Length: 9.42574257426
+[32m[0313 20:45:15 @summary_handler.py:92][0m At episode: 523889, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:45:15 @summary_handler.py:93][0m Length: 9.48514851485
+[32m[0313 20:45:16 @network.py:199][0m step: 11400, current TD loss: 0.015086052008
+[32m[0313 20:45:19 @summary_handler.py:92][0m At episode: 524767, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:45:19 @summary_handler.py:93][0m Length: 8.69306930693
+[32m[0313 20:45:20 @dqn_agent.py:206][0m episode: 525000, epsilon: 0.52975099
+[32m[0313 20:45:24 @summary_handler.py:92][0m At episode: 525905, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:45:24 @summary_handler.py:93][0m Length: 11.2673267327
+[32m[0313 20:45:30 @summary_handler.py:92][0m At episode: 527137, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:45:30 @summary_handler.py:93][0m Length: 12.198019802
+[32m[0313 20:45:34 @dqn_agent.py:206][0m episode: 528000, epsilon: 0.52678099
+[32m[0313 20:45:35 @summary_handler.py:92][0m At episode: 528353, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:45:35 @summary_handler.py:93][0m Length: 12.0396039604
+[32m[0313 20:45:36 @network.py:199][0m step: 11500, current TD loss: 0.0450597405434
+[32m[0313 20:45:40 @summary_handler.py:92][0m At episode: 529215, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 20:45:40 @summary_handler.py:93][0m Length: 8.53465346535
+[32m[0313 20:45:44 @summary_handler.py:92][0m At episode: 530001, Reward: 0.0891089108911 (over 100 episodes)
+[32m[0313 20:45:44 @summary_handler.py:93][0m Length: 7.78217821782
+[32m[0313 20:45:48 @summary_handler.py:92][0m At episode: 531035, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:45:48 @summary_handler.py:93][0m Length: 10.2376237624
+[32m[0313 20:45:54 @summary_handler.py:92][0m At episode: 532176, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:45:54 @summary_handler.py:93][0m Length: 11.297029703
+[32m[0313 20:45:55 @network.py:199][0m step: 11600, current TD loss: 0.0150325931609
+[32m[0313 20:46:00 @summary_handler.py:92][0m At episode: 533536, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:46:00 @summary_handler.py:93][0m Length: 13.4653465347
+[32m[0313 20:46:05 @summary_handler.py:92][0m At episode: 534830, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:46:05 @summary_handler.py:93][0m Length: 12.8118811881
+[32m[0313 20:46:10 @summary_handler.py:92][0m At episode: 536020, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:46:10 @summary_handler.py:93][0m Length: 11.7821782178
+[32m[0313 20:46:16 @summary_handler.py:92][0m At episode: 537287, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:46:16 @summary_handler.py:93][0m Length: 12.5445544554
+[32m[0313 20:46:17 @network.py:199][0m step: 11700, current TD loss: 0.0294532347471
+[32m[0313 20:46:21 @summary_handler.py:92][0m At episode: 538292, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:46:21 @summary_handler.py:93][0m Length: 9.9504950495
+[32m[0313 20:46:26 @summary_handler.py:92][0m At episode: 539239, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:46:26 @summary_handler.py:93][0m Length: 9.37623762376
+[32m[0313 20:46:32 @summary_handler.py:92][0m At episode: 540610, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 20:46:32 @summary_handler.py:93][0m Length: 13.5742574257
+[32m[0313 20:46:38 @summary_handler.py:92][0m At episode: 541852, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:46:38 @summary_handler.py:93][0m Length: 12.297029703
+[32m[0313 20:46:39 @network.py:199][0m step: 11800, current TD loss: 0.0292908810079
+[32m[0313 20:46:44 @summary_handler.py:92][0m At episode: 543109, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:46:44 @summary_handler.py:93][0m Length: 12.4455445545
+[32m[0313 20:46:49 @summary_handler.py:92][0m At episode: 544142, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:46:49 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 20:46:54 @summary_handler.py:92][0m At episode: 545321, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:46:54 @summary_handler.py:93][0m Length: 11.6732673267
+[32m[0313 20:47:00 @summary_handler.py:92][0m At episode: 546360, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:47:00 @summary_handler.py:93][0m Length: 10.2871287129
+[32m[0313 20:47:00 @network.py:199][0m step: 11900, current TD loss: 0.000499276211485
+[32m[0313 20:47:04 @summary_handler.py:92][0m At episode: 547281, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:47:04 @summary_handler.py:93][0m Length: 9.11881188119
+[32m[0313 20:47:09 @summary_handler.py:92][0m At episode: 548129, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:47:09 @summary_handler.py:93][0m Length: 8.39603960396
+[32m[0313 20:47:14 @summary_handler.py:92][0m At episode: 549065, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:47:14 @summary_handler.py:93][0m Length: 9.26732673267
+[32m[0313 20:47:19 @summary_handler.py:92][0m At episode: 550177, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:47:19 @summary_handler.py:93][0m Length: 11.0099009901
+[32m[0313 20:47:19 @network.py:199][0m step: 12000, current TD loss: 0.0284134075046
+[32m[0313 20:47:25 @summary_handler.py:92][0m At episode: 551430, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:47:25 @summary_handler.py:93][0m Length: 12.4059405941
+[32m[0313 20:47:30 @summary_handler.py:92][0m At episode: 552429, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:47:30 @summary_handler.py:93][0m Length: 9.89108910891
+[32m[0313 20:47:34 @summary_handler.py:92][0m At episode: 553377, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 20:47:34 @summary_handler.py:93][0m Length: 9.38613861386
+[32m[0313 20:47:40 @summary_handler.py:92][0m At episode: 554654, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:47:40 @summary_handler.py:93][0m Length: 12.6435643564
+[32m[0313 20:47:40 @network.py:199][0m step: 12100, current TD loss: 0.0154428789392
+[32m[0313 20:47:46 @summary_handler.py:92][0m At episode: 555899, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:47:46 @summary_handler.py:93][0m Length: 12.3267326733
+[32m[0313 20:47:52 @summary_handler.py:92][0m At episode: 557087, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:47:52 @summary_handler.py:93][0m Length: 11.7623762376
+[32m[0313 20:47:56 @summary_handler.py:92][0m At episode: 557997, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:47:56 @summary_handler.py:93][0m Length: 9.0099009901
+[32m[0313 20:48:01 @network.py:199][0m step: 12200, current TD loss: 0.0590519495308
+[32m[0313 20:48:02 @summary_handler.py:92][0m At episode: 559203, Reward: 0.415841584158 (over 100 episodes)
+[32m[0313 20:48:02 @summary_handler.py:93][0m Length: 11.9405940594
+[32m[0313 20:48:05 @dqn_agent.py:206][0m episode: 560000, epsilon: 0.49510099
+[32m[0313 20:48:08 @summary_handler.py:92][0m At episode: 560647, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:48:08 @summary_handler.py:93][0m Length: 14.297029703
+[32m[0313 20:48:14 @summary_handler.py:92][0m At episode: 561690, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:48:14 @summary_handler.py:93][0m Length: 10.3267326733
+[32m[0313 20:48:21 @summary_handler.py:92][0m At episode: 562916, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:48:21 @summary_handler.py:93][0m Length: 12.1386138614
+[32m[0313 20:48:25 @network.py:199][0m step: 12300, current TD loss: 0.0438286364079
+[32m[0313 20:48:25 @summary_handler.py:92][0m At episode: 563774, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:48:25 @summary_handler.py:93][0m Length: 8.49504950495
+[32m[0313 20:48:30 @summary_handler.py:92][0m At episode: 564638, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:48:30 @summary_handler.py:93][0m Length: 8.55445544554
+[32m[0313 20:48:35 @summary_handler.py:92][0m At episode: 565600, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:48:35 @summary_handler.py:93][0m Length: 9.52475247525
+[32m[0313 20:48:40 @summary_handler.py:92][0m At episode: 566529, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:48:40 @summary_handler.py:93][0m Length: 9.19801980198
+[32m[0313 20:48:44 @network.py:199][0m step: 12400, current TD loss: 0.0151378847659
+[32m[0313 20:48:45 @summary_handler.py:92][0m At episode: 567567, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:48:45 @summary_handler.py:93][0m Length: 10.2772277228
+[32m[0313 20:48:51 @summary_handler.py:92][0m At episode: 568958, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:48:51 @summary_handler.py:93][0m Length: 13.7722772277
+[32m[0313 20:48:57 @summary_handler.py:92][0m At episode: 570139, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:48:57 @summary_handler.py:93][0m Length: 11.6930693069
+[32m[0313 20:49:03 @summary_handler.py:92][0m At episode: 571424, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:49:03 @summary_handler.py:93][0m Length: 12.7227722772
+[32m[0313 20:49:05 @dqn_agent.py:206][0m episode: 572000, epsilon: 0.48322099
+[32m[0313 20:49:08 @network.py:199][0m step: 12500, current TD loss: 0.0586644113064
+[32m[0313 20:49:08 @dqn_agent.py:223][0m At time step 12500, the target_network is updated
+[32m[0313 20:49:08 @summary_handler.py:92][0m At episode: 572742, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:49:08 @summary_handler.py:93][0m Length: 13.0495049505
+[32m[0313 20:49:13 @summary_handler.py:92][0m At episode: 573733, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:49:13 @summary_handler.py:93][0m Length: 9.81188118812
+[32m[0313 20:49:19 @summary_handler.py:92][0m At episode: 574830, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:49:19 @summary_handler.py:93][0m Length: 10.8613861386
+[32m[0313 20:49:24 @dqn_agent.py:206][0m episode: 576000, epsilon: 0.47926099
+[32m[0313 20:49:24 @summary_handler.py:92][0m At episode: 576040, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:49:24 @summary_handler.py:93][0m Length: 11.9801980198
+[32m[0313 20:49:28 @network.py:199][0m step: 12600, current TD loss: 0.000594240962528
+[32m[0313 20:49:29 @summary_handler.py:92][0m At episode: 576890, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:49:29 @summary_handler.py:93][0m Length: 8.41584158416
+[32m[0313 20:49:34 @summary_handler.py:92][0m At episode: 577875, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:49:34 @summary_handler.py:93][0m Length: 9.75247524752
+[32m[0313 20:49:39 @summary_handler.py:92][0m At episode: 578950, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:49:39 @summary_handler.py:93][0m Length: 10.6435643564
+[32m[0313 20:49:46 @summary_handler.py:92][0m At episode: 580327, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:49:46 @summary_handler.py:93][0m Length: 13.6336633663
+[32m[0313 20:49:51 @network.py:199][0m step: 12700, current TD loss: 0.000630315276794
+[32m[0313 20:49:52 @summary_handler.py:92][0m At episode: 581715, Reward: 0.376237623762 (over 100 episodes)
+[32m[0313 20:49:52 @summary_handler.py:93][0m Length: 13.7425742574
+[32m[0313 20:49:58 @summary_handler.py:92][0m At episode: 582915, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:49:58 @summary_handler.py:93][0m Length: 11.8811881188
+[32m[0313 20:50:03 @summary_handler.py:92][0m At episode: 584048, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:50:03 @summary_handler.py:93][0m Length: 11.2178217822
+[32m[0313 20:50:08 @summary_handler.py:92][0m At episode: 584970, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:50:08 @summary_handler.py:93][0m Length: 9.12871287129
+[32m[0313 20:50:11 @network.py:199][0m step: 12800, current TD loss: 0.0429876074195
+[32m[0313 20:50:12 @summary_handler.py:92][0m At episode: 585892, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:50:12 @summary_handler.py:93][0m Length: 9.12871287129
+[32m[0313 20:50:17 @summary_handler.py:92][0m At episode: 586871, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:50:17 @summary_handler.py:93][0m Length: 9.69306930693
+[32m[0313 20:50:22 @summary_handler.py:92][0m At episode: 587870, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:50:22 @summary_handler.py:93][0m Length: 9.89108910891
+[32m[0313 20:50:28 @summary_handler.py:92][0m At episode: 589009, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:50:28 @summary_handler.py:93][0m Length: 11.2772277228
+[32m[0313 20:50:32 @network.py:199][0m step: 12900, current TD loss: 0.0147808343172
+[32m[0313 20:50:34 @summary_handler.py:92][0m At episode: 590234, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:50:34 @summary_handler.py:93][0m Length: 12.1287128713
+[32m[0313 20:50:39 @summary_handler.py:92][0m At episode: 591361, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:50:39 @summary_handler.py:93][0m Length: 11.1584158416
+[32m[0313 20:50:45 @summary_handler.py:92][0m At episode: 592452, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:50:45 @summary_handler.py:93][0m Length: 10.801980198
+[32m[0313 20:50:47 @dqn_agent.py:206][0m episode: 593000, epsilon: 0.46243099
+[32m[0313 20:50:52 @summary_handler.py:92][0m At episode: 593960, Reward: 0.376237623762 (over 100 episodes)
+[32m[0313 20:50:52 @summary_handler.py:93][0m Length: 14.9306930693
+[32m[0313 20:50:56 @network.py:199][0m step: 13000, current TD loss: 0.0302821341902
+[32m[0313 20:50:58 @summary_handler.py:92][0m At episode: 595398, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:50:58 @summary_handler.py:93][0m Length: 14.2376237624
+[32m[0313 20:51:03 @summary_handler.py:92][0m At episode: 596249, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:51:03 @summary_handler.py:93][0m Length: 8.42574257426
+[32m[0313 20:51:08 @summary_handler.py:92][0m At episode: 597278, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:51:08 @summary_handler.py:93][0m Length: 10.1881188119
+[32m[0313 20:51:13 @summary_handler.py:92][0m At episode: 598285, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:51:13 @summary_handler.py:93][0m Length: 9.9702970297
+[32m[0313 20:51:16 @network.py:199][0m step: 13100, current TD loss: 0.00114089890849
+[32m[0313 20:51:19 @summary_handler.py:92][0m At episode: 599509, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:51:19 @summary_handler.py:93][0m Length: 12.1188118812
+[32m[0313 20:51:25 @summary_handler.py:92][0m At episode: 600861, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:51:25 @summary_handler.py:93][0m Length: 13.3861386139
+[32m[0313 20:51:29 @summary_handler.py:92][0m At episode: 601777, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:51:29 @summary_handler.py:93][0m Length: 9.06930693069
+[32m[0313 20:51:34 @summary_handler.py:92][0m At episode: 602634, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:51:34 @summary_handler.py:93][0m Length: 8.48514851485
+[32m[0313 20:51:36 @network.py:199][0m step: 13200, current TD loss: 0.000648860412184
+[32m[0313 20:51:38 @summary_handler.py:92][0m At episode: 603557, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:51:38 @summary_handler.py:93][0m Length: 9.13861386139
+[32m[0313 20:51:43 @summary_handler.py:92][0m At episode: 604496, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:51:43 @summary_handler.py:93][0m Length: 9.29702970297
+[32m[0313 20:51:45 @dqn_agent.py:206][0m episode: 605000, epsilon: 0.45055099
+[32m[0313 20:51:47 @summary_handler.py:92][0m At episode: 605356, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:51:47 @summary_handler.py:93][0m Length: 8.51485148515
+[32m[0313 20:51:50 @dqn_agent.py:206][0m episode: 606000, epsilon: 0.44956099
+[32m[0313 20:51:52 @summary_handler.py:92][0m At episode: 606342, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:51:52 @summary_handler.py:93][0m Length: 9.76237623762
+[32m[0313 20:51:55 @network.py:199][0m step: 13300, current TD loss: 0.0142943384126
+[32m[0313 20:51:58 @summary_handler.py:92][0m At episode: 607773, Reward: 0.386138613861 (over 100 episodes)
+[32m[0313 20:51:58 @summary_handler.py:93][0m Length: 14.1683168317
+[32m[0313 20:52:03 @summary_handler.py:92][0m At episode: 608856, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:52:03 @summary_handler.py:93][0m Length: 10.7227722772
+[32m[0313 20:52:08 @summary_handler.py:92][0m At episode: 609738, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:52:08 @summary_handler.py:93][0m Length: 8.73267326733
+[32m[0313 20:52:12 @summary_handler.py:92][0m At episode: 610648, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:52:12 @summary_handler.py:93][0m Length: 9.0099009901
+[32m[0313 20:52:15 @network.py:199][0m step: 13400, current TD loss: 0.000469260616228
+[32m[0313 20:52:17 @summary_handler.py:92][0m At episode: 611579, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:52:17 @summary_handler.py:93][0m Length: 9.21782178218
+[32m[0313 20:52:19 @dqn_agent.py:206][0m episode: 612000, epsilon: 0.44362099
+[32m[0313 20:52:22 @summary_handler.py:92][0m At episode: 612621, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:52:22 @summary_handler.py:93][0m Length: 10.3168316832
+[32m[0313 20:52:28 @summary_handler.py:92][0m At episode: 613840, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:52:28 @summary_handler.py:93][0m Length: 12.0693069307
+[32m[0313 20:52:34 @summary_handler.py:92][0m At episode: 615209, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:52:34 @summary_handler.py:93][0m Length: 13.5544554455
+[32m[0313 20:52:37 @network.py:199][0m step: 13500, current TD loss: 0.000470898114145
+[32m[0313 20:52:40 @summary_handler.py:92][0m At episode: 616652, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:52:40 @summary_handler.py:93][0m Length: 14.2871287129
+[32m[0313 20:52:46 @summary_handler.py:92][0m At episode: 618213, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:52:46 @summary_handler.py:93][0m Length: 15.4554455446
+[32m[0313 20:52:53 @summary_handler.py:92][0m At episode: 619702, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:52:53 @summary_handler.py:93][0m Length: 14.7425742574
+[32m[0313 20:52:58 @summary_handler.py:92][0m At episode: 620923, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:52:58 @summary_handler.py:93][0m Length: 12.0891089109
+[32m[0313 20:53:01 @network.py:199][0m step: 13600, current TD loss: 0.000574284465984
+[32m[0313 20:53:04 @summary_handler.py:92][0m At episode: 621985, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:53:04 @summary_handler.py:93][0m Length: 10.5148514851
+[32m[0313 20:53:09 @summary_handler.py:92][0m At episode: 623171, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:53:09 @summary_handler.py:93][0m Length: 11.7425742574
+[32m[0313 20:53:14 @summary_handler.py:92][0m At episode: 624257, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 20:53:14 @summary_handler.py:93][0m Length: 10.7524752475
+[32m[0313 20:53:20 @summary_handler.py:92][0m At episode: 625522, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:53:20 @summary_handler.py:93][0m Length: 12.5247524752
+[32m[0313 20:53:23 @network.py:199][0m step: 13700, current TD loss: 0.000725284626242
+[32m[0313 20:53:26 @summary_handler.py:92][0m At episode: 626823, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:53:26 @summary_handler.py:93][0m Length: 12.8811881188
+[32m[0313 20:53:31 @summary_handler.py:92][0m At episode: 627678, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:53:31 @summary_handler.py:93][0m Length: 8.46534653465
+[32m[0313 20:53:36 @summary_handler.py:92][0m At episode: 628860, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:53:36 @summary_handler.py:93][0m Length: 11.702970297
+[32m[0313 20:53:41 @summary_handler.py:92][0m At episode: 629829, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:53:41 @summary_handler.py:93][0m Length: 9.59405940594
+[32m[0313 20:53:43 @network.py:199][0m step: 13800, current TD loss: 0.0148326614872
+[32m[0313 20:53:46 @summary_handler.py:92][0m At episode: 630764, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:53:46 @summary_handler.py:93][0m Length: 9.25742574257
+[32m[0313 20:53:50 @summary_handler.py:92][0m At episode: 631604, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:53:50 @summary_handler.py:93][0m Length: 8.31683168317
+[32m[0313 20:53:55 @summary_handler.py:92][0m At episode: 632493, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:53:55 @summary_handler.py:93][0m Length: 8.80198019802
+[32m[0313 20:54:01 @summary_handler.py:92][0m At episode: 633822, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:54:01 @summary_handler.py:93][0m Length: 13.1584158416
+[32m[0313 20:54:02 @network.py:199][0m step: 13900, current TD loss: 0.0152514027432
+[32m[0313 20:54:06 @dqn_agent.py:206][0m episode: 635000, epsilon: 0.42085099
+[32m[0313 20:54:07 @summary_handler.py:92][0m At episode: 635139, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:54:07 @summary_handler.py:93][0m Length: 13.0396039604
+[32m[0313 20:54:12 @summary_handler.py:92][0m At episode: 636134, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:54:12 @summary_handler.py:93][0m Length: 9.85148514851
+[32m[0313 20:54:17 @summary_handler.py:92][0m At episode: 637047, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:54:17 @summary_handler.py:93][0m Length: 9.0396039604
+[32m[0313 20:54:22 @summary_handler.py:92][0m At episode: 638023, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:54:22 @summary_handler.py:93][0m Length: 9.66336633663
+[32m[0313 20:54:23 @network.py:199][0m step: 14000, current TD loss: 0.000544577895198
+[32m[0313 20:54:27 @summary_handler.py:92][0m At episode: 639032, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:54:27 @summary_handler.py:93][0m Length: 9.9900990099
+[32m[0313 20:54:32 @summary_handler.py:92][0m At episode: 640328, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:54:32 @summary_handler.py:93][0m Length: 12.8316831683
+[32m[0313 20:54:38 @summary_handler.py:92][0m At episode: 641519, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:54:38 @summary_handler.py:93][0m Length: 11.7920792079
+[32m[0313 20:54:43 @summary_handler.py:92][0m At episode: 642500, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:54:43 @summary_handler.py:93][0m Length: 9.71287128713
+[32m[0313 20:54:44 @network.py:199][0m step: 14100, current TD loss: 0.0286772884429
+[32m[0313 20:54:48 @summary_handler.py:92][0m At episode: 643464, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:54:48 @summary_handler.py:93][0m Length: 9.54455445545
+[32m[0313 20:54:54 @summary_handler.py:92][0m At episode: 644713, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:54:54 @summary_handler.py:93][0m Length: 12.3663366337
+[32m[0313 20:54:59 @summary_handler.py:92][0m At episode: 645894, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:54:59 @summary_handler.py:93][0m Length: 11.6930693069
+[32m[0313 20:55:04 @summary_handler.py:92][0m At episode: 646901, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:55:04 @summary_handler.py:93][0m Length: 9.9702970297
+[32m[0313 20:55:05 @network.py:199][0m step: 14200, current TD loss: 0.0154333915561
+[32m[0313 20:55:11 @summary_handler.py:92][0m At episode: 648351, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:55:11 @summary_handler.py:93][0m Length: 14.3564356436
+[32m[0313 20:55:16 @summary_handler.py:92][0m At episode: 649561, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 20:55:16 @summary_handler.py:93][0m Length: 11.9801980198
+[32m[0313 20:55:22 @summary_handler.py:92][0m At episode: 650772, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:55:22 @summary_handler.py:93][0m Length: 11.9900990099
+[32m[0313 20:55:27 @summary_handler.py:92][0m At episode: 651901, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 20:55:27 @summary_handler.py:93][0m Length: 11.1782178218
+[32m[0313 20:55:28 @network.py:199][0m step: 14300, current TD loss: 0.00136902043596
+[32m[0313 20:55:28 @dqn_agent.py:206][0m episode: 652000, epsilon: 0.40402099
+[32m[0313 20:55:32 @summary_handler.py:92][0m At episode: 652839, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:55:32 @summary_handler.py:93][0m Length: 9.28712871287
+[32m[0313 20:55:37 @summary_handler.py:92][0m At episode: 653822, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 20:55:37 @summary_handler.py:93][0m Length: 9.73267326733
+[32m[0313 20:55:42 @dqn_agent.py:206][0m episode: 655000, epsilon: 0.40105099
+[32m[0313 20:55:43 @summary_handler.py:92][0m At episode: 655201, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:55:43 @summary_handler.py:93][0m Length: 13.6534653465
+[32m[0313 20:55:49 @summary_handler.py:92][0m At episode: 656453, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:55:49 @summary_handler.py:93][0m Length: 12.396039604
+[32m[0313 20:55:49 @network.py:199][0m step: 14400, current TD loss: 0.00106757483445
+[32m[0313 20:55:54 @summary_handler.py:92][0m At episode: 657621, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:55:54 @summary_handler.py:93][0m Length: 11.5643564356
+[32m[0313 20:55:56 @dqn_agent.py:206][0m episode: 658000, epsilon: 0.39808099
+[32m[0313 20:56:00 @summary_handler.py:92][0m At episode: 658649, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:56:00 @summary_handler.py:93][0m Length: 10.1782178218
+[32m[0313 20:56:06 @summary_handler.py:92][0m At episode: 660178, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:56:06 @summary_handler.py:93][0m Length: 15.1386138614
+[32m[0313 20:56:13 @summary_handler.py:92][0m At episode: 661620, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 20:56:13 @summary_handler.py:93][0m Length: 14.2772277228
+[32m[0313 20:56:13 @network.py:199][0m step: 14500, current TD loss: 0.0447385236621
+[32m[0313 20:56:15 @dqn_agent.py:206][0m episode: 662000, epsilon: 0.39412099
+[32m[0313 20:56:18 @summary_handler.py:92][0m At episode: 662579, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:56:18 @summary_handler.py:93][0m Length: 9.49504950495
+[32m[0313 20:56:23 @summary_handler.py:92][0m At episode: 663466, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:56:23 @summary_handler.py:93][0m Length: 8.78217821782
+[32m[0313 20:56:28 @summary_handler.py:92][0m At episode: 664477, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:56:28 @summary_handler.py:93][0m Length: 10.0099009901
+[32m[0313 20:56:33 @summary_handler.py:92][0m At episode: 665528, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 20:56:33 @summary_handler.py:93][0m Length: 10.4059405941
+[32m[0313 20:56:33 @network.py:199][0m step: 14600, current TD loss: 0.0288711842149
+[32m[0313 20:56:38 @summary_handler.py:92][0m At episode: 666458, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:56:38 @summary_handler.py:93][0m Length: 9.20792079208
+[32m[0313 20:56:43 @summary_handler.py:92][0m At episode: 667456, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 20:56:43 @summary_handler.py:93][0m Length: 9.88118811881
+[32m[0313 20:56:47 @summary_handler.py:92][0m At episode: 668270, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:56:47 @summary_handler.py:93][0m Length: 8.05940594059
+[32m[0313 20:56:53 @network.py:199][0m step: 14700, current TD loss: 0.000839788932353
+[32m[0313 20:56:53 @summary_handler.py:92][0m At episode: 669432, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:56:53 @summary_handler.py:93][0m Length: 11.504950495
+[32m[0313 20:56:58 @summary_handler.py:92][0m At episode: 670430, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 20:56:58 @summary_handler.py:93][0m Length: 9.88118811881
+[32m[0313 20:57:00 @dqn_agent.py:206][0m episode: 671000, epsilon: 0.38521099
+[32m[0313 20:57:03 @summary_handler.py:92][0m At episode: 671683, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 20:57:03 @summary_handler.py:93][0m Length: 12.4059405941
+[32m[0313 20:57:05 @dqn_agent.py:206][0m episode: 672000, epsilon: 0.38422099
+[32m[0313 20:57:08 @summary_handler.py:92][0m At episode: 672517, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:57:08 @summary_handler.py:93][0m Length: 8.25742574257
+[32m[0313 20:57:13 @network.py:199][0m step: 14800, current TD loss: 0.0152198541909
+[32m[0313 20:57:13 @summary_handler.py:92][0m At episode: 673522, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:57:13 @summary_handler.py:93][0m Length: 9.9504950495
+[32m[0313 20:57:18 @summary_handler.py:92][0m At episode: 674442, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 20:57:18 @summary_handler.py:93][0m Length: 9.10891089109
+[32m[0313 20:57:22 @summary_handler.py:92][0m At episode: 675382, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:57:22 @summary_handler.py:93][0m Length: 9.30693069307
+[32m[0313 20:57:28 @summary_handler.py:92][0m At episode: 676439, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:57:28 @summary_handler.py:93][0m Length: 10.4653465347
+[32m[0313 20:57:33 @network.py:199][0m step: 14900, current TD loss: 0.015153891407
+[32m[0313 20:57:33 @summary_handler.py:92][0m At episode: 677477, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:57:33 @summary_handler.py:93][0m Length: 10.2772277228
+[32m[0313 20:57:38 @summary_handler.py:92][0m At episode: 678517, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:57:38 @summary_handler.py:93][0m Length: 10.297029703
+[32m[0313 20:57:41 @dqn_agent.py:206][0m episode: 679000, epsilon: 0.37729099
+[32m[0313 20:57:45 @summary_handler.py:92][0m At episode: 679941, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:57:45 @summary_handler.py:93][0m Length: 14.099009901
+[32m[0313 20:57:51 @summary_handler.py:92][0m At episode: 681408, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:57:51 @summary_handler.py:93][0m Length: 14.5247524752
+[32m[0313 20:57:57 @network.py:199][0m step: 15000, current TD loss: 0.0291895959526
+[32m[0313 20:57:57 @dqn_agent.py:223][0m At time step 15000, the target_network is updated
+[32m[0313 20:57:57 @summary_handler.py:92][0m At episode: 682713, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 20:57:57 @summary_handler.py:93][0m Length: 12.9207920792
+[32m[0313 20:58:03 @summary_handler.py:92][0m At episode: 683887, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 20:58:03 @summary_handler.py:93][0m Length: 11.6237623762
+[32m[0313 20:58:08 @summary_handler.py:92][0m At episode: 685017, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:58:08 @summary_handler.py:93][0m Length: 11.1881188119
+[32m[0313 20:58:13 @summary_handler.py:92][0m At episode: 686042, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:58:13 @summary_handler.py:93][0m Length: 10.1485148515
+[32m[0313 20:58:17 @network.py:199][0m step: 15100, current TD loss: 0.00102383026388
+[32m[0313 20:58:18 @summary_handler.py:92][0m At episode: 686992, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:58:18 @summary_handler.py:93][0m Length: 9.40594059406
+[32m[0313 20:58:23 @summary_handler.py:92][0m At episode: 687973, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 20:58:23 @summary_handler.py:93][0m Length: 9.71287128713
+[32m[0313 20:58:28 @summary_handler.py:92][0m At episode: 688963, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:58:28 @summary_handler.py:93][0m Length: 9.80198019802
+[32m[0313 20:58:33 @summary_handler.py:92][0m At episode: 690095, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 20:58:33 @summary_handler.py:93][0m Length: 11.2079207921
+[32m[0313 20:58:37 @network.py:199][0m step: 15200, current TD loss: 0.0274979285896
+[32m[0313 20:58:38 @summary_handler.py:92][0m At episode: 691032, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:58:38 @summary_handler.py:93][0m Length: 9.27722772277
+[32m[0313 20:58:43 @summary_handler.py:92][0m At episode: 691891, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 20:58:43 @summary_handler.py:93][0m Length: 8.50495049505
+[32m[0313 20:58:48 @summary_handler.py:92][0m At episode: 692887, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 20:58:48 @summary_handler.py:93][0m Length: 9.86138613861
+[32m[0313 20:58:52 @summary_handler.py:92][0m At episode: 693846, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 20:58:52 @summary_handler.py:93][0m Length: 9.49504950495
+[32m[0313 20:58:57 @network.py:199][0m step: 15300, current TD loss: 0.0152367409319
+[32m[0313 20:58:59 @summary_handler.py:92][0m At episode: 695227, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:58:59 @summary_handler.py:93][0m Length: 13.6732673267
+[32m[0313 20:59:02 @dqn_agent.py:206][0m episode: 696000, epsilon: 0.36046099
+[32m[0313 20:59:05 @summary_handler.py:92][0m At episode: 696557, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:59:05 @summary_handler.py:93][0m Length: 13.1683168317
+[32m[0313 20:59:11 @summary_handler.py:92][0m At episode: 698063, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:59:11 @summary_handler.py:93][0m Length: 14.9108910891
+[32m[0313 20:59:16 @summary_handler.py:92][0m At episode: 699034, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:59:16 @summary_handler.py:93][0m Length: 9.61386138614
+[32m[0313 20:59:20 @network.py:199][0m step: 15400, current TD loss: 0.000907349865884
+[32m[0313 20:59:21 @summary_handler.py:92][0m At episode: 700062, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:59:21 @summary_handler.py:93][0m Length: 10.1782178218
+[32m[0313 20:59:26 @summary_handler.py:92][0m At episode: 700961, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 20:59:26 @summary_handler.py:93][0m Length: 8.90099009901
+[32m[0313 20:59:26 @dqn_agent.py:206][0m episode: 701000, epsilon: 0.35551099
+[32m[0313 20:59:31 @summary_handler.py:92][0m At episode: 701953, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 20:59:31 @summary_handler.py:93][0m Length: 9.82178217822
+[32m[0313 20:59:36 @summary_handler.py:92][0m At episode: 702971, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 20:59:36 @summary_handler.py:93][0m Length: 10.0792079208
+[32m[0313 20:59:40 @network.py:199][0m step: 15500, current TD loss: 0.0144862271845
+[32m[0313 20:59:42 @summary_handler.py:92][0m At episode: 704420, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 20:59:42 @summary_handler.py:93][0m Length: 14.3465346535
+[32m[0313 20:59:48 @summary_handler.py:92][0m At episode: 705720, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 20:59:48 @summary_handler.py:93][0m Length: 12.8712871287
+[32m[0313 20:59:53 @summary_handler.py:92][0m At episode: 706911, Reward: 0.356435643564 (over 100 episodes)
+[32m[0313 20:59:53 @summary_handler.py:93][0m Length: 11.7920792079
+[32m[0313 20:59:58 @summary_handler.py:92][0m At episode: 707920, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 20:59:58 @summary_handler.py:93][0m Length: 9.9900990099
+[32m[0313 21:00:02 @network.py:199][0m step: 15600, current TD loss: 0.0150310266763
+[32m[0313 21:00:04 @summary_handler.py:92][0m At episode: 709174, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:00:04 @summary_handler.py:93][0m Length: 12.4158415842
+[32m[0313 21:00:11 @summary_handler.py:92][0m At episode: 710713, Reward: 0.39603960396 (over 100 episodes)
+[32m[0313 21:00:11 @summary_handler.py:93][0m Length: 15.2376237624
+[32m[0313 21:00:16 @summary_handler.py:92][0m At episode: 711898, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:00:16 @summary_handler.py:93][0m Length: 11.7326732673
+[32m[0313 21:00:23 @summary_handler.py:92][0m At episode: 713369, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:00:23 @summary_handler.py:93][0m Length: 14.5643564356
+[32m[0313 21:00:26 @network.py:199][0m step: 15700, current TD loss: 0.0141985304654
+[32m[0313 21:00:29 @summary_handler.py:92][0m At episode: 714729, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 21:00:29 @summary_handler.py:93][0m Length: 13.4653465347
+[32m[0313 21:00:35 @summary_handler.py:92][0m At episode: 716033, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 21:00:35 @summary_handler.py:93][0m Length: 12.9108910891
+[32m[0313 21:00:41 @summary_handler.py:92][0m At episode: 717407, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:00:41 @summary_handler.py:93][0m Length: 13.603960396
+[32m[0313 21:00:47 @summary_handler.py:92][0m At episode: 718594, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:00:47 @summary_handler.py:93][0m Length: 11.7524752475
+[32m[0313 21:00:50 @network.py:199][0m step: 15800, current TD loss: 0.000412211054936
+[32m[0313 21:00:53 @summary_handler.py:92][0m At episode: 719990, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:00:53 @summary_handler.py:93][0m Length: 13.8217821782
+[32m[0313 21:00:58 @summary_handler.py:92][0m At episode: 721193, Reward: 0.366336633663 (over 100 episodes)
+[32m[0313 21:00:58 @summary_handler.py:93][0m Length: 11.9108910891
+[32m[0313 21:01:05 @summary_handler.py:92][0m At episode: 722601, Reward: 0.306930693069 (over 100 episodes)
+[32m[0313 21:01:05 @summary_handler.py:93][0m Length: 13.9405940594
+[32m[0313 21:01:10 @summary_handler.py:92][0m At episode: 723800, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:01:10 @summary_handler.py:93][0m Length: 11.8712871287
+[32m[0313 21:01:14 @network.py:199][0m step: 15900, current TD loss: 0.0297915097326
+[32m[0313 21:01:15 @dqn_agent.py:206][0m episode: 725000, epsilon: 0.33175099
+[32m[0313 21:01:17 @summary_handler.py:92][0m At episode: 725264, Reward: 0.405940594059 (over 100 episodes)
+[32m[0313 21:01:17 @summary_handler.py:93][0m Length: 14.495049505
+[32m[0313 21:01:23 @summary_handler.py:92][0m At episode: 726578, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:01:23 @summary_handler.py:93][0m Length: 13.0099009901
+[32m[0313 21:01:29 @summary_handler.py:92][0m At episode: 727930, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:01:29 @summary_handler.py:93][0m Length: 13.3861386139
+[32m[0313 21:01:34 @dqn_agent.py:206][0m episode: 729000, epsilon: 0.32779099
+[32m[0313 21:01:35 @summary_handler.py:92][0m At episode: 729291, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:01:35 @summary_handler.py:93][0m Length: 13.4752475248
+[32m[0313 21:01:38 @network.py:199][0m step: 16000, current TD loss: 0.0146685773507
+[32m[0313 21:01:42 @summary_handler.py:92][0m At episode: 730880, Reward: 0.326732673267 (over 100 episodes)
+[32m[0313 21:01:42 @summary_handler.py:93][0m Length: 15.7326732673
+[32m[0313 21:01:49 @summary_handler.py:92][0m At episode: 732265, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:01:49 @summary_handler.py:93][0m Length: 13.7128712871
+[32m[0313 21:01:54 @summary_handler.py:92][0m At episode: 733468, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:01:54 @summary_handler.py:93][0m Length: 11.9108910891
+[32m[0313 21:02:01 @summary_handler.py:92][0m At episode: 734914, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:02:01 @summary_handler.py:93][0m Length: 14.3168316832
+[32m[0313 21:02:04 @network.py:199][0m step: 16100, current TD loss: 0.0440028682351
+[32m[0313 21:02:07 @summary_handler.py:92][0m At episode: 736220, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 21:02:07 @summary_handler.py:93][0m Length: 12.9306930693
+[32m[0313 21:02:13 @summary_handler.py:92][0m At episode: 737601, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 21:02:13 @summary_handler.py:93][0m Length: 13.6732673267
+[32m[0313 21:02:19 @summary_handler.py:92][0m At episode: 739117, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:02:19 @summary_handler.py:93][0m Length: 15.0099009901
+[32m[0313 21:02:26 @summary_handler.py:92][0m At episode: 740665, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 21:02:26 @summary_handler.py:93][0m Length: 15.3267326733
+[32m[0313 21:02:29 @network.py:199][0m step: 16200, current TD loss: 0.0577376931906
+[32m[0313 21:02:33 @summary_handler.py:92][0m At episode: 742106, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:02:33 @summary_handler.py:93][0m Length: 14.2673267327
+[32m[0313 21:02:39 @summary_handler.py:92][0m At episode: 743610, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:02:39 @summary_handler.py:93][0m Length: 14.8910891089
+[32m[0313 21:02:46 @summary_handler.py:92][0m At episode: 745105, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 21:02:46 @summary_handler.py:93][0m Length: 14.801980198
+[32m[0313 21:02:53 @summary_handler.py:92][0m At episode: 746696, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 21:02:53 @summary_handler.py:93][0m Length: 15.7524752475
+[32m[0313 21:02:55 @network.py:199][0m step: 16300, current TD loss: 0.000475685490528
+[32m[0313 21:02:58 @dqn_agent.py:206][0m episode: 748000, epsilon: 0.30898099
+[32m[0313 21:02:59 @summary_handler.py:92][0m At episode: 748242, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 21:02:59 @summary_handler.py:93][0m Length: 15.3069306931
+[32m[0313 21:03:05 @summary_handler.py:92][0m At episode: 749517, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:03:05 @summary_handler.py:93][0m Length: 12.6237623762
+[32m[0313 21:03:10 @summary_handler.py:92][0m At episode: 750577, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:03:10 @summary_handler.py:93][0m Length: 10.495049505
+[32m[0313 21:03:17 @summary_handler.py:92][0m At episode: 752129, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 21:03:17 @summary_handler.py:93][0m Length: 15.3663366337
+[32m[0313 21:03:19 @network.py:199][0m step: 16400, current TD loss: 0.015190157108
+[32m[0313 21:03:23 @summary_handler.py:92][0m At episode: 753405, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:03:23 @summary_handler.py:93][0m Length: 12.6336633663
+[32m[0313 21:03:29 @summary_handler.py:92][0m At episode: 754755, Reward: 0.405940594059 (over 100 episodes)
+[32m[0313 21:03:29 @summary_handler.py:93][0m Length: 13.3663366337
+[32m[0313 21:03:30 @dqn_agent.py:206][0m episode: 755000, epsilon: 0.30205099
+[32m[0313 21:03:36 @summary_handler.py:92][0m At episode: 756223, Reward: 0.376237623762 (over 100 episodes)
+[32m[0313 21:03:36 @summary_handler.py:93][0m Length: 14.5346534653
+[32m[0313 21:03:43 @summary_handler.py:92][0m At episode: 757924, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 21:03:43 @summary_handler.py:93][0m Length: 16.8415841584
+[32m[0313 21:03:45 @network.py:199][0m step: 16500, current TD loss: 0.0291919652373
+[32m[0313 21:03:50 @summary_handler.py:92][0m At episode: 759507, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:03:50 @summary_handler.py:93][0m Length: 15.6732673267
+[32m[0313 21:03:56 @summary_handler.py:92][0m At episode: 760965, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 21:03:56 @summary_handler.py:93][0m Length: 14.4356435644
+[32m[0313 21:03:56 @dqn_agent.py:206][0m episode: 761000, epsilon: 0.29611099
+[32m[0313 21:04:03 @summary_handler.py:92][0m At episode: 762448, Reward: 0.316831683168 (over 100 episodes)
+[32m[0313 21:04:03 @summary_handler.py:93][0m Length: 14.6831683168
+[32m[0313 21:04:10 @summary_handler.py:92][0m At episode: 763977, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:04:10 @summary_handler.py:93][0m Length: 15.1386138614
+[32m[0313 21:04:11 @network.py:199][0m step: 16600, current TD loss: 0.072598837316
+[32m[0313 21:04:16 @summary_handler.py:92][0m At episode: 765528, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:04:16 @summary_handler.py:93][0m Length: 15.3564356436
+[32m[0313 21:04:23 @summary_handler.py:92][0m At episode: 767029, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:04:23 @summary_handler.py:93][0m Length: 14.8613861386
+[32m[0313 21:04:30 @summary_handler.py:92][0m At episode: 768682, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:04:30 @summary_handler.py:93][0m Length: 16.3663366337
+[32m[0313 21:04:37 @summary_handler.py:92][0m At episode: 770263, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:04:37 @summary_handler.py:93][0m Length: 15.6534653465
+[32m[0313 21:04:38 @network.py:199][0m step: 16700, current TD loss: 0.0152210211381
+[32m[0313 21:04:40 @dqn_agent.py:206][0m episode: 771000, epsilon: 0.28621099
+[32m[0313 21:04:44 @summary_handler.py:92][0m At episode: 771843, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:04:44 @summary_handler.py:93][0m Length: 15.6435643564
+[32m[0313 21:04:51 @summary_handler.py:92][0m At episode: 773536, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:04:51 @summary_handler.py:93][0m Length: 16.7623762376
+[32m[0313 21:04:57 @summary_handler.py:92][0m At episode: 774953, Reward: 0.356435643564 (over 100 episodes)
+[32m[0313 21:04:57 @summary_handler.py:93][0m Length: 14.0297029703
+[32m[0313 21:05:03 @summary_handler.py:92][0m At episode: 776299, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:05:03 @summary_handler.py:93][0m Length: 13.3267326733
+[32m[0313 21:05:04 @network.py:199][0m step: 16800, current TD loss: 0.00117975275498
+[32m[0313 21:05:11 @summary_handler.py:92][0m At episode: 778154, Reward: 0.415841584158 (over 100 episodes)
+[32m[0313 21:05:11 @summary_handler.py:93][0m Length: 18.3663366337
+[32m[0313 21:05:17 @summary_handler.py:92][0m At episode: 779497, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:05:17 @summary_handler.py:93][0m Length: 13.297029703
+[32m[0313 21:05:19 @dqn_agent.py:206][0m episode: 780000, epsilon: 0.27730099
+[32m[0313 21:05:24 @summary_handler.py:92][0m At episode: 781107, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:05:24 @summary_handler.py:93][0m Length: 15.9405940594
+[32m[0313 21:05:31 @summary_handler.py:92][0m At episode: 782623, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:05:31 @summary_handler.py:93][0m Length: 15.0099009901
+[32m[0313 21:05:31 @network.py:199][0m step: 16900, current TD loss: 0.01523915492
+[32m[0313 21:05:36 @summary_handler.py:92][0m At episode: 783528, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:05:36 @summary_handler.py:93][0m Length: 8.9603960396
+[32m[0313 21:05:41 @summary_handler.py:92][0m At episode: 784505, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:05:41 @summary_handler.py:93][0m Length: 9.67326732673
+[32m[0313 21:05:48 @summary_handler.py:92][0m At episode: 786102, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:05:48 @summary_handler.py:93][0m Length: 15.8118811881
+[32m[0313 21:05:54 @summary_handler.py:92][0m At episode: 787580, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:05:54 @summary_handler.py:93][0m Length: 14.6336633663
+[32m[0313 21:05:55 @network.py:199][0m step: 17000, current TD loss: 0.0149202365428
+[32m[0313 21:05:59 @summary_handler.py:92][0m At episode: 788481, Reward: 0.0792079207921 (over 100 episodes)
+[32m[0313 21:05:59 @summary_handler.py:93][0m Length: 8.92079207921
+[32m[0313 21:06:05 @summary_handler.py:92][0m At episode: 789646, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:06:05 @summary_handler.py:93][0m Length: 11.5346534653
+[32m[0313 21:06:11 @summary_handler.py:92][0m At episode: 791131, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 21:06:11 @summary_handler.py:93][0m Length: 14.702970297
+[32m[0313 21:06:19 @summary_handler.py:92][0m At episode: 792766, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:06:19 @summary_handler.py:93][0m Length: 16.1881188119
+[32m[0313 21:06:19 @network.py:199][0m step: 17100, current TD loss: 0.0285533480346
+[32m[0313 21:06:26 @summary_handler.py:92][0m At episode: 794378, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:06:26 @summary_handler.py:93][0m Length: 15.9603960396
+[32m[0313 21:06:32 @summary_handler.py:92][0m At episode: 795892, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:06:32 @summary_handler.py:93][0m Length: 14.9900990099
+[32m[0313 21:06:40 @summary_handler.py:92][0m At episode: 797612, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:06:40 @summary_handler.py:93][0m Length: 17.0297029703
+[32m[0313 21:06:45 @network.py:199][0m step: 17200, current TD loss: 0.0150960804895
+[32m[0313 21:06:45 @summary_handler.py:92][0m At episode: 798645, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:06:45 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 21:06:52 @summary_handler.py:92][0m At episode: 800115, Reward: 0.346534653465 (over 100 episodes)
+[32m[0313 21:06:52 @summary_handler.py:93][0m Length: 14.5544554455
+[32m[0313 21:06:59 @summary_handler.py:92][0m At episode: 801702, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 21:06:59 @summary_handler.py:93][0m Length: 15.7128712871
+[32m[0313 21:07:04 @summary_handler.py:92][0m At episode: 802645, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:07:04 @summary_handler.py:93][0m Length: 9.33663366337
+[32m[0313 21:07:08 @network.py:199][0m step: 17300, current TD loss: 0.0276836715639
+[32m[0313 21:07:08 @summary_handler.py:92][0m At episode: 803422, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 21:07:08 @summary_handler.py:93][0m Length: 7.69306930693
+[32m[0313 21:07:13 @summary_handler.py:92][0m At episode: 804191, Reward: 0.0792079207921 (over 100 episodes)
+[32m[0313 21:07:13 @summary_handler.py:93][0m Length: 7.61386138614
+[32m[0313 21:07:17 @summary_handler.py:92][0m At episode: 805003, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:07:17 @summary_handler.py:93][0m Length: 8.0396039604
+[32m[0313 21:07:21 @summary_handler.py:92][0m At episode: 805739, Reward: 0.0891089108911 (over 100 episodes)
+[32m[0313 21:07:21 @summary_handler.py:93][0m Length: 7.28712871287
+[32m[0313 21:07:27 @network.py:199][0m step: 17400, current TD loss: 0.000672172638588
+[32m[0313 21:07:27 @summary_handler.py:92][0m At episode: 806995, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:07:27 @summary_handler.py:93][0m Length: 12.4356435644
+[32m[0313 21:07:34 @summary_handler.py:92][0m At episode: 808536, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:07:34 @summary_handler.py:93][0m Length: 15.2574257426
+[32m[0313 21:07:41 @summary_handler.py:92][0m At episode: 810098, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:07:41 @summary_handler.py:93][0m Length: 15.4653465347
+[32m[0313 21:07:48 @summary_handler.py:92][0m At episode: 811677, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:07:48 @summary_handler.py:93][0m Length: 15.6336633663
+[32m[0313 21:07:54 @network.py:199][0m step: 17500, current TD loss: 0.0139276497066
+[32m[0313 21:07:55 @dqn_agent.py:223][0m At time step 17500, the target_network is updated
+[32m[0313 21:07:55 @summary_handler.py:92][0m At episode: 813472, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:07:55 @summary_handler.py:93][0m Length: 17.7722772277
+[32m[0313 21:08:01 @summary_handler.py:92][0m At episode: 814605, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:08:01 @summary_handler.py:93][0m Length: 11.2178217822
+[32m[0313 21:08:05 @summary_handler.py:92][0m At episode: 815426, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 21:08:05 @summary_handler.py:93][0m Length: 8.12871287129
+[32m[0313 21:08:10 @summary_handler.py:92][0m At episode: 816426, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 21:08:10 @summary_handler.py:93][0m Length: 9.90099009901
+[32m[0313 21:08:15 @network.py:199][0m step: 17600, current TD loss: 0.0152640333399
+[32m[0313 21:08:16 @summary_handler.py:92][0m At episode: 817652, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:08:16 @summary_handler.py:93][0m Length: 12.1386138614
+[32m[0313 21:08:23 @summary_handler.py:92][0m At episode: 819243, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:08:23 @summary_handler.py:93][0m Length: 15.7524752475
+[32m[0313 21:08:30 @summary_handler.py:92][0m At episode: 820768, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:08:30 @summary_handler.py:93][0m Length: 15.099009901
+[32m[0313 21:08:35 @summary_handler.py:92][0m At episode: 821805, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:08:35 @summary_handler.py:93][0m Length: 10.2673267327
+[32m[0313 21:08:38 @network.py:199][0m step: 17700, current TD loss: 0.014376481995
+[32m[0313 21:08:39 @summary_handler.py:92][0m At episode: 822592, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 21:08:39 @summary_handler.py:93][0m Length: 7.79207920792
+[32m[0313 21:08:44 @summary_handler.py:92][0m At episode: 823361, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 21:08:44 @summary_handler.py:93][0m Length: 7.61386138614
+[32m[0313 21:08:48 @summary_handler.py:92][0m At episode: 824159, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 21:08:48 @summary_handler.py:93][0m Length: 7.90099009901
+[32m[0313 21:08:53 @summary_handler.py:92][0m At episode: 824976, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:08:53 @summary_handler.py:93][0m Length: 8.08910891089
+[32m[0313 21:08:56 @network.py:199][0m step: 17800, current TD loss: 0.00055082765175
+[32m[0313 21:08:58 @summary_handler.py:92][0m At episode: 826117, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:08:58 @summary_handler.py:93][0m Length: 11.297029703
+[32m[0313 21:09:04 @summary_handler.py:92][0m At episode: 827216, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:09:04 @summary_handler.py:93][0m Length: 10.8811881188
+[32m[0313 21:09:11 @summary_handler.py:92][0m At episode: 828817, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:09:11 @summary_handler.py:93][0m Length: 15.8514851485
+[32m[0313 21:09:18 @summary_handler.py:92][0m At episode: 830533, Reward: 0.0990099009901 (over 100 episodes)
+[32m[0313 21:09:18 @summary_handler.py:93][0m Length: 16.9900990099
+[32m[0313 21:09:22 @network.py:199][0m step: 17900, current TD loss: 0.0286238305271
+[32m[0313 21:09:24 @summary_handler.py:92][0m At episode: 831720, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:09:24 @summary_handler.py:93][0m Length: 11.7524752475
+[32m[0313 21:09:31 @summary_handler.py:92][0m At episode: 833423, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:09:31 @summary_handler.py:93][0m Length: 16.8613861386
+[32m[0313 21:09:39 @summary_handler.py:92][0m At episode: 835139, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:09:39 @summary_handler.py:93][0m Length: 16.9900990099
+[32m[0313 21:09:46 @summary_handler.py:92][0m At episode: 837004, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:09:46 @summary_handler.py:93][0m Length: 18.4653465347
+[32m[0313 21:09:51 @network.py:199][0m step: 18000, current TD loss: 0.0291149765253
+[32m[0313 21:09:53 @summary_handler.py:92][0m At episode: 838510, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:09:53 @summary_handler.py:93][0m Length: 14.9108910891
+[32m[0313 21:09:58 @summary_handler.py:92][0m At episode: 839543, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:09:58 @summary_handler.py:93][0m Length: 10.2277227723
+[32m[0313 21:10:00 @dqn_agent.py:206][0m episode: 840000, epsilon: 0.21790099
+[32m[0313 21:10:06 @summary_handler.py:92][0m At episode: 841387, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:10:06 @summary_handler.py:93][0m Length: 18.2574257426
+[32m[0313 21:10:14 @summary_handler.py:92][0m At episode: 843150, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:10:14 @summary_handler.py:93][0m Length: 17.4554455446
+[32m[0313 21:10:19 @network.py:199][0m step: 18100, current TD loss: 0.0142042040825
+[32m[0313 21:10:21 @summary_handler.py:92][0m At episode: 844905, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:10:21 @summary_handler.py:93][0m Length: 17.3762376238
+[32m[0313 21:10:22 @dqn_agent.py:206][0m episode: 845000, epsilon: 0.21295099
+[32m[0313 21:10:29 @summary_handler.py:92][0m At episode: 846751, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:10:29 @summary_handler.py:93][0m Length: 18.2772277228
+[32m[0313 21:10:35 @dqn_agent.py:206][0m episode: 848000, epsilon: 0.20998099
+[32m[0313 21:10:35 @summary_handler.py:92][0m At episode: 848082, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:10:35 @summary_handler.py:93][0m Length: 13.1782178218
+[32m[0313 21:10:43 @summary_handler.py:92][0m At episode: 849783, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 21:10:43 @summary_handler.py:93][0m Length: 16.8415841584
+[32m[0313 21:10:47 @network.py:199][0m step: 18200, current TD loss: 0.0278423316777
+[32m[0313 21:10:51 @summary_handler.py:92][0m At episode: 851680, Reward: 0.19801980198 (over 100 episodes)
+[32m[0313 21:10:51 @summary_handler.py:93][0m Length: 18.7821782178
+[32m[0313 21:10:58 @summary_handler.py:92][0m At episode: 853430, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 21:10:58 @summary_handler.py:93][0m Length: 17.3267326733
+[32m[0313 21:11:04 @summary_handler.py:92][0m At episode: 854499, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:11:04 @summary_handler.py:93][0m Length: 10.5841584158
+[32m[0313 21:11:12 @summary_handler.py:92][0m At episode: 856425, Reward: 0.336633663366 (over 100 episodes)
+[32m[0313 21:11:12 @summary_handler.py:93][0m Length: 19.0693069307
+[32m[0313 21:11:17 @network.py:199][0m step: 18300, current TD loss: 0.000392884423491
+[32m[0313 21:11:21 @summary_handler.py:92][0m At episode: 858314, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:11:21 @summary_handler.py:93][0m Length: 18.702970297
+[32m[0313 21:11:28 @summary_handler.py:92][0m At episode: 860021, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:11:28 @summary_handler.py:93][0m Length: 16.900990099
+[32m[0313 21:11:37 @summary_handler.py:92][0m At episode: 861946, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:11:37 @summary_handler.py:93][0m Length: 19.0594059406
+[32m[0313 21:11:46 @summary_handler.py:92][0m At episode: 863724, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:11:46 @summary_handler.py:93][0m Length: 17.603960396
+[32m[0313 21:11:48 @network.py:199][0m step: 18400, current TD loss: 0.0280764568597
+[32m[0313 21:11:51 @summary_handler.py:92][0m At episode: 864867, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:11:51 @summary_handler.py:93][0m Length: 11.3168316832
+[32m[0313 21:11:59 @summary_handler.py:92][0m At episode: 866641, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:11:59 @summary_handler.py:93][0m Length: 17.5643564356
+[32m[0313 21:12:06 @summary_handler.py:92][0m At episode: 867971, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:12:06 @summary_handler.py:93][0m Length: 13.1683168317
+[32m[0313 21:12:10 @summary_handler.py:92][0m At episode: 868735, Reward: 0.0990099009901 (over 100 episodes)
+[32m[0313 21:12:10 @summary_handler.py:93][0m Length: 7.56435643564
+[32m[0313 21:12:12 @network.py:199][0m step: 18500, current TD loss: 0.0280636027455
+[32m[0313 21:12:14 @summary_handler.py:92][0m At episode: 869520, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:12:14 @summary_handler.py:93][0m Length: 7.77227722772
+[32m[0313 21:12:22 @summary_handler.py:92][0m At episode: 871444, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:12:22 @summary_handler.py:93][0m Length: 19.0495049505
+[32m[0313 21:12:30 @summary_handler.py:92][0m At episode: 873253, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:12:30 @summary_handler.py:93][0m Length: 17.9108910891
+[32m[0313 21:12:33 @dqn_agent.py:206][0m episode: 874000, epsilon: 0.18424099
+[32m[0313 21:12:38 @summary_handler.py:92][0m At episode: 875161, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:12:38 @summary_handler.py:93][0m Length: 18.8910891089
+[32m[0313 21:12:41 @network.py:199][0m step: 18600, current TD loss: 0.0154739292338
+[32m[0313 21:12:46 @summary_handler.py:92][0m At episode: 877016, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:12:46 @summary_handler.py:93][0m Length: 18.3663366337
+[32m[0313 21:12:54 @summary_handler.py:92][0m At episode: 878917, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:12:54 @summary_handler.py:93][0m Length: 18.8217821782
+[32m[0313 21:13:02 @summary_handler.py:92][0m At episode: 880883, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:13:02 @summary_handler.py:93][0m Length: 19.4653465347
+[32m[0313 21:13:10 @summary_handler.py:92][0m At episode: 882805, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:13:10 @summary_handler.py:93][0m Length: 19.0297029703
+[32m[0313 21:13:12 @network.py:199][0m step: 18700, current TD loss: 0.000507684191689
+[32m[0313 21:13:18 @summary_handler.py:92][0m At episode: 884387, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:13:18 @summary_handler.py:93][0m Length: 15.6633663366
+[32m[0313 21:13:26 @summary_handler.py:92][0m At episode: 886429, Reward: 0.29702970297 (over 100 episodes)
+[32m[0313 21:13:26 @summary_handler.py:93][0m Length: 20.2178217822
+[32m[0313 21:13:35 @summary_handler.py:92][0m At episode: 888384, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 21:13:35 @summary_handler.py:93][0m Length: 19.3564356436
+[32m[0313 21:13:43 @summary_handler.py:92][0m At episode: 890307, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:13:43 @summary_handler.py:93][0m Length: 19.0396039604
+[32m[0313 21:13:47 @network.py:199][0m step: 18800, current TD loss: 0.000901781138964
+[32m[0313 21:13:52 @summary_handler.py:92][0m At episode: 892414, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:13:52 @summary_handler.py:93][0m Length: 20.8613861386
+[32m[0313 21:14:01 @summary_handler.py:92][0m At episode: 894607, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:14:01 @summary_handler.py:93][0m Length: 21.7128712871
+[32m[0313 21:14:09 @summary_handler.py:92][0m At episode: 896489, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:14:09 @summary_handler.py:93][0m Length: 18.6336633663
+[32m[0313 21:14:18 @summary_handler.py:92][0m At episode: 898660, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:14:18 @summary_handler.py:93][0m Length: 21.495049505
+[32m[0313 21:14:21 @network.py:199][0m step: 18900, current TD loss: 0.0153690036386
+[32m[0313 21:14:27 @summary_handler.py:92][0m At episode: 900845, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 21:14:27 @summary_handler.py:93][0m Length: 21.6336633663
+[32m[0313 21:14:35 @summary_handler.py:92][0m At episode: 902769, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:14:35 @summary_handler.py:93][0m Length: 19.0495049505
+[32m[0313 21:14:44 @summary_handler.py:92][0m At episode: 904912, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 21:14:44 @summary_handler.py:93][0m Length: 21.2178217822
+[32m[0313 21:14:54 @summary_handler.py:92][0m At episode: 907318, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:14:54 @summary_handler.py:93][0m Length: 23.8217821782
+[32m[0313 21:14:56 @network.py:199][0m step: 19000, current TD loss: 0.0140270395204
+[32m[0313 21:15:03 @summary_handler.py:92][0m At episode: 909594, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:15:03 @summary_handler.py:93][0m Length: 22.5346534653
+[32m[0313 21:15:12 @summary_handler.py:92][0m At episode: 911677, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:15:12 @summary_handler.py:93][0m Length: 20.6237623762
+[32m[0313 21:15:21 @summary_handler.py:92][0m At episode: 913886, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:15:21 @summary_handler.py:93][0m Length: 21.8712871287
+[32m[0313 21:15:26 @dqn_agent.py:206][0m episode: 915000, epsilon: 0.14365099
+[32m[0313 21:15:28 @summary_handler.py:92][0m At episode: 915248, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 21:15:28 @summary_handler.py:93][0m Length: 13.4851485149
+[32m[0313 21:15:29 @network.py:199][0m step: 19100, current TD loss: 0.000702802557498
+[32m[0313 21:15:35 @summary_handler.py:92][0m At episode: 916801, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:15:35 @summary_handler.py:93][0m Length: 15.3762376238
+[32m[0313 21:15:44 @summary_handler.py:92][0m At episode: 919029, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:15:44 @summary_handler.py:93][0m Length: 22.0594059406
+[32m[0313 21:15:53 @summary_handler.py:92][0m At episode: 921292, Reward: 0.257425742574 (over 100 episodes)
+[32m[0313 21:15:53 @summary_handler.py:93][0m Length: 22.4059405941
+[32m[0313 21:16:03 @summary_handler.py:92][0m At episode: 923527, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:16:03 @summary_handler.py:93][0m Length: 22.1287128713
+[32m[0313 21:16:05 @network.py:199][0m step: 19200, current TD loss: 0.0427036881447
+[32m[0313 21:16:12 @summary_handler.py:92][0m At episode: 925968, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 21:16:12 @summary_handler.py:93][0m Length: 24.1683168317
+[32m[0313 21:16:21 @dqn_agent.py:206][0m episode: 928000, epsilon: 0.13078099
+[32m[0313 21:16:21 @summary_handler.py:92][0m At episode: 928000, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:16:21 @summary_handler.py:93][0m Length: 20.1188118812
+[32m[0313 21:16:31 @summary_handler.py:92][0m At episode: 930544, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:16:31 @summary_handler.py:93][0m Length: 25.1881188119
+[32m[0313 21:16:33 @dqn_agent.py:206][0m episode: 931000, epsilon: 0.12781099
+[32m[0313 21:16:42 @summary_handler.py:92][0m At episode: 933076, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:16:42 @summary_handler.py:93][0m Length: 25.0693069307
+[32m[0313 21:16:43 @network.py:199][0m step: 19300, current TD loss: 0.0142330722883
+[32m[0313 21:16:52 @summary_handler.py:92][0m At episode: 935545, Reward: 0.217821782178 (over 100 episodes)
+[32m[0313 21:16:52 @summary_handler.py:93][0m Length: 24.4455445545
+[32m[0313 21:16:54 @dqn_agent.py:206][0m episode: 936000, epsilon: 0.12286099
+[32m[0313 21:17:01 @summary_handler.py:92][0m At episode: 937937, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:17:01 @summary_handler.py:93][0m Length: 23.6831683168
+[32m[0313 21:17:12 @summary_handler.py:92][0m At episode: 940521, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:17:12 @summary_handler.py:93][0m Length: 25.5841584158
+[32m[0313 21:17:22 @summary_handler.py:92][0m At episode: 943123, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:17:22 @summary_handler.py:93][0m Length: 25.7623762376
+[32m[0313 21:17:23 @network.py:199][0m step: 19400, current TD loss: 0.0141638219357
+[32m[0313 21:17:33 @summary_handler.py:92][0m At episode: 945679, Reward: 0.267326732673 (over 100 episodes)
+[32m[0313 21:17:33 @summary_handler.py:93][0m Length: 25.3069306931
+[32m[0313 21:17:42 @dqn_agent.py:206][0m episode: 948000, epsilon: 0.11098099
+[32m[0313 21:17:43 @summary_handler.py:92][0m At episode: 948354, Reward: 0.277227722772 (over 100 episodes)
+[32m[0313 21:17:43 @summary_handler.py:93][0m Length: 26.4851485149
+[32m[0313 21:17:50 @dqn_agent.py:206][0m episode: 950000, epsilon: 0.10900099
+[32m[0313 21:17:52 @summary_handler.py:92][0m At episode: 950310, Reward: 0.0990099009901 (over 100 episodes)
+[32m[0313 21:17:52 @summary_handler.py:93][0m Length: 19.3663366337
+[32m[0313 21:17:55 @dqn_agent.py:206][0m episode: 951000, epsilon: 0.10801099
+[32m[0313 21:17:56 @summary_handler.py:92][0m At episode: 951098, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:17:56 @summary_handler.py:93][0m Length: 7.80198019802
+[32m[0313 21:17:56 @network.py:199][0m step: 19500, current TD loss: 0.0458866581321
+[32m[0313 21:18:05 @summary_handler.py:92][0m At episode: 953176, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:18:05 @summary_handler.py:93][0m Length: 20.5742574257
+[32m[0313 21:18:12 @summary_handler.py:92][0m At episode: 954890, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:18:12 @summary_handler.py:93][0m Length: 16.9702970297
+[32m[0313 21:18:22 @summary_handler.py:92][0m At episode: 957412, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 21:18:22 @summary_handler.py:93][0m Length: 24.9702970297
+[32m[0313 21:18:32 @summary_handler.py:92][0m At episode: 959928, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:18:32 @summary_handler.py:93][0m Length: 24.9108910891
+[32m[0313 21:18:33 @network.py:199][0m step: 19600, current TD loss: 0.0280881728977
+[32m[0313 21:18:44 @summary_handler.py:92][0m At episode: 962740, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:18:44 @summary_handler.py:93][0m Length: 27.8415841584
+[32m[0313 21:18:49 @summary_handler.py:92][0m At episode: 963657, Reward: 0.287128712871 (over 100 episodes)
+[32m[0313 21:18:49 @summary_handler.py:93][0m Length: 9.07920792079
+[32m[0313 21:18:55 @dqn_agent.py:206][0m episode: 965000, epsilon: 0.09415099
+[32m[0313 21:18:56 @summary_handler.py:92][0m At episode: 965409, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:18:56 @summary_handler.py:93][0m Length: 17.3465346535
+[32m[0313 21:19:07 @dqn_agent.py:206][0m episode: 968000, epsilon: 0.09118099
+[32m[0313 21:19:07 @network.py:199][0m step: 19700, current TD loss: 0.0159455593675
+[32m[0313 21:19:08 @summary_handler.py:92][0m At episode: 968296, Reward: 0.247524752475 (over 100 episodes)
+[32m[0313 21:19:08 @summary_handler.py:93][0m Length: 28.5841584158
+[32m[0313 21:19:20 @summary_handler.py:92][0m At episode: 971315, Reward: 0.207920792079 (over 100 episodes)
+[32m[0313 21:19:20 @summary_handler.py:93][0m Length: 29.8910891089
+[32m[0313 21:19:32 @summary_handler.py:92][0m At episode: 974557, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 21:19:32 @summary_handler.py:93][0m Length: 32.099009901
+[32m[0313 21:19:43 @summary_handler.py:92][0m At episode: 977263, Reward: 0.128712871287 (over 100 episodes)
+[32m[0313 21:19:43 @summary_handler.py:93][0m Length: 26.7920792079
+[32m[0313 21:19:55 @network.py:199][0m step: 19800, current TD loss: 0.0444750934839
+[32m[0313 21:19:56 @summary_handler.py:92][0m At episode: 980496, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:19:56 @summary_handler.py:93][0m Length: 32.0099009901
+[32m[0313 21:20:08 @summary_handler.py:92][0m At episode: 983591, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:20:08 @summary_handler.py:93][0m Length: 30.6435643564
+[32m[0313 21:20:21 @summary_handler.py:92][0m At episode: 986848, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 21:20:21 @summary_handler.py:93][0m Length: 32.2475247525
+[32m[0313 21:20:33 @summary_handler.py:92][0m At episode: 990025, Reward: 0.148514851485 (over 100 episodes)
+[32m[0313 21:20:33 @summary_handler.py:93][0m Length: 31.4554455446
+[32m[0313 21:20:45 @dqn_agent.py:206][0m episode: 993000, epsilon: 0.06643099
+[32m[0313 21:20:47 @network.py:199][0m step: 19900, current TD loss: 0.000418194162194
+[32m[0313 21:20:49 @summary_handler.py:92][0m At episode: 994074, Reward: 0.237623762376 (over 100 episodes)
+[32m[0313 21:20:49 @summary_handler.py:93][0m Length: 40.0891089109
+[32m[0313 21:21:04 @summary_handler.py:92][0m At episode: 997968, Reward: 0.138613861386 (over 100 episodes)
+[32m[0313 21:21:04 @summary_handler.py:93][0m Length: 38.5544554455
+[32m[0313 21:21:18 @summary_handler.py:92][0m At episode: 1001808, Reward: 0.118811881188 (over 100 episodes)
+[32m[0313 21:21:18 @summary_handler.py:93][0m Length: 38.0198019802
+[32m[0313 21:21:19 @dqn_agent.py:206][0m episode: 1002000, epsilon: 0.05752099
+[32m[0313 21:21:34 @summary_handler.py:92][0m At episode: 1005961, Reward: 0.158415841584 (over 100 episodes)
+[32m[0313 21:21:34 @summary_handler.py:93][0m Length: 41.1188118812
+[32m[0313 21:21:49 @network.py:199][0m step: 20000, current TD loss: 0.000241115296376
+[32m[0313 21:21:49 @dqn_agent.py:223][0m At time step 20000, the target_network is updated
+[32m[0313 21:21:51 @summary_handler.py:92][0m At episode: 1010353, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 21:21:51 @summary_handler.py:93][0m Length: 43.4851485149
+[32m[0313 21:22:10 @summary_handler.py:92][0m At episode: 1015613, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:22:10 @summary_handler.py:93][0m Length: 52.0792079208
+[32m[0313 21:22:33 @summary_handler.py:92][0m At episode: 1021671, Reward: 0.188118811881 (over 100 episodes)
+[32m[0313 21:22:33 @summary_handler.py:93][0m Length: 59.9801980198
+[32m[0313 21:22:59 @summary_handler.py:92][0m At episode: 1028777, Reward: 0.227722772277 (over 100 episodes)
+[32m[0313 21:22:59 @summary_handler.py:93][0m Length: 70.3564356436
+[32m[0313 21:23:21 @network.py:199][0m step: 20100, current TD loss: 0.0154476836324
+[32m[0313 21:23:23 @summary_handler.py:92][0m At episode: 1035355, Reward: 0.168316831683 (over 100 episodes)
+[32m[0313 21:23:23 @summary_handler.py:93][0m Length: 65.1287128713
+[32m[0313 21:23:50 @summary_handler.py:92][0m At episode: 1042930, Reward: 0.178217821782 (over 100 episodes)
+[32m[0313 21:23:50 @summary_handler.py:93][0m Length: 75.0
+[32m[0313 21:27:48 @summary_handler.py:92][0m At episode: 1111914, Reward: 0.108910891089 (over 100 episodes)
+[32m[0313 21:27:48 @summary_handler.py:93][0m Length: 683.00990099
+[32m[0313 21:39:21 @summary_handler.py:92][0m At episode: 1313626, Reward: 0.0 (over 100 episodes)
+[32m[0313 21:39:21 @summary_handler.py:93][0m Length: 1997.14851485
+[32m[0313 21:48:34 @network.py:199][0m step: 20200, current TD loss: 0.0161980763078
+[32m[0313 21:50:57 @summary_handler.py:92][0m At episode: 1515335, Reward: 0.0 (over 100 episodes)
+[32m[0313 21:50:57 @summary_handler.py:93][0m Length: 1997.11881188
