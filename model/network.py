@@ -16,6 +16,7 @@ import tensorflow as tf
 import cnn
 import layers
 from util import logger
+import numpy as np
 init_path.bypass_frost_warning()
 
 
@@ -117,7 +118,7 @@ class deep_Q_network(network):
                  target_network=None, update_freq=100):
         # init the parent class and build the baseline model
         self.target_network = target_network
-        self.update_freq = update_freq
+        self.info_update_freq = update_freq
 
         if target_network is None:
             logger.info('building the target network, name: {}'.format(name))
@@ -163,8 +164,8 @@ class deep_Q_network(network):
             self.output * self.actions_one_hot,
             reduction_indices=1, name='action_state_value')
 
-        self.td_diff = self.Q_next_state_input - \
-            self.reward_input - self.config.TRAIN.value_decay_factor * \
+        self.td_diff = self.config.TRAIN.value_decay_factor * \
+            self.Q_next_state_input + self.reward_input - \
             self.pred_state_action_value
         self.td_diff_clipped = tf.where(tf.abs(self.td_diff) < 1.0,
                                         0.5 * tf.square(self.td_diff),
@@ -174,19 +175,22 @@ class deep_Q_network(network):
 
         self.init_training()
 
-    def get_next_state_value(self, end_states):
+    def get_next_state_value(self, end_states, terminal):
         assert self.target_network is None, logger.error(
             'You should call the target network to generate the value')
-        return self.sess.run(
+        max_value = self.sess.run(
             self.max_Q_value, feed_dict={self.input_screen: end_states})
+        max_value[np.where(terminal)] = 0  # if terminated, return 0
+        return max_value
 
-    def train_step(self, start_states, end_states, actions, rewards,
+    def train_step(self, start_states, end_states, actions, rewards, terminal,
                    td_loss_summary):
         assert self.target_network is not None, logger.error(
             'You should call the prediction network')
 
         # get the target prediction
-        Q_next_state = self.target_network.get_next_state_value(end_states)
+        Q_next_state = self.target_network.get_next_state_value(end_states,
+                                                                terminal)
 
         _, current_loss, current_step, td_loss_sum = self.sess.run(
             [self.optim, self.td_loss, self.step_count, td_loss_summary],
@@ -194,7 +198,7 @@ class deep_Q_network(network):
                        self.reward_input: rewards,
                        self.Q_next_state_input: Q_next_state,
                        self.input_screen: start_states})
-        if current_step % self.update_freq == 0:
+        if current_step % self.info_update_freq == 0:
             logger.info('step: {}, current TD loss: {}'.format(
                 current_step, current_loss))
 

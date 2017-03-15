@@ -20,5 +20,13 @@ ipython, opencv2 (pip install)
 
 Things to consider: 
 
-## the display option
-## not using feeddict, but use a queue runner.
+### the display option  # still bug in it!
+
+### record the max value
+
+### record the distribution of action a
+
+### not using feed-dict, but use a queue runner.
+
+
+## The actor critic network

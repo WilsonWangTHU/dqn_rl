@@ -187,7 +187,7 @@ class qlearning_agent(object):
                     self.config.TRAIN.end_epsilon_episode,
                     self.config.TRAIN.training_start_episode)
 
-                if random.uniform(0, 1) < epsilon:
+                if random.uniform(0, 1) <= epsilon:
                     pred_action = random.randint(0, self.n_action - 1)
                 else:
                     feed_dict = {}
@@ -206,9 +206,6 @@ class qlearning_agent(object):
             if self.exp_shop.episode % 1000 == 0:
                 logger.info('episode: {}, epsilon: {}'.format(
                     self.exp_shop.episode, epsilon))
-            if self.step % 100 == 0:
-                print('{}, {}'.format(i_exp, total_reward))
-
             # add it to the summary handler
             self.summary_handler.add_stat(total_reward, num_step_in_episode,
                                           self.exp_shop.episode)
@@ -230,7 +227,7 @@ class qlearning_agent(object):
             start_states, end_states, actions, rewards, terminal = \
                 self.exp_shop.pop()
             self.step, td_loss = self.predict_network.train_step(
-                start_states, end_states, actions, rewards,
+                start_states, end_states, actions, rewards, terminal,
                 self.summary_handler.get_td_loss_summary())
 
             # record the summary of loss
@@ -242,5 +239,5 @@ class qlearning_agent(object):
         current_episode = self.exp_shop.episode
         effective_length = t_ep_end - max(0., current_episode - t_learn_start)
         epsilon = ep_end + \
-            max(0., (ep_start - ep_end)) * effective_length / float(t_ep_end)
+            max(0., (ep_start - ep_end) * effective_length / float(t_ep_end))
         return epsilon

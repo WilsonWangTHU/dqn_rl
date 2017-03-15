@@ -105,6 +105,7 @@ class experience_shop(object):
             # find length = self.history_length frames, that don't have
             # terminal signals in between, loop until found
             while True:
+                # randint(0, 1) takes both 0 and 1
                 index = random.randint(self.history_length, self.count - 1)
 
                 # test if it is a valid state: is_broken_experience
