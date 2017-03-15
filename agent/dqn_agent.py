@@ -199,6 +199,11 @@ class qlearning_agent(object):
                 # do the action and record it in the experience shop
                 observation, reward, terminal, _ = self.env.step(pred_action)
                 self.exp_shop.push(pred_action, reward, observation, terminal)
+
+                # record it in the history recorder
+                self.history_recorder.update_history(observation)
+
+                # record the para to be written into the summary writer
                 num_step_in_episode += 1
                 total_reward += reward
 

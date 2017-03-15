@@ -145,7 +145,7 @@ class history_recorder(object):
 
     def update_history(self, observation):
         self.history_exp[1:, :, :] = \
-            self.history_exp[0: self.history_length, :, :]
+            self.history_exp[0: self.history_length - 1, :, :]
         self.history_exp[0, :, :] = observation
         return
 
