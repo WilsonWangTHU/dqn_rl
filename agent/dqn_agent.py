@@ -34,6 +34,7 @@ class qlearning_agent(object):
                     The structure used to record past experience
                 @self.summary_handle:
                     The structure that handles all the summary recording
+
             @what it should do:
                 It is a master mind of different functions. But details of
                 different function should not appear here (say training,

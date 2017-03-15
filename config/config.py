@@ -24,7 +24,7 @@ __C.TRAIN.gradient_clip = 10  # it is actually deprecated
 __C.TRAIN.learning_rate = 0.00025  # 0.001 (suggested)
 __C.TRAIN.learning_rate_minimum = 0.00025
 __C.TRAIN.decay_step = 50000
-__C.TRAIN.decay_rate = 0.96
+__C.TRAIN.decay_rate = 0.99
 __C.TRAIN.max_grad_norm = None
 
 # for the Q learning
