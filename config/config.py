@@ -48,14 +48,14 @@ __C.TRAIN.training_start_episode = 50000
 __C.TRAIN.end_epsilon_episode = 1000000
 
 # parameters for the summary tensorboard
-__C.TRAIN.update_tensorboard_episode_length = 100
+__C.TRAIN.update_tensorboard_step_length = 100
 
 # configurations about the game
 __C.GAME.type = 'atari'
 __C.GAME.display = False
 __C.GAME.screen_size = 80
 __C.GAME.history_length = 4
-__C.GAME.n_action_repeat = 4  # TODO: they already have the skip of frame
+__C.GAME.n_action_repeat = 1  # TODO: they already have the skip of frame
 __C.GAME.n_random_action = 30
 __C.GAME.max_reward_clip = 1
 __C.GAME.return_cumulated_reward = 4

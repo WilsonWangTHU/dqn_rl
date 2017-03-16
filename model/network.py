@@ -192,6 +192,9 @@ class deep_Q_network(network):
         Q_next_state = self.target_network.get_next_state_value(end_states,
                                                                 terminal)
 
+        # increment the step parameters
+        self.sess.run(self.step_add_op)
+
         _, current_loss, current_step, td_loss_sum = self.sess.run(
             [self.optim, self.td_loss, self.step_count, td_loss_summary],
             feed_dict={self.action_input: actions,
@@ -202,8 +205,6 @@ class deep_Q_network(network):
             logger.info('step: {}, current TD loss: {}'.format(
                 current_step, current_loss))
 
-        # increment the step parameters
-        self.sess.run(self.step_add_op)
         return current_step, td_loss_sum
 
     def init_training(self):
@@ -249,6 +250,9 @@ class deep_Q_network(network):
 
     def get_td_loss(self):
         return self.td_loss
+
+    def get_max_q(self):
+        return self.max_Q_value
 
 
 class actor_critic_network(network):

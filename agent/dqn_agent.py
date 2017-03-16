@@ -69,7 +69,7 @@ class qlearning_agent(object):
         self.predict_network = deep_Q_network(
             self.sess, 'predict_network', self.config, self.n_action,
             target_network=self.target_network,
-            update_freq=self.config.TRAIN.update_tensorboard_episode_length)
+            update_freq=self.config.TRAIN.update_tensorboard_step_length)
 
         # construct the operation of copying weights.
         self.target_network.set_all_var_copy_op(
@@ -86,7 +86,8 @@ class qlearning_agent(object):
         # construct the summary recorder
         self.summary_handler = gym_summary_handler(
             self.sess, self.predict_network.get_td_loss(),
-            self.config.TRAIN.update_tensorboard_episode_length)
+            self.predict_network.get_max_q(),
+            self.config.TRAIN.update_tensorboard_step_length)
 
         # init the network saver and restore
         self.saver = tf.train.Saver()
@@ -136,87 +137,73 @@ class qlearning_agent(object):
                 2. using these experiences to update the network
                 3. transfer knowledge from predict network to target network
         '''
-        # TODO: make sure the two network are indentical if ...
         while True:
-            # generating played sequences
-            self.generate_experience()
-
-            # train the network
-            self.train_step()
-
-            # save the network if needed
-            '''
-            if self.step % self.config.TRAIN.snapshot_step == 1:
-                self.save_all()
-            '''
-
-            # save the played video if needed
-            if self.step % self.config.TRAIN.play_and_save_video == 1:
-                self.play_game_and_save()
-        return
-
-    def play_game_and_save(self):
-        # save the video and play a little bit
-        base_path = init_path.get_base_dir()
-        path = os.path.join(base_path, 'video',
-                            init_path.get_time() + 'dqn_' +
-                            str(self.step) + '_' + self.env_name)
-        if not os.path.exists(path):
-            os.mkdir(path)
-        for i_video in range(10):
-            self.env.set_monitor(os.path.join(path, str(i_video)))
-            self.generate_experience(num_episode=1)
-            self.env.unset_monitor()
-        return
-
-    def generate_experience(self, num_episode=None):
-        if num_episode is None:
-            num_episode = self.config.TRAIN.exp_train_ratio
-        for i_exp in range(num_episode):
-            # play the whole episodes
-            observation, reward, terminal = self.env.new_game(
+            # start a new game
+            observation, reward, terminal, _ = self.env.new_game(
                 run_random_action=self.env.get_if_run_random_action())
+
+            # init history recorder and summary handler for one new game
             self.history_recorder.init_history(observation)
-            num_step_in_episode = 0
-            total_reward = reward
+            # this is just for one episode
+
             while terminal is False:
                 # get the predicted action, note we all use training step
                 # instead of episode count
-                epsilon = self.get_epsilon(
-                    self.config.TRAIN.end_epsilon,
-                    self.config.TRAIN.start_epsilon,
-                    self.config.TRAIN.end_epsilon_episode,
-                    self.config.TRAIN.training_start_episode)
+                terminal = self.agent_play_game_step()
 
-                if random.uniform(0, 1) <= epsilon:
-                    pred_action = random.randint(0, self.n_action - 1)
-                else:
-                    feed_dict = {}
-                    feed_dict[self.predict_network.get_input_placeholder()] = \
-                        self.history_recorder.get_history()
-                    pred_action = self.predict_network.get_pred_action(
-                        feed_dict)
+                # train the network
+                self.train_step()
 
-                # do the action and record it in the experience shop
-                observation, reward, terminal, _ = self.env.step(pred_action)
-                self.exp_shop.push(pred_action, reward, observation, terminal)
+            # add it to the summary handler after every episode
+            self.summary_handler.add_episode_stat(
+                self.exp_shop.get_total_game_step())
 
-                # record it in the history recorder
-                self.history_recorder.update_history(observation)
+            '''
+            # save the network if needed
+            if self.step % self.config.TRAIN.snapshot_step == 1:
+                self.save_all()
 
-                # record the para to be written into the summary writer
-                num_step_in_episode += 1
-                total_reward += reward
-
-            # show some information
-            if self.exp_shop.episode % 1000 == 0:
-                logger.info('episode: {}, epsilon: {}'.format(
-                    self.exp_shop.episode, epsilon))
-            # add it to the summary handler
-            self.summary_handler.add_stat(total_reward, num_step_in_episode,
-                                          self.exp_shop.episode)
-
+            # save the played video if needed
+            # if self.step % self.config.TRAIN.play_and_save_video == 1:
+            #    self.play_game_and_save()
+            '''
         return
+
+    def agent_play_game_step(self, num_episode=None):
+
+        epsilon = self.get_epsilon(
+            self.config.TRAIN.end_epsilon,
+            self.config.TRAIN.start_epsilon,
+            self.config.TRAIN.end_epsilon_episode,
+            self.config.TRAIN.training_start_episode)
+
+        if random.uniform(0, 1) <= epsilon:
+            pred_action = random.randint(0, self.n_action - 1)
+        else:
+            feed_dict = {}
+            feed_dict[self.predict_network.get_input_placeholder()] = \
+                self.history_recorder.get_history()
+            pred_action = self.predict_network.get_pred_action(
+                feed_dict)
+
+        # do the action and record it in the experience shop
+        observation, reward, terminal, _ = self.env.step(pred_action)
+        self.exp_shop.push(pred_action, reward, observation, terminal)
+
+        # record it in the history recorder
+        self.history_recorder.update_history(observation)
+
+        # record the para to be written into the summary writer
+        self.summary_handler.add_step_stat(reward)
+
+        # show some information
+        if self.exp_shop.get_total_game_step() % 1000 == 0:
+            logger.info(
+                'episode: {}, total game step: {}, epsilon: {}'.format(
+                    self.exp_shop.get_total_episode(),
+                    self.exp_shop.get_total_game_step(), epsilon))
+
+        return terminal
 
     def train_step(self):
         if self.exp_shop.count < self.config.TRAIN.training_start_episode:
@@ -241,8 +228,23 @@ class qlearning_agent(object):
                 td_loss, self.step)
         return
 
+    def play_game_and_save(self):
+        # save the video and play a little bit
+        assert False, logger.error('Not usable')
+        base_path = init_path.get_base_dir()
+        path = os.path.join(base_path, 'video',
+                            init_path.get_time() + 'dqn_' +
+                            str(self.step) + '_' + self.env_name)
+        if not os.path.exists(path):
+            os.mkdir(path)
+        for i_video in range(10):
+            self.env.set_monitor(os.path.join(path, str(i_video)))
+            # self.generate_experience(num_episode=1)
+            self.env.unset_monitor()
+        return
+
     def get_epsilon(self, ep_end, ep_start, t_ep_end, t_learn_start):
-        current_episode = self.exp_shop.episode
+        current_episode = self.exp_shop.get_total_game_step()
         effective_length = t_ep_end - max(0., current_episode - t_learn_start)
         epsilon = ep_end + \
             max(0., (ep_start - ep_end) * effective_length / float(t_ep_end))

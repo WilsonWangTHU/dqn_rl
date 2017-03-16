@@ -30,6 +30,7 @@ class experience_shop(object):
         # the FIFO pointer
         self.current = 0
         self.count = 0
+        self.total_game_step = 0
         self.total_episode = 0
 
         # locate the memory
@@ -59,6 +60,7 @@ class experience_shop(object):
                      'observations': self.observations[:self.count, :, :],
                      'terminals': self.terminals[:self.count],
                      'current': self.current,
+                     'total_game_step': self.total_game_step,
                      'total_episode': self.total_episode}
 
         np.save(path, data_dict)
@@ -80,6 +82,7 @@ class experience_shop(object):
         self.observations[:self.count, :, :] = data_dict['observations']
         self.terminals[:self.count] = data_dict['terminals']
         self.current = data_dict['current']
+        self.total_game_step = data_dict['total_game_step']
         self.total_episode = data_dict['total_episode']
         return
 
@@ -93,7 +96,11 @@ class experience_shop(object):
         # update parameters
         self.current = (self.current + 1) % self.memory_length
         self.count = min(self.count + 1, self.memory_length)
-        self.total_episode += 1
+        self.total_game_step += 1
+
+        # record the number of total epsisodes played
+        if terminal:
+            self.total_episode += 1
 
         return
 
@@ -130,8 +137,10 @@ class experience_shop(object):
         return self.start_states, self.end_states, self.actions[batch_id], \
             self.rewards[batch_id], self.terminals[batch_id]
 
-    @property
-    def episode(self):
+    def get_total_game_step(self):
+        return self.total_game_step
+
+    def get_total_episode(self):
         return self.total_episode
 
 

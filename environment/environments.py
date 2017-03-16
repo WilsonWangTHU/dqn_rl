@@ -28,7 +28,8 @@ class game_environment(object):
                 @data_format: 'NWHC' or 'NCWH' useful when defining the network
         '''
         self.name = env_name
-        self.n_action_repeat = n_action_repeat
+        # TODO: action repeat is not useful
+        self.n_action_repeat = 1
         self.env = gym.make(env_name)
         self.temp_env = None
         self.data_format = data_format
@@ -100,14 +101,20 @@ class atari_environment(game_environment):
 
         # if run random for some steps
         if run_random_action:
-            # @TODO: about early terminaled games?
-            for i_random_walk in range(random.randint(0, self.n_random_action)):
-                screen, reward, terminal, info = self.env.step(0)  # noop action
+            num_random_action = random.randint(0, self.n_random_action - 1)
+            for i_random_walk in range(num_random_action):
+                if i_random_walk == num_random_action - 1:
+                    # start action
+                    screen, reward, terminal, info = self.env.step(1)
+                else:
+                    # noop action
+                    screen, reward, terminal, info = self.env.step(0)
+
                 if terminal:  # set for a new game if terminated
                     logger.warning('New game terminated after {} step'.format(
                         i_random_walk))
                     screen = self.env.reset()
-                    screen, reward, terminal, info = self.env.step(0)
+                    screen, reward, terminal, info = self.env.step(1)
         # rendering
         if self.display:
             self.env.render()
@@ -118,7 +125,7 @@ class atari_environment(game_environment):
         reward = 0
         observation = self.get_observation(screen)
 
-        return observation, reward, terminal
+        return observation, reward, terminal, info
 
     def step(self, action):
         assert self.lives >= 0, logger.error(

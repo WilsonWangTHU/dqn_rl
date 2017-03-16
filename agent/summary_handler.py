@@ -44,11 +44,16 @@ class gym_summary_handler(summary_handler):
             3. loss between difference of estimated value (TD)
     '''
 
-    def __init__(self, sess, td_loss, update_frequency):
+    def __init__(self, sess, td_loss, max_q, update_frequency):
         super(self.__class__, self).__init__(sess)
         self.loss_td_sum = tf.summary.scalar('td_loss', td_loss)
+        self.maxq_sum = tf.summary.scalar('max_q', max_q)
+
+        self.sum = tf.summary.merge([self.loss_td_sum, self.maxq_sum])
         self.update_frequency_episode = update_frequency
 
+        self.step_counter_per_episode = 0
+        self.reward_per_episode = 0
         # init the reward
         self.reset_stat()
         return
@@ -68,36 +73,48 @@ class gym_summary_handler(summary_handler):
         return
 
     def get_td_loss_summary(self):
-        return self.loss_td_sum
+        return self.sum
 
-    def add_stat(self, reward, length, episode_count):
-        self.reward_total += reward
-        self.episode_length_total += length
+    def add_episode_stat(self, game_step_count):
+        # flush the data recorded during one single episode
+        self.reward_total += self.reward_per_episode
+        self.episode_length_total += self.step_counter_per_episode
         self.count += 1
-        if self.count > self.update_frequency_episode:
+
+        # get prepared for the new episode, clean data
+        self.reward_per_episode = 0
+        self.step_counter_per_episode = 0
+
+        if self.count >= self.update_frequency_episode:
             # record the data into the summary
             self.episode_length_total = \
                 self.episode_length_total / float(self.count)
             self.reward_total = self.reward_total / float(self.count)
 
             self.manually_add_scalar_summary(
-                'avg_reward', self.reward_total, episode_count)
+                'avg_reward', self.reward_total, game_step_count)
 
             self.manually_add_scalar_summary(
-                'avg_episode_length', self.episode_length_total, episode_count)
+                'avg_episode_length', self.episode_length_total,
+                game_step_count)
 
             logger.info(
                 'At episode: {}, Reward: {} (over {} episodes)'.format(
-                    episode_count, self.reward_total,
+                    game_step_count, self.reward_total,
                     self.update_frequency_episode))
             logger.info('Length: {}'.format(self.episode_length_total))
 
             self.reset_stat()
         return
 
-    def reset_stat(self):
-        self.reward_total = 0
+    def reset_stat(self, init_reward=0):
+        self.reward_total = init_reward
         self.episode_length_total = 0
 
         self.count = 0
+        return
+
+    def add_step_stat(self, reward):
+        self.reward_per_episode += reward
+        self.step_counter_per_episode += 1
         return
