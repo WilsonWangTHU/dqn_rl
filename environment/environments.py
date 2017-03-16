@@ -180,3 +180,121 @@ class atari_environment(game_environment):
 
     def get_if_run_random_action(self):
         return self.run_random_action
+
+
+class toy_environment(game_environment):
+    '''
+        @brief: the same toy from carpedm
+    '''
+
+    def __init__(self, env_name, n_action_repeat,
+                 n_random_action, screen_size,
+                 display, data_format='NCHW', return_cumulated_reward=False,
+                 is_training=True):
+
+        # init the base environment class
+        super(self.__class__, self).__init__(
+            env_name, n_action_repeat, display,
+            data_format, return_cumulated_reward, is_training)
+
+        self.n_random_action = n_random_action
+        if self.n_random_action > 0:
+            self.run_random_action = True
+        self.screen_size = screen_size
+
+        logger.info('Game set image size: {}, random walk step: {}'.format(
+            self.screen_size, self.n_random_action))
+
+        return
+
+    def new_game(self, run_random_action=False):
+        '''
+            @brief:
+                start a new game.
+            @input:
+                @n_random_action: if not 0, than we do some 'noop' action
+        '''
+        screen = self.env.reset()  # set for new game
+        screen, reward, terminal, info = self.env.step(0)  # the noop action
+
+        # if run random for some steps
+        if run_random_action:
+            num_random_action = random.randint(0, self.n_random_action - 1)
+            for i_random_walk in range(num_random_action):
+                if i_random_walk == num_random_action - 1:
+                    # start action
+                    screen, reward, terminal, info = self.env.step(1)
+                else:
+                    # noop action
+                    screen, reward, terminal, info = self.env.step(0)
+
+                if terminal:  # set for a new game if terminated
+                    logger.warning('New game terminated after {} step'.format(
+                        i_random_walk))
+                    screen = self.env.reset()
+                    screen, reward, terminal, info = self.env.step(1)
+        # rendering
+        if self.display:
+            self.env.render()
+
+        # now return the true observation, reward, terminal, ...
+        self.lives = info['ale.lives']
+        terminal = False
+        reward = 0
+        observation = self.get_observation(screen)
+
+        return observation, reward, terminal, info
+
+    def step(self, action):
+        assert self.lives >= 0, logger.error(
+            'Why negative lives? did you run new_game()?')
+        cumulated_reward = 0
+        screen, reward, terminal, _ = self.env.step(action)
+
+        for _ in range(self.n_action_repeat):
+            screen, reward, terminal, info = self.env.step(action)
+            cumulated_reward += reward
+            current_lives = info['ale.lives']
+
+            # in training, even dead by once, we regard as an end of game
+            if terminal or (self.is_train and self.lives > current_lives):
+                terminal = True
+                break
+
+            self.lives = info['ale.lives']
+
+        # rendering
+        if self.display:
+            self.env.render()
+
+        # get what is needed to be returned
+        if not terminal:
+            self.lives = current_lives
+        else:  # to make sure that no one run game without init
+            self.lives = -1
+        if self.return_cumulated_reward:
+            reward = cumulated_reward
+        screen = self.get_observation(screen)
+
+        return screen, reward, terminal, info
+
+    def get_observation(self, screen):
+        '''
+            @brief:
+                from the import raw pixel observation to the real observation
+        '''
+        screen = screen[:, :, 0] * 0.2126 + screen[:, :, 1] * 0.7152 + \
+            screen[:, :, 2] * 0.0722
+        screen = screen.astype(np.uint8)
+        screen = imresize(screen, [self.screen_size, self.screen_size])
+
+        return screen
+
+    def get_action_space_size(self):
+        '''
+            @brief: the network will need to know the size of action
+        '''
+        return self.env.action_space.n
+
+    def get_if_run_random_action(self):
+        return self.run_random_action
