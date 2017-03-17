@@ -8,12 +8,14 @@
 import init_path
 from util import logger
 from environment.environments import atari_environment
+from environment.environments import toy_environment
 from model.network import deep_Q_network
 from experience import experience_shop, history_recorder
 from summary_handler import gym_summary_handler
 import tensorflow as tf
 import random
 import os
+import numpy as np
 
 
 class qlearning_agent(object):
@@ -53,6 +55,13 @@ class qlearning_agent(object):
         # construct the environment
         if self.config.GAME.type == 'atari':
             self.env = atari_environment(
+                self.env_name, self.config.GAME.n_action_repeat,
+                self.config.GAME.n_random_action,
+                self.config.GAME.screen_size, self.config.GAME.display,
+                self.config.NETWORK.data_format,
+                self.config.GAME.return_cumulated_reward)
+        elif self.config.GAME.type == 'toy':
+            self.env = toy_environment(
                 self.env_name, self.config.GAME.n_action_repeat,
                 self.config.GAME.n_random_action,
                 self.config.GAME.screen_size, self.config.GAME.display,
@@ -187,11 +196,18 @@ class qlearning_agent(object):
                 feed_dict)
 
         # do the action and record it in the experience shop
+        # the_map = ['Left', 'Down', 'Right', 'Up', 'NOOP']
+        # print(the_map[pred_action])
         observation, reward, terminal, _ = self.env.step(pred_action)
+        # print(np.array(observation).reshape(4, 4))
         self.exp_shop.push(pred_action, reward, observation, terminal)
 
         # record it in the history recorder
+        #start_state = self.history_recorder.get_last_frame()
         self.history_recorder.update_history(observation)
+        #self.show_result(pred_action, reward, 
+        #                 start_state,
+        #                 observation, terminal)
 
         # record the para to be written into the summary writer
         self.summary_handler.add_step_stat(reward)
@@ -202,7 +218,6 @@ class qlearning_agent(object):
                 'episode: {}, total game step: {}, epsilon: {}'.format(
                     self.exp_shop.get_total_episode(),
                     self.exp_shop.get_total_game_step(), epsilon))
-
         return terminal
 
     def train_step(self):
@@ -219,6 +234,9 @@ class qlearning_agent(object):
             # fetch the data and train the network
             start_states, end_states, actions, rewards, terminal = \
                 self.exp_shop.pop()
+            #for i in range(32):
+            #    self.show_result(actions[i], rewards[i], start_states[i], 
+            #        end_states[i], terminal[i])
             self.step, td_loss = self.predict_network.train_step(
                 start_states, end_states, actions, rewards, terminal,
                 self.summary_handler.get_td_loss_summary())
@@ -249,3 +267,17 @@ class qlearning_agent(object):
         epsilon = ep_end + \
             max(0., (ep_start - ep_end) * effective_length / float(t_ep_end))
         return epsilon
+    
+    def show_result(self, pred_action, reward, start_state, 
+                    observation, terminal):
+        he_map = ['Left', 'Down', 'Right', 'Up', 'NOOP']
+        if reward > 0:
+            print('success!')
+        print('-------------------- debug result:')
+        print(np.array(start_state).reshape(4,4))
+        print('action: {}'.format(he_map[pred_action]))
+        print('reward: {}'.format(reward))
+        print('terminal: {}'.format(terminal))
+        print(np.array(observation).reshape(4,4))
+        return
+        

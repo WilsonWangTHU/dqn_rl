@@ -46,8 +46,6 @@ class network(object):
         self.name = name
         self.all_var = {}
 
-        assert self.game_type in ['atari'], \
-            logger.error('Game type not supported: {}'.format(self.game_type))
         logger.info('Building network of type: {}, using basebone: {}'.format(
             self.network_type, self.network_basebone))
 
@@ -95,7 +93,7 @@ class network(object):
 
     def get_pred_action(self, feed_dict):
         # TODO: we might want to know how to deal with asyn
-        return self.sess.run(self.action, feed_dict=feed_dict)
+        return self.sess.run(self.action, feed_dict=feed_dict)[0]
 
     def get_input_placeholder(self):
         return self.baseline_net.get_input_placeholder()
@@ -163,10 +161,11 @@ class deep_Q_network(network):
         self.pred_state_action_value = tf.reduce_sum(
             self.output * self.actions_one_hot,
             reduction_indices=1, name='action_state_value')
-
-        self.td_diff = self.config.TRAIN.value_decay_factor * \
-            self.Q_next_state_input + self.reward_input - \
-            self.pred_state_action_value
+        self.target_value = self.config.TRAIN.value_decay_factor * \
+            self.Q_next_state_input + self.reward_input
+        
+        self.td_diff = self.target_value - self.pred_state_action_value
+        
         self.td_diff_clipped = tf.where(tf.abs(self.td_diff) < 1.0,
                                         0.5 * tf.square(self.td_diff),
                                         tf.abs(self.td_diff) - 0.5,
@@ -195,12 +194,29 @@ class deep_Q_network(network):
         # increment the step parameters
         self.sess.run(self.step_add_op)
 
-        _, current_loss, current_step, td_loss_sum = self.sess.run(
-            [self.optim, self.td_loss, self.step_count, td_loss_summary],
+        current_step = self.sess.run(self.step_count)
+        '''
+        if current_step > 100000 and current_step % 10000 == 1:            
+            current_loss, current_step, td_loss_sum, q_values, diff_clipped = self.sess.run(
+                [self.td_loss, self.step_count, td_loss_summary, 
+                 self.output, self.td_diff_clipped],
+                feed_dict={self.action_input: actions,
+                           self.reward_input: rewards,
+                           self.Q_next_state_input: Q_next_state,
+                           self.input_screen: start_states})
+
+            for i in range(32):
+                self.show_result(actions[i], rewards[i], start_states[i], 
+                                 end_states[i], terminal[i], Q_next_state[i], q_values[i], diff_clipped[i])
+          '''      
+        _, current_loss, current_step, td_loss_sum, q_values = self.sess.run(
+            [self.optim, self.td_loss, self.step_count, td_loss_summary, 
+             self.output],
             feed_dict={self.action_input: actions,
                        self.reward_input: rewards,
                        self.Q_next_state_input: Q_next_state,
                        self.input_screen: start_states})
+ 
         if current_step % self.info_update_freq == 0:
             logger.info('step: {}, current TD loss: {}'.format(
                 current_step, current_loss))
@@ -253,6 +269,22 @@ class deep_Q_network(network):
 
     def get_max_q(self):
         return self.max_Q_value
+    
+    def show_result(self, pred_action, reward, start_state, 
+                    observation, terminal, predicted_max_value_next_state, current_q_a_value, diff_clipped):
+        he_map = ['Left', 'Down', 'Right', 'Up', 'NOOP']
+        if reward > 0:
+            print('success!')
+        print('-------------------- debug result:')
+        print(np.array(start_state).reshape(4,4))
+        print('action: {}'.format(he_map[pred_action]))
+        print('reward: {}'.format(reward))
+        print('terminal: {}'.format(terminal))
+        print(np.array(observation).reshape(4,4))
+        print('target_should be: {}'.format(0.99 * predicted_max_value_next_state + reward))
+        print('predicited: {}'.format(current_q_a_value[pred_action]))
+        print('all_value: {}'.format(current_q_a_value))
+        return
 
 
 class actor_critic_network(network):

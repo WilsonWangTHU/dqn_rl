@@ -47,7 +47,7 @@ class gym_summary_handler(summary_handler):
     def __init__(self, sess, td_loss, max_q, update_frequency):
         super(self.__class__, self).__init__(sess)
         self.loss_td_sum = tf.summary.scalar('td_loss', td_loss)
-        self.maxq_sum = tf.summary.scalar('max_q', max_q)
+        self.maxq_sum = tf.summary.scalar('max_q', tf.reduce_max(max_q))
 
         self.sum = tf.summary.merge([self.loss_td_sum, self.maxq_sum])
         self.update_frequency_episode = update_frequency
@@ -99,7 +99,7 @@ class gym_summary_handler(summary_handler):
                 game_step_count)
 
             logger.info(
-                'At episode: {}, Reward: {} (over {} episodes)'.format(
+                'Current step: {}, Reward: {} (over {} episodes)'.format(
                     game_step_count, self.reward_total,
                     self.update_frequency_episode))
             logger.info('Length: {}'.format(self.episode_length_total))

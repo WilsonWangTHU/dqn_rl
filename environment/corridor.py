@@ -92,9 +92,7 @@ class CorridorEnv(discrete.DiscreteEnv):
                     rew = 1.0 if letter == 'A' \
                         else 10.0 if letter == 'D' \
                         else -1.0 if letter == 'H' \
-                        else 1.0 if (newrow != row or
-                                     newcol != col) and letter == 'F' \
-                        else 0.0
+                        else -0.1
                     li.append((1.0 / 3.0, newstate, rew, done))
 
         super(CorridorEnv, self).__init__(
@@ -149,7 +147,7 @@ class CorridorEnv(discrete.DiscreteEnv):
 
 register(
     id='CorridorSmall-v5',
-    entry_point='corridor:CorridorEnv',
+    entry_point='environment.corridor:CorridorEnv',
     kwargs={
         'map_name': '4x4',
         'n_actions': 5},
@@ -158,7 +156,7 @@ register(
 
 register(
     id='CorridorSmall-v10',
-    entry_point='corridor:CorridorEnv',
+    entry_point='environment.corridor:CorridorEnv',
     kwargs={
         'map_name': '4x4',
         'n_actions': 10},
@@ -167,7 +165,7 @@ register(
 
 register(
     id='CorridorBig-v5',
-    entry_point='corridor:CorridorEnv',
+    entry_point='environment.corridor:CorridorEnv',
     kwargs={
         'map_name': '9x9',
         'n_actions': 5},
@@ -176,7 +174,7 @@ register(
 
 register(
     id='CorridorBig-v10',
-    entry_point='corridor:CorridorEnv',
+    entry_point='environment.corridor:CorridorEnv',
     kwargs={
         'map_name': '9x9',
         'n_actions': 10},

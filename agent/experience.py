@@ -35,7 +35,7 @@ class experience_shop(object):
 
         # locate the memory
         self.actions = np.empty(self.memory_length, dtype=np.uint8)
-        self.rewards = np.empty(self.memory_length, dtype=np.int8)
+        self.rewards = np.empty(self.memory_length, dtype=np.uint8)
         self.observations = np.empty(
             [self.memory_length, self.screen_size, self.screen_size],
             dtype=np.uint8)
@@ -153,9 +153,12 @@ class history_recorder(object):
             [history_length, screen_size, screen_size], np.uint8)
 
     def update_history(self, observation):
-        self.history_exp[1:, :, :] = \
-            self.history_exp[0: self.history_length - 1, :, :]
-        self.history_exp[0, :, :] = observation
+        if self.history_length == 1:
+            self.init_history(observation)
+        else:
+            self.history_exp[1:, :, :] = \
+                self.history_exp[0: self.history_length - 1, :, :]
+            self.history_exp[0, :, :] = observation
         return
 
     def init_history(self, observation):
@@ -172,3 +175,6 @@ class history_recorder(object):
     def clean_history(self):
         self.history_exp = np.empty(
             [self.history_length, self.size, self.size], np.uint8)
+        
+    def get_last_frame(self):
+        return self.history_exp[self.history_length - 1]

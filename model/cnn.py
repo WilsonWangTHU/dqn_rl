@@ -93,6 +93,20 @@ class basebone_network(object):
                 self.l2, 256, activation_fn=tf.nn.relu, name='fc_3')
 
             self.output = self.l3
+        elif self.network_basebone == 'mlp':
+            logger.info('Building a DEBUG model!')
+            layer = self.l0
+            if len(layer.get_shape().as_list()) == 3:
+                assert layer.get_shape().as_list()[1] == 1, logger.error(
+                    'We only play mlp with the toy environment')
+            layer = tf.reshape(layer, [-1] + layer.get_shape().as_list()[2:])
+
+            for idx, hidden_size in enumerate([50, 50, 50]):
+                w_name, b_name = 'w_%d' % idx, 'b_%d' % idx  # get the name
+                layer, self.var[w_name], self.var[b_name] = \
+                    layers.linear(layer, hidden_size, activation_fn=tf.sigmoid,
+                                  trainable=True, name=('lin_%d' % idx))
+            self.output = layer
         else:
             assert False, logger.error(
                 'Unknown baseline type {}'.format(self.network_basebone))
