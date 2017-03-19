@@ -34,11 +34,13 @@ def change_debug_config(config):
     config.NETWORK.network_basebone = 'mlp'
     config.GAME.screen_size = 4
     config.TRAIN.training_start_episode = 1000
-    config.TRAIN.end_epsilon_episode = 100000
+    config.TRAIN.end_epsilon_episode = 20000
     config.TRAIN.decay_step = 1000
     config.GAME.history_length = 1
-    config.TRAIN.learning_rate = 0.025
-    config.TRAIN.learning_rate_minimum = 0.0025
+    config.TRAIN.learning_rate = 0.005
+    config.TRAIN.learning_rate_minimum = 0.005
+    config.TRAIN.update_network_freq = 2000
+
 
     # the environment
     config.GAME.type = 'toy'
@@ -62,6 +64,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     args.debug = True
+    config.TRAIN.training_start_episode = 1000
     # init the logger, just save the network
     logger.set_file_handler(prefix='gym_')
 

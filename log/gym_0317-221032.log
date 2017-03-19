@@ -1,0 +1,104 @@
+[32m[0317 22:10:32 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0317-221032.log
+[32m[0317 22:10:32 @train_gym.py:77][0m Session starts, using gpu: 0
+[32m[0317 22:10:32 @dqn_agent.py:49][0m Constructing a q-learning agent to play CorridorSmall-v5
+[32m[0317 22:10:32 @environments.py:46][0m Init game environments CorridorSmall-v5
+[32m[0317 22:10:32 @environments.py:202][0m Game set image size: 4
+[32m[0317 22:10:32 @network.py:123][0m building the target network, name: target_network
+[32m[0317 22:10:32 @network.py:51][0m Building network of type: dqn, using basebone: mlp
+[32m[0317 22:10:32 @cnn.py:21][0m building the basebone network, using mlp format
+[32m[0317 22:10:32 @cnn.py:98][0m Building a DEBUG model!
+[32m[0317 22:10:32 @network.py:125][0m building the pred network, name: predict_network
+[32m[0317 22:10:32 @network.py:51][0m Building network of type: dqn, using basebone: mlp
+[32m[0317 22:10:32 @cnn.py:21][0m building the basebone network, using mlp format
+[32m[0317 22:10:32 @cnn.py:98][0m Building a DEBUG model!
+[32m[0317 22:10:32 @experience.py:23][0m building the experience shop
+[32m[0317 22:10:32 @summary_handler.py:30][0m summary write initialized, writing to ../agent/../checkpoint
+[32m[0317 22:10:32 @summary_handler.py:104][0m Current step: 434, Reward: -0.454 (over 100 episodes)
+[32m[0317 22:10:32 @summary_handler.py:105][0m Length: 4.34
+[32m[0317 22:10:32 @summary_handler.py:104][0m Current step: 794, Reward: -0.49 (over 100 episodes)
+[32m[0317 22:10:32 @summary_handler.py:105][0m Length: 3.6
+[32m[0317 22:10:32 @dqn_agent.py:220][0m episode: 249, total game step: 1000, epsilon: 1.0
+[32m[0317 22:10:32 @dqn_agent.py:232][0m At time step 0, the target_network is updated
+[32m[0317 22:10:35 @network.py:237][0m step: 100, current TD loss: 0.0901229977608
+[32m[0317 22:10:37 @network.py:237][0m step: 200, current TD loss: 0.0257911272347
+[32m[0317 22:10:37 @summary_handler.py:104][0m Current step: 1211, Reward: -0.547 (over 100 episodes)
+[32m[0317 22:10:37 @summary_handler.py:105][0m Length: 4.17
+[32m[0317 22:10:39 @network.py:237][0m step: 300, current TD loss: 0.0158304739743
+[32m[0317 22:10:40 @network.py:237][0m step: 400, current TD loss: 0.204672843218
+[32m[0317 22:10:42 @network.py:237][0m step: 500, current TD loss: 0.0284856874496
+[32m[0317 22:10:44 @network.py:237][0m step: 600, current TD loss: 0.00663550989702
+[32m[0317 22:10:45 @summary_handler.py:104][0m Current step: 1634, Reward: -0.553 (over 100 episodes)
+[32m[0317 22:10:45 @summary_handler.py:105][0m Length: 4.23
+[32m[0317 22:10:46 @network.py:237][0m step: 700, current TD loss: 0.0395030602813
+[32m[0317 22:10:48 @network.py:237][0m step: 800, current TD loss: 0.0385631807148
+[32m[0317 22:10:50 @network.py:237][0m step: 900, current TD loss: 0.314585030079
+[32m[0317 22:10:52 @network.py:237][0m step: 1000, current TD loss: 0.00168907199986
+[32m[0317 22:10:52 @summary_handler.py:104][0m Current step: 1999, Reward: -0.165 (over 100 episodes)
+[32m[0317 22:10:52 @summary_handler.py:105][0m Length: 3.65
+[32m[0317 22:10:52 @dqn_agent.py:220][0m episode: 500, total game step: 2000, epsilon: 0.991009
+[32m[0317 22:10:54 @network.py:237][0m step: 1100, current TD loss: 0.138418510556
+[32m[0317 22:10:56 @network.py:237][0m step: 1200, current TD loss: 0.00339154736139
+[32m[0317 22:10:58 @network.py:237][0m step: 1300, current TD loss: 0.0502623021603
+[32m[0317 22:10:59 @summary_handler.py:104][0m Current step: 2348, Reward: -0.039 (over 100 episodes)
+[32m[0317 22:10:59 @summary_handler.py:105][0m Length: 3.49
+[32m[0317 22:11:00 @network.py:237][0m step: 1400, current TD loss: 0.0191879943013
+[32m[0317 22:11:02 @network.py:237][0m step: 1500, current TD loss: 0.013283399865
+[32m[0317 22:11:04 @network.py:237][0m step: 1600, current TD loss: 0.0756631866097
+[32m[0317 22:11:06 @summary_handler.py:104][0m Current step: 2698, Reward: -0.7 (over 100 episodes)
+[32m[0317 22:11:06 @summary_handler.py:105][0m Length: 3.5
+[32m[0317 22:11:06 @network.py:237][0m step: 1700, current TD loss: 0.00531376339495
+[32m[0317 22:11:07 @network.py:237][0m step: 1800, current TD loss: 0.0034936228767
+[32m[0317 22:11:09 @network.py:237][0m step: 1900, current TD loss: 0.0368461757898
+[32m[0317 22:11:11 @network.py:237][0m step: 2000, current TD loss: 0.0334883108735
+[32m[0317 22:11:11 @dqn_agent.py:220][0m episode: 766, total game step: 3000, epsilon: 0.982009
+[32m[0317 22:11:13 @network.py:237][0m step: 2100, current TD loss: 0.0114446617663
+[32m[0317 22:11:14 @summary_handler.py:104][0m Current step: 3136, Reward: -0.568 (over 100 episodes)
+[32m[0317 22:11:14 @summary_handler.py:105][0m Length: 4.38
+[32m[0317 22:11:15 @network.py:237][0m step: 2200, current TD loss: 0.0898502022028
+[32m[0317 22:11:17 @network.py:237][0m step: 2300, current TD loss: 0.0113669857383
+[32m[0317 22:11:19 @network.py:237][0m step: 2400, current TD loss: 0.0547226443887
+[32m[0317 22:11:21 @network.py:237][0m step: 2500, current TD loss: 0.0925040766597
+[32m[0317 22:11:21 @dqn_agent.py:232][0m At time step 2500, the target_network is updated
+[32m[0317 22:11:22 @summary_handler.py:104][0m Current step: 3569, Reward: -0.673 (over 100 episodes)
+[32m[0317 22:11:22 @summary_handler.py:105][0m Length: 4.33
+[32m[0317 22:11:23 @network.py:237][0m step: 2600, current TD loss: 0.116118073463
+[32m[0317 22:11:25 @network.py:237][0m step: 2700, current TD loss: 0.295308023691
+[32m[0317 22:11:27 @network.py:237][0m step: 2800, current TD loss: 0.166658997536
+[32m[0317 22:11:29 @network.py:237][0m step: 2900, current TD loss: 0.573940515518
+[32m[0317 22:11:30 @summary_handler.py:104][0m Current step: 3947, Reward: -0.728 (over 100 episodes)
+[32m[0317 22:11:30 @summary_handler.py:105][0m Length: 3.78
+[32m[0317 22:11:31 @network.py:237][0m step: 3000, current TD loss: 0.853661060333
+[32m[0317 22:11:31 @dqn_agent.py:220][0m episode: 1011, total game step: 4000, epsilon: 0.973009
+[32m[0317 22:11:33 @network.py:237][0m step: 3100, current TD loss: 0.27127122879
+[32m[0317 22:11:35 @network.py:237][0m step: 3200, current TD loss: 0.0342556349933
+[32m[0317 22:11:36 @summary_handler.py:104][0m Current step: 4277, Reward: -0.35 (over 100 episodes)
+[32m[0317 22:11:36 @summary_handler.py:105][0m Length: 3.3
+[32m[0317 22:11:37 @network.py:237][0m step: 3300, current TD loss: 12.0855979919
+[32m[0317 22:11:38 @network.py:237][0m step: 3400, current TD loss: 25.2324886322
+[32m[0317 22:11:40 @network.py:237][0m step: 3500, current TD loss: 15.5986022949
+[32m[0317 22:11:42 @network.py:237][0m step: 3600, current TD loss: 51.5059928894
+[32m[0317 22:11:43 @summary_handler.py:104][0m Current step: 4641, Reward: -0.384 (over 100 episodes)
+[32m[0317 22:11:43 @summary_handler.py:105][0m Length: 3.64
+[32m[0317 22:11:44 @network.py:237][0m step: 3700, current TD loss: 39.7829589844
+[32m[0317 22:11:46 @network.py:237][0m step: 3800, current TD loss: 8.96489238739
+[32m[0317 22:11:48 @network.py:237][0m step: 3900, current TD loss: 63.8235435486
+[32m[0317 22:11:49 @summary_handler.py:104][0m Current step: 4971, Reward: -0.35 (over 100 episodes)
+[32m[0317 22:11:49 @summary_handler.py:105][0m Length: 3.3
+[32m[0317 22:11:50 @network.py:237][0m step: 4000, current TD loss: 59.4618377686
+[32m[0317 22:11:50 @dqn_agent.py:220][0m episode: 1306, total game step: 5000, epsilon: 0.964009
+[32m[0317 22:11:52 @network.py:237][0m step: 4100, current TD loss: 6.65677165985
+[32m[0317 22:11:54 @network.py:237][0m step: 4200, current TD loss: 10.7059736252
+[32m[0317 22:11:56 @network.py:237][0m step: 4300, current TD loss: 19.686504364
+[32m[0317 22:11:57 @summary_handler.py:104][0m Current step: 5342, Reward: -0.391 (over 100 episodes)
+[32m[0317 22:11:57 @summary_handler.py:105][0m Length: 3.71
+[32m[0317 22:11:58 @network.py:237][0m step: 4400, current TD loss: 33.2932319641
+[32m[0317 22:12:00 @network.py:237][0m step: 4500, current TD loss: 45.3871917725
+[32m[0317 22:12:02 @network.py:237][0m step: 4600, current TD loss: 24.0478553772
+[32m[0317 22:12:04 @network.py:237][0m step: 4700, current TD loss: 17.8641281128
+[32m[0317 22:12:05 @summary_handler.py:104][0m Current step: 5757, Reward: -0.985 (over 100 episodes)
+[32m[0317 22:12:05 @summary_handler.py:105][0m Length: 4.15
+[32m[0317 22:12:06 @network.py:237][0m step: 4800, current TD loss: 95.8470916748
+[32m[0317 22:12:07 @network.py:237][0m step: 4900, current TD loss: 29.2576560974
+[32m[0317 22:12:09 @network.py:237][0m step: 5000, current TD loss: 21.4804725647
+[32m[0317 22:12:09 @dqn_agent.py:220][0m episode: 1568, total game step: 6000, epsilon: 0.955009
+[32m[0317 22:12:09 @dqn_agent.py:232][0m At time step 5000, the target_network is updated

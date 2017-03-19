@@ -1,0 +1,209 @@
+[32m[0317 22:31:04 @logger.py:67][0m Log file set to /mnt/rl_playground/tool/train_gym.py/../../log/gym_0317-223104.log
+[32m[0317 22:31:04 @train_gym.py:79][0m Session starts, using gpu: 0
+[32m[0317 22:31:04 @dqn_agent.py:49][0m Constructing a q-learning agent to play CorridorSmall-v5
+[32m[0317 22:31:04 @environments.py:46][0m Init game environments CorridorSmall-v5
+[32m[0317 22:31:04 @environments.py:202][0m Game set image size: 4
+[32m[0317 22:31:04 @network.py:123][0m building the target network, name: target_network
+[32m[0317 22:31:04 @network.py:51][0m Building network of type: dqn, using basebone: mlp
+[32m[0317 22:31:04 @cnn.py:21][0m building the basebone network, using mlp format
+[32m[0317 22:31:04 @cnn.py:98][0m Building a DEBUG model!
+[32m[0317 22:31:04 @network.py:125][0m building the pred network, name: predict_network
+[32m[0317 22:31:04 @network.py:51][0m Building network of type: dqn, using basebone: mlp
+[32m[0317 22:31:04 @cnn.py:21][0m building the basebone network, using mlp format
+[32m[0317 22:31:04 @cnn.py:98][0m Building a DEBUG model!
+[32m[0317 22:31:04 @experience.py:23][0m building the experience shop
+[32m[0317 22:31:04 @summary_handler.py:30][0m summary write initialized, writing to ../agent/../checkpoint
+[32m[0317 22:31:04 @summary_handler.py:104][0m Current step: 376, Reward: -0.396 (over 100 episodes)
+[32m[0317 22:31:04 @summary_handler.py:105][0m Length: 3.76
+[32m[0317 22:31:04 @summary_handler.py:104][0m Current step: 740, Reward: 0.166 (over 100 episodes)
+[32m[0317 22:31:04 @summary_handler.py:105][0m Length: 3.64
+[32m[0317 22:31:05 @dqn_agent.py:220][0m episode: 274, total game step: 1000, epsilon: 1.0
+[32m[0317 22:31:05 @dqn_agent.py:232][0m At time step 0, the target_network is updated
+[32m[0317 22:31:05 @network.py:238][0m step: 5, current TD loss: 0.286225944757
+[32m[0317 22:31:05 @network.py:238][0m step: 10, current TD loss: 0.107895158231
+[32m[0317 22:31:05 @network.py:238][0m step: 15, current TD loss: 0.013620775193
+[32m[0317 22:31:05 @network.py:238][0m step: 20, current TD loss: 0.0407959036529
+[32m[0317 22:31:05 @network.py:238][0m step: 25, current TD loss: 0.055186368525
+[32m[0317 22:31:05 @network.py:238][0m step: 30, current TD loss: 0.0486206784844
+[32m[0317 22:31:05 @network.py:238][0m step: 35, current TD loss: 0.0170733183622
+[32m[0317 22:31:05 @network.py:238][0m step: 40, current TD loss: 0.0040915235877
+[32m[0317 22:31:05 @network.py:238][0m step: 45, current TD loss: 0.00069809530396
+[32m[0317 22:31:06 @network.py:238][0m step: 50, current TD loss: 8.90932424227e-05
+[32m[0317 22:31:06 @network.py:238][0m step: 55, current TD loss: 0.00460391305387
+[32m[0317 22:31:06 @network.py:238][0m step: 60, current TD loss: 0.00384550914168
+[32m[0317 22:31:06 @network.py:238][0m step: 65, current TD loss: 0.000308601884171
+[32m[0317 22:31:06 @network.py:238][0m step: 70, current TD loss: 0.00941243860871
+[32m[0317 22:31:06 @network.py:238][0m step: 75, current TD loss: 0.00555841438472
+[32m[0317 22:31:06 @network.py:238][0m step: 80, current TD loss: 0.00436471216381
+[32m[0317 22:31:06 @network.py:238][0m step: 85, current TD loss: 0.00241908058524
+[32m[0317 22:31:06 @network.py:238][0m step: 90, current TD loss: 0.0429493486881
+[32m[0317 22:31:06 @network.py:238][0m step: 95, current TD loss: 0.0953219234943
+[32m[0317 22:31:06 @network.py:238][0m step: 100, current TD loss: 0.00198127678595
+[32m[0317 22:31:06 @dqn_agent.py:232][0m At time step 100, the target_network is updated
+[32m[0317 22:31:06 @network.py:238][0m step: 105, current TD loss: 0.0159891955554
+[32m[0317 22:31:07 @summary_handler.py:104][0m Current step: 1106, Reward: -0.716 (over 100 episodes)
+[32m[0317 22:31:07 @summary_handler.py:105][0m Length: 3.66
+[32m[0317 22:31:07 @network.py:238][0m step: 110, current TD loss: 0.0634967088699
+[32m[0317 22:31:07 @network.py:238][0m step: 115, current TD loss: 0.0420030727983
+[32m[0317 22:31:07 @network.py:238][0m step: 120, current TD loss: 0.0321661755443
+[32m[0317 22:31:07 @network.py:238][0m step: 125, current TD loss: 0.0128895882517
+[32m[0317 22:31:07 @network.py:238][0m step: 130, current TD loss: 0.0479193106294
+[32m[0317 22:31:07 @network.py:238][0m step: 135, current TD loss: 0.0182153526694
+[32m[0317 22:31:07 @network.py:238][0m step: 140, current TD loss: 0.171893805265
+[32m[0317 22:31:07 @network.py:238][0m step: 145, current TD loss: 0.105070278049
+[32m[0317 22:31:07 @network.py:238][0m step: 150, current TD loss: 0.0349501520395
+[32m[0317 22:31:07 @network.py:238][0m step: 155, current TD loss: 0.110861025751
+[32m[0317 22:31:07 @network.py:238][0m step: 160, current TD loss: 0.0404561534524
+[32m[0317 22:31:08 @network.py:238][0m step: 165, current TD loss: 0.0158454701304
+[32m[0317 22:31:08 @network.py:238][0m step: 170, current TD loss: 0.0323714837432
+[32m[0317 22:31:08 @network.py:238][0m step: 175, current TD loss: 0.0183195378631
+[32m[0317 22:31:08 @network.py:238][0m step: 180, current TD loss: 0.0244184546173
+[32m[0317 22:31:08 @network.py:238][0m step: 185, current TD loss: 0.0480758845806
+[32m[0317 22:31:08 @network.py:238][0m step: 190, current TD loss: 0.0227056499571
+[32m[0317 22:31:08 @network.py:238][0m step: 195, current TD loss: 0.143439501524
+[32m[0317 22:31:08 @network.py:238][0m step: 200, current TD loss: 0.0692728161812
+[32m[0317 22:31:08 @dqn_agent.py:232][0m At time step 200, the target_network is updated
+[32m[0317 22:31:08 @network.py:238][0m step: 205, current TD loss: 0.108862355351
+[32m[0317 22:31:08 @network.py:238][0m step: 210, current TD loss: 0.0779283493757
+[32m[0317 22:31:08 @network.py:238][0m step: 215, current TD loss: 0.0965859889984
+[32m[0317 22:31:09 @network.py:238][0m step: 220, current TD loss: 0.0848853141069
+[32m[0317 22:31:09 @network.py:238][0m step: 225, current TD loss: 0.199140161276
+[32m[0317 22:31:09 @network.py:238][0m step: 230, current TD loss: 0.107827290893
+[32m[0317 22:31:09 @network.py:238][0m step: 235, current TD loss: 0.154685556889
+[32m[0317 22:31:09 @network.py:238][0m step: 240, current TD loss: 0.294286340475
+[32m[0317 22:31:09 @network.py:238][0m step: 245, current TD loss: 0.182757616043
+[32m[0317 22:31:09 @network.py:238][0m step: 250, current TD loss: 0.111532218754
+[32m[0317 22:31:09 @network.py:238][0m step: 255, current TD loss: 0.324534147978
+[32m[0317 22:31:09 @network.py:238][0m step: 260, current TD loss: 0.0402309522033
+[32m[0317 22:31:09 @network.py:238][0m step: 265, current TD loss: 0.0416137725115
+[32m[0317 22:31:09 @network.py:238][0m step: 270, current TD loss: 0.0486342906952
+[32m[0317 22:31:10 @network.py:238][0m step: 275, current TD loss: 0.0919695422053
+[32m[0317 22:31:10 @network.py:238][0m step: 280, current TD loss: 0.193781584501
+[32m[0317 22:31:10 @network.py:238][0m step: 285, current TD loss: 0.207281112671
+[32m[0317 22:31:10 @network.py:238][0m step: 290, current TD loss: 0.0891241878271
+[32m[0317 22:31:10 @network.py:238][0m step: 295, current TD loss: 0.0466032102704
+[32m[0317 22:31:10 @network.py:238][0m step: 300, current TD loss: 0.059485707432
+[32m[0317 22:31:10 @dqn_agent.py:232][0m At time step 300, the target_network is updated
+[32m[0317 22:31:10 @network.py:238][0m step: 305, current TD loss: 0.15866997838
+[32m[0317 22:31:10 @network.py:238][0m step: 310, current TD loss: 0.0905511751771
+[32m[0317 22:31:10 @network.py:238][0m step: 315, current TD loss: 0.0521718710661
+[32m[0317 22:31:10 @network.py:238][0m step: 320, current TD loss: 0.0693941712379
+[32m[0317 22:31:10 @network.py:238][0m step: 325, current TD loss: 0.135502189398
+[32m[0317 22:31:10 @network.py:238][0m step: 330, current TD loss: 0.137543648481
+[32m[0317 22:31:11 @network.py:238][0m step: 335, current TD loss: 0.226666986942
+[32m[0317 22:31:11 @network.py:238][0m step: 340, current TD loss: 0.155837655067
+[32m[0317 22:31:11 @network.py:238][0m step: 345, current TD loss: 0.0615312233567
+[32m[0317 22:31:11 @network.py:238][0m step: 350, current TD loss: 0.145999222994
+[32m[0317 22:31:11 @network.py:238][0m step: 355, current TD loss: 0.0991540253162
+[32m[0317 22:31:11 @network.py:238][0m step: 360, current TD loss: 0.0594588890672
+[32m[0317 22:31:11 @network.py:238][0m step: 365, current TD loss: 0.189513355494
+[32m[0317 22:31:11 @network.py:238][0m step: 370, current TD loss: 0.0886286348104
+[32m[0317 22:31:11 @network.py:238][0m step: 375, current TD loss: 0.115403421223
+[32m[0317 22:31:11 @network.py:238][0m step: 380, current TD loss: 0.0966426283121
+[32m[0317 22:31:11 @network.py:238][0m step: 385, current TD loss: 0.35796225071
+[32m[0317 22:31:12 @network.py:238][0m step: 390, current TD loss: 0.100364029408
+[32m[0317 22:31:12 @network.py:238][0m step: 395, current TD loss: 0.119153805077
+[32m[0317 22:31:12 @network.py:238][0m step: 400, current TD loss: 0.0157852768898
+[32m[0317 22:31:12 @dqn_agent.py:232][0m At time step 400, the target_network is updated
+[32m[0317 22:31:12 @network.py:238][0m step: 405, current TD loss: 0.137828364968
+[32m[0317 22:31:12 @network.py:238][0m step: 410, current TD loss: 0.325799375772
+[32m[0317 22:31:12 @network.py:238][0m step: 415, current TD loss: 0.108425885439
+[32m[0317 22:31:12 @network.py:238][0m step: 420, current TD loss: 0.111540205777
+[32m[0317 22:31:12 @network.py:238][0m step: 425, current TD loss: 0.138256758451
+[32m[0317 22:31:12 @network.py:238][0m step: 430, current TD loss: 0.162620633841
+[32m[0317 22:31:12 @network.py:238][0m step: 435, current TD loss: 0.110518202186
+[32m[0317 22:31:12 @network.py:238][0m step: 440, current TD loss: 0.273322850466
+[32m[0317 22:31:13 @network.py:238][0m step: 445, current TD loss: 0.200925648212
+[32m[0317 22:31:13 @network.py:238][0m step: 450, current TD loss: 0.206510096788
+[32m[0317 22:31:13 @network.py:238][0m step: 455, current TD loss: 0.276805430651
+[32m[0317 22:31:13 @network.py:238][0m step: 460, current TD loss: 0.162890672684
+[32m[0317 22:31:13 @network.py:238][0m step: 465, current TD loss: 0.10552059859
+[32m[0317 22:31:13 @network.py:238][0m step: 470, current TD loss: 0.112428836524
+[32m[0317 22:31:13 @network.py:238][0m step: 475, current TD loss: 0.289073109627
+[32m[0317 22:31:13 @network.py:238][0m step: 480, current TD loss: 0.215429633856
+[32m[0317 22:31:13 @network.py:238][0m step: 485, current TD loss: 0.185379296541
+[32m[0317 22:31:13 @network.py:238][0m step: 490, current TD loss: 0.10006967932
+[32m[0317 22:31:13 @network.py:238][0m step: 495, current TD loss: 0.151761412621
+[32m[0317 22:31:13 @network.py:238][0m step: 500, current TD loss: 0.363873720169
+[32m[0317 22:31:13 @dqn_agent.py:232][0m At time step 500, the target_network is updated
+[32m[0317 22:31:14 @network.py:238][0m step: 505, current TD loss: 0.391685962677
+[32m[0317 22:31:14 @network.py:238][0m step: 510, current TD loss: 0.258596897125
+[32m[0317 22:31:14 @network.py:238][0m step: 515, current TD loss: 0.334060788155
+[32m[0317 22:31:14 @network.py:238][0m step: 520, current TD loss: 0.502039432526
+[32m[0317 22:31:14 @network.py:238][0m step: 525, current TD loss: 0.336012214422
+[32m[0317 22:31:14 @network.py:238][0m step: 530, current TD loss: 0.132987514138
+[32m[0317 22:31:14 @network.py:238][0m step: 535, current TD loss: 0.345446974039
+[32m[0317 22:31:14 @network.py:238][0m step: 540, current TD loss: 0.224968239665
+[32m[0317 22:31:14 @network.py:238][0m step: 545, current TD loss: 0.228166043758
+[32m[0317 22:31:14 @network.py:238][0m step: 550, current TD loss: 0.350977092981
+[32m[0317 22:31:14 @network.py:238][0m step: 555, current TD loss: 0.167502999306
+[32m[0317 22:31:14 @summary_handler.py:104][0m Current step: 1554, Reward: -0.578 (over 100 episodes)
+[32m[0317 22:31:14 @summary_handler.py:105][0m Length: 4.48
+[32m[0317 22:31:15 @network.py:238][0m step: 560, current TD loss: 0.331443727016
+[32m[0317 22:31:15 @network.py:238][0m step: 565, current TD loss: 0.526910960674
+[32m[0317 22:31:15 @network.py:238][0m step: 570, current TD loss: 0.262205243111
+[32m[0317 22:31:15 @network.py:238][0m step: 575, current TD loss: 0.439861118793
+[32m[0317 22:31:15 @network.py:238][0m step: 580, current TD loss: 0.25936755538
+[32m[0317 22:31:15 @network.py:238][0m step: 585, current TD loss: 0.452936500311
+[32m[0317 22:31:15 @network.py:238][0m step: 590, current TD loss: 0.175173044205
+[32m[0317 22:31:15 @network.py:238][0m step: 595, current TD loss: 0.322797060013
+[32m[0317 22:31:15 @network.py:238][0m step: 600, current TD loss: 0.656704425812
+[32m[0317 22:31:15 @dqn_agent.py:232][0m At time step 600, the target_network is updated
+[32m[0317 22:31:15 @network.py:238][0m step: 605, current TD loss: 0.06763638556
+[32m[0317 22:31:15 @network.py:238][0m step: 610, current TD loss: 0.652850866318
+[32m[0317 22:31:16 @network.py:238][0m step: 615, current TD loss: 0.29380017519
+[32m[0317 22:31:16 @network.py:238][0m step: 620, current TD loss: 0.120203688741
+[32m[0317 22:31:16 @network.py:238][0m step: 625, current TD loss: 0.099924698472
+[32m[0317 22:31:16 @network.py:238][0m step: 630, current TD loss: 0.325892806053
+[32m[0317 22:31:16 @network.py:238][0m step: 635, current TD loss: 0.343176692724
+[32m[0317 22:31:16 @network.py:238][0m step: 640, current TD loss: 0.284148991108
+[32m[0317 22:31:16 @network.py:238][0m step: 645, current TD loss: 0.151140734553
+[32m[0317 22:31:16 @network.py:238][0m step: 650, current TD loss: 0.22292535007
+[32m[0317 22:31:16 @network.py:238][0m step: 655, current TD loss: 0.210881829262
+[32m[0317 22:31:16 @network.py:238][0m step: 660, current TD loss: 0.209583953023
+[32m[0317 22:31:16 @network.py:238][0m step: 665, current TD loss: 0.377381682396
+[32m[0317 22:31:16 @network.py:238][0m step: 670, current TD loss: 0.208276510239
+[32m[0317 22:31:17 @network.py:238][0m step: 675, current TD loss: 0.130178868771
+[32m[0317 22:31:17 @network.py:238][0m step: 680, current TD loss: 0.428342401981
+[32m[0317 22:31:17 @network.py:238][0m step: 685, current TD loss: 0.0877446979284
+[32m[0317 22:31:17 @network.py:238][0m step: 690, current TD loss: 0.165373682976
+[32m[0317 22:31:17 @network.py:238][0m step: 695, current TD loss: 0.114646449685
+[32m[0317 22:31:17 @network.py:238][0m step: 700, current TD loss: 0.146468579769
+[32m[0317 22:31:17 @dqn_agent.py:232][0m At time step 700, the target_network is updated
+[32m[0317 22:31:17 @network.py:238][0m step: 705, current TD loss: 0.38921636343
+[32m[0317 22:31:17 @network.py:238][0m step: 710, current TD loss: 0.290744900703
+[32m[0317 22:31:17 @network.py:238][0m step: 715, current TD loss: 0.201877743006
+[32m[0317 22:31:17 @network.py:238][0m step: 720, current TD loss: 0.079926237464
+[32m[0317 22:31:17 @network.py:238][0m step: 725, current TD loss: 0.656483054161
+[32m[0317 22:31:18 @network.py:238][0m step: 730, current TD loss: 0.282444775105
+[32m[0317 22:31:18 @network.py:238][0m step: 735, current TD loss: 0.307179331779
+[32m[0317 22:31:18 @network.py:238][0m step: 740, current TD loss: 0.0833318755031
+[32m[0317 22:31:18 @network.py:238][0m step: 745, current TD loss: 0.290942281485
+[32m[0317 22:31:18 @network.py:238][0m step: 750, current TD loss: 0.261070311069
+[32m[0317 22:31:18 @network.py:238][0m step: 755, current TD loss: 0.508505225182
+[32m[0317 22:31:18 @network.py:238][0m step: 760, current TD loss: 0.253768891096
+[32m[0317 22:31:18 @network.py:238][0m step: 765, current TD loss: 0.391539901495
+[32m[0317 22:31:18 @network.py:238][0m step: 770, current TD loss: 0.46824914217
+[32m[0317 22:31:18 @network.py:238][0m step: 775, current TD loss: 0.139304980636
+[32m[0317 22:31:18 @network.py:238][0m step: 780, current TD loss: 0.20125824213
+[32m[0317 22:31:19 @network.py:238][0m step: 785, current TD loss: 0.125167429447
+[32m[0317 22:31:19 @network.py:238][0m step: 790, current TD loss: 0.0928327515721
+[32m[0317 22:31:19 @network.py:238][0m step: 795, current TD loss: 0.422809898853
+[32m[0317 22:31:19 @network.py:238][0m step: 800, current TD loss: 0.16333642602
+[32m[0317 22:31:19 @dqn_agent.py:232][0m At time step 800, the target_network is updated
+[32m[0317 22:31:19 @network.py:238][0m step: 805, current TD loss: 0.250699996948
+[32m[0317 22:31:19 @network.py:238][0m step: 810, current TD loss: 0.397565484047
+[32m[0317 22:31:19 @network.py:238][0m step: 815, current TD loss: 0.369858592749
+[32m[0317 22:31:19 @network.py:238][0m step: 820, current TD loss: 0.156165450811
+[32m[0317 22:31:19 @network.py:238][0m step: 825, current TD loss: 0.551235795021
+[32m[0317 22:31:19 @network.py:238][0m step: 830, current TD loss: 0.199370101094
+[32m[0317 22:31:19 @network.py:238][0m step: 835, current TD loss: 0.176209419966
+[32m[0317 22:31:20 @network.py:238][0m step: 840, current TD loss: 0.189937204123
+[32m[0317 22:31:20 @network.py:238][0m step: 845, current TD loss: 0.287988066673
+[32m[0317 22:31:20 @network.py:238][0m step: 850, current TD loss: 0.129189908504
+[32m[0317 22:31:20 @network.py:238][0m step: 855, current TD loss: 0.236431390047
+[32m[0317 22:31:20 @network.py:238][0m step: 860, current TD loss: 0.19039657712
+[32m[0317 22:31:20 @network.py:238][0m step: 865, current TD loss: 0.196031674743
+[32m[0317 22:31:20 @network.py:238][0m step: 870, current TD loss: 0.709905266762
+[32m[0317 22:31:20 @network.py:238][0m step: 875, current TD loss: 0.198970854282
+[32m[0317 22:31:20 @network.py:238][0m step: 880, current TD loss: 0.178968563676

@@ -10,8 +10,8 @@ from tensorflow.contrib.layers.python.layers import initializers
 
 
 def conv2d(x, output_dim, kernel_size, stride,
-           weights_initializer=tf.contrib.layers.xavier_initializer(),
-           biases_initializer=tf.constant_initializer(0.1),
+           weights_initializer=tf.truncated_normal_initializer(0, 0.02),
+           biases_initializer=tf.random_normal_initializer(stddev=0.01),
            activation_fn=tf.nn.relu,
            data_format='NHWC', padding='VALID', name='conv2d', trainable=True):
     with tf.variable_scope(name):
@@ -41,8 +41,8 @@ def conv2d(x, output_dim, kernel_size, stride,
 
 
 def linear(input_, output_size,
-           weights_initializer=initializers.xavier_initializer(),
-           biases_initializer=tf.zeros_initializer(),
+           weights_initializer=tf.random_normal_initializer(stddev=0.02),
+           biases_initializer=tf.random_normal_initializer(stddev=0.01),
            activation_fn=None, trainable=True, name='linear'):
     '''
         @brief:

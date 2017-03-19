@@ -65,7 +65,8 @@ class CorridorEnv(discrete.DiscreteEnv):
         n_state = nrow * ncol
 
         # define the initial state distribution
-        isd = (desc == 'S').ravel().astype('float64')
+        isd = 2 * (desc == 'S').ravel().astype('float64') + \
+            (desc == 'F').ravel().astype('float64')
         isd /= isd.sum()
         self.isd = isd
 

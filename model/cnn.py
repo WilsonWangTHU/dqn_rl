@@ -54,7 +54,8 @@ class basebone_network(object):
                 'data_format |{}| might not be a good idea, you sure?')
 
         # the convolutional layers
-        self.l0 = self.input_screen / 255.0  # size [b, 4, 80, 80]
+        self.l0 = self.input_screen  # size [b, 4, 80, 80]
+        # self.l0 = self.input_screen / 255.0  # size [b, 4, 80, 80]
 
         if self.network_basebone == 'nature':
             # self.l1: size [b, 32, 20, 20], relu used
@@ -100,13 +101,14 @@ class basebone_network(object):
                 assert layer.get_shape().as_list()[1] == 1, logger.error(
                     'We only play mlp with the toy environment')
             layer = tf.reshape(layer, [-1] + layer.get_shape().as_list()[2:])
-
-            for idx, hidden_size in enumerate([50, 50, 50]):
+            self.layers = {} # just to debug
+            self.layers['l_0'] = self.l0
+            for idx, hidden_size in enumerate([50]):
                 w_name, b_name = 'w_%d' % idx, 'b_%d' % idx  # get the name
-                layer, self.var[w_name], self.var[b_name] = \
-                    layers.linear(layer, hidden_size, activation_fn=tf.sigmoid,
+                self.layers['l_%d' % (idx + 1)], self.var[w_name], self.var[b_name] = \
+                    layers.linear(self.layers['l_%d' % idx], hidden_size, activation_fn=None,
                                   trainable=True, name=('lin_%d' % idx))
-            self.output = layer
+            self.output = self.layers['l_1']
         else:
             assert False, logger.error(
                 'Unknown baseline type {}'.format(self.network_basebone))

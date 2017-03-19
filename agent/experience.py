@@ -35,7 +35,7 @@ class experience_shop(object):
 
         # locate the memory
         self.actions = np.empty(self.memory_length, dtype=np.uint8)
-        self.rewards = np.empty(self.memory_length, dtype=np.uint8)
+        self.rewards = np.empty(self.memory_length, dtype=np.float32)
         self.observations = np.empty(
             [self.memory_length, self.screen_size, self.screen_size],
             dtype=np.uint8)

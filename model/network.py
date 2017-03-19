@@ -17,6 +17,7 @@ import cnn
 import layers
 from util import logger
 import numpy as np
+from matplotlib import pyplot as plt
 init_path.bypass_frost_warning()
 
 
@@ -137,7 +138,7 @@ class deep_Q_network(network):
     def build_model(self):
         self.intermediate_layer = self.baseline_net.get_output_layer()
 
-        # size [b, number_action], no relu, we get the logit
+        # size [batch_size, num_action_space], no relu, we get the logit
         self.output, self.all_var['w_out'], self.all_var['b_out'] = \
             layers.linear(self.intermediate_layer, self.action_space_size,
                           name='output')
@@ -155,12 +156,16 @@ class deep_Q_network(network):
         self.reward_input = tf.placeholder('float32', [None])
         self.action_input = tf.placeholder('int64', [None])
 
+        # size [batch_size, num_action_space]
         self.actions_one_hot = tf.one_hot(self.action_input,
                                           self.action_space_size,
                                           1.0, 0.0, name='action_one_hot')
+        # size [batch_size]
         self.pred_state_action_value = tf.reduce_sum(
             self.output * self.actions_one_hot,
             reduction_indices=1, name='action_state_value')
+        
+        # size [batch_size]
         self.target_value = self.config.TRAIN.value_decay_factor * \
             self.Q_next_state_input + self.reward_input
         
@@ -173,7 +178,8 @@ class deep_Q_network(network):
         self.td_loss = tf.reduce_mean(self.td_diff_clipped, name='final_loss')
 
         self.init_training()
-
+        #self.action_grads = tf.gradients(self.td_loss, self.baseline_net.layers['l_2'])
+        
     def get_next_state_value(self, end_states, terminal):
         assert self.target_network is None, logger.error(
             'You should call the target network to generate the value')
@@ -195,8 +201,7 @@ class deep_Q_network(network):
         self.sess.run(self.step_add_op)
 
         current_step = self.sess.run(self.step_count)
-        '''
-        if current_step > 100000 and current_step % 10000 == 1:            
+        if current_step < -1 and current_step % 10000 == 1:            
             current_loss, current_step, td_loss_sum, q_values, diff_clipped = self.sess.run(
                 [self.td_loss, self.step_count, td_loss_summary, 
                  self.output, self.td_diff_clipped],
@@ -208,19 +213,36 @@ class deep_Q_network(network):
             for i in range(32):
                 self.show_result(actions[i], rewards[i], start_states[i], 
                                  end_states[i], terminal[i], Q_next_state[i], q_values[i], diff_clipped[i])
-          '''      
-        _, current_loss, current_step, td_loss_sum, q_values = self.sess.run(
-            [self.optim, self.td_loss, self.step_count, td_loss_summary, 
-             self.output],
+        for _ in range(20):
+            _, current_loss, current_step, td_loss_sum, q_values = self.sess.run(
+                [self.optim, self.td_loss, self.step_count, td_loss_summary, 
+                 self.output],
+                feed_dict={self.action_input: actions,
+                           self.reward_input: rewards,
+                           self.Q_next_state_input: Q_next_state,
+                           self.input_screen: start_states})
+            #print 'lllloooosssseeeee: {}'.format(current_loss)
+            #print '1: {}'.format(q_values[0])
+            #print '2: {}'.format(q_values[1])
+        
+        #print '-----------------------'
+        #print q_values[0]
+        #print q_values[1]
+        #plt.imsave('test.png', np.array(start_states[0,0], dtype=np.float) / 255)
+        #print '-----------------------'
+        #print self.all_var['base_w_2'].eval(self.sess)
+        #print current_loss
+        #if current_step % self.info_update_freq == 0:
+        if current_step % 5 == 0:
+            logger.info('step: {}, current TD loss: {}'.format(
+                current_step, current_loss))
+        '''
+        gradients_and_vars = self.sess.run(self.action_grads, 
             feed_dict={self.action_input: actions,
                        self.reward_input: rewards,
                        self.Q_next_state_input: Q_next_state,
                        self.input_screen: start_states})
- 
-        if current_step % self.info_update_freq == 0:
-            logger.info('step: {}, current TD loss: {}'.format(
-                current_step, current_loss))
-
+        '''
         return current_step, td_loss_sum
 
     def init_training(self):
@@ -247,6 +269,7 @@ class deep_Q_network(network):
         self.optimizer = tf.train.RMSPropOptimizer(
             self.learning_rate_op, momentum=0.95, epsilon=0.01)
 
+        '''
         if self.config.TRAIN.max_grad_norm is not None:
             grads_and_vars = self.optimizer.compute_gradients(self.td_loss)
             for idx, (grad, var) in enumerate(grads_and_vars):
@@ -256,6 +279,8 @@ class deep_Q_network(network):
             self.optim = self.optimizer.apply_gradients(grads_and_vars)
         else:
             self.optim = self.optimizer.minimize(self.td_loss)
+            '''
+        self.optim = self.optimizer.minimize(self.td_loss)
 
     def get_step_count(self):
         '''
